@@ -48,3 +48,29 @@ Inspiring community engagement with event aggregation.
 ### Assessment:**
 - Nice to have: This interviewee enjoys going out with their friends, and is always looking for more events to go to. That being said they seem to mainly go off of word of mouth of their friends, so they do not necessarily NEED the app. That being said, they do think it would make the process of finding the events a lot easier, and for that reason I think they would like to have the app but do not need it.
 
+## Interview 3:
+**Interviewee:** Noah Levine \
+**Interviewer:** Benjamin Levine \
+**Date:** 9/22/24 \
+**Customer Segments:** NAU Freshman
+### Key Insights:
+- This interviewee was very interested in a friend system within an application, or the group system, as he said he doesn’t enjoy going to events if his friends do not go.
+### Representative Quotes:
+- When asked if there was ever an event that was missed even though you were interested because you weren’t aware it was happening: “Yeah, specifically the movie night events on campus.” 
+- When asked how he keeps track of or reminds himself of upcoming events: “Keep in my brain. No, I do not write it down. Mostly mental notes.”
+### Assessment:
+- Low Must have/ High nice to have
+
+## Interview 4:
+**Interviewee:** Chris Leckey \
+**Interviewer:** Benjamin Levine \
+**Date:** 9/19/24 \
+**Customer Segments:** NAU Student
+### Key Insights:
+- This interviewee was generally uninterested in events, but when he would actually respond, he talked about friends and how important they are to his activity at events. 
+### Representative Quotes:
+- When asked what the primary reasons that causes him to attend an event: “Socializing with friends and peers alike.”
+- When asked what features would be most useful to you for an event tracker: “A system to find like-minded people.” 
+### Assessment:
+- Overall “Nice-to-have,” but some features mentioned were “Don’t care.”
+
