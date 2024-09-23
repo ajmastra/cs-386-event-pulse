@@ -74,3 +74,28 @@ Inspiring community engagement with event aggregation.
 ### Assessment:
 - Overall “Nice-to-have,” but some features mentioned were “Don’t care.”
 
+## Interview 5:
+**Interviewee:** Logan Herbert \
+**Interviewer:** Zachary Garza \
+**Date:** 9/21/24 \
+**Customer Segments:** NAU Junior Student
+### Key Insights:
+- The interviewee thought NAU’s ability to place flyers at popular locations is what makes them so successful.
+### Representative Quotes:
+- “I really only want to go meetings if I’m with friends”
+- “I see flyers outside the union and they interest me.”
+### Assessment:
+- This student does not want to go to events unless they go with other people, and they rarely, if not ever, go to an actual meeting by themselves. They value something that you can get information easily, like being out and about and seeing the event.
+
+## Interview 6:
+**Interviewee:** Saul Macias \
+**Interviewer:** Zachary Garza \
+**Date:** 9/21/24 \
+**Customer Segments:** ASU Junior 
+### Key Insights:
+- The interviewee said that ASU already had the ability to send notifications and already had the an event website
+### Representative Quotes:
+- “Only having 3 buttons to add events would be best, having too many fields takes way too long”
+### Assessment:
+- Doesn’t really want to go to events unless friends want to or it’s important to them. Events aren’t the top of their priority list unless they get something out of it. 
+
