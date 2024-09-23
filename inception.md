@@ -37,7 +37,7 @@ Inspiring community engagement with event aggregation.
 ## Interview 2:
 **Interviewee:** Cole Pace \
 **Interviewer:** Anthony Mastrangelo \
-**Date:** 9/21/24 \ 
+**Date:** 9/21/24 \
 **Customer Segments:** NAU Student 
 ### Key Insights:
 - This interviewee did not see the importance of having a friends system within the app. They thought as though with the current age of social media that people don’t really want another app that they have to add all of the the people they know on once again.
