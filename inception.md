@@ -117,3 +117,31 @@ Inspiring community engagement with event aggregation.
 ### Assessment:
 - Nice to have, Ricky thinks NAU does a good enough job about notifying him about events, but there are a lot of reasons for him to use the app. Would help him connect with more friends, keep everything organized in one place.
 
+## Interview 8:
+**Interviewee:** Jalyn Peters  
+**Interviewer:** Anthony Mastrangelo  
+**Date:** 9/23/24  
+**Customer Segments:** NAU college students, local interior designers  
+### Key Insights:
+- Social features, like knowing where friends are going, would increase interest and participation in local events.
+- A simple, user-driven tool appeals as it feels more inclusive than platforms like Facebook or Ticketmaster.
+### Representative Quotes:
+- "I always miss out on cool events because I never know where to look for them."
+- "If I knew my friends were going, I'd definitely check out more local stuff."
+### Assessment:
+- Must have. This user feels strongly that a tool like Event Pulse would significantly improve their connection to campus and local events.
+
+## Interview 9:
+**Interviewee:** Justin Baird  
+**Interviewer:** Anthony Mastrangelo  
+**Date:** 9/22/24  
+**Customer Segments:** Freelance graphic designers, college students  
+### Key Insights:
+- There is a gap in platforms for promoting small or niche local events, which are often lost in larger event promotion services.
+- A community-driven approach, where anyone can contribute, would bring attention to more diverse and less mainstream events.
+### Representative Quotes:
+- "It's hard to get the word out about small local events; people just don't see them unless it's a big name or advertised."
+### Assessment:
+- Must have. This user sees strong potential for Event Pulse as a key tool for promoting smaller events and staying socially connected.
+
+
