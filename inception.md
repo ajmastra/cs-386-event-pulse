@@ -99,3 +99,21 @@ Inspiring community engagement with event aggregation.
 ### Assessment:
 - Doesn’t really want to go to events unless friends want to or it’s important to them. Events aren’t the top of their priority list unless they get something out of it. 
 
+## Interview 7:
+**Interviewee:** Ricky Rocchi \
+**Interviewer:** Andrew Gajewski \
+**Date:** 9/21/24 \
+**Customer Segments:** NAU Senior Student
+### Key Insights:
+- Attending events is very important, a big part of why it's important is to make new friends and spend time with friends.
+- He finds out about events through emails, friends, and sometimes the NAU app.
+- He does say that he hasn’t missed out on any events because he wasn’t aware, he thinks the emails do a good job of notifying him.
+- He just keeps track of events in his head, he says it works well but it would be nice to have one place for reminders and not have to use multiple different apps.
+- He had a good suggestion for a feature, a rating system for events, similar to yelp or something like that. This would allow people who attend the events to rate them on a certain scale so people could determine what events are worth going to.
+### Representative Quotes:
+- “A good feature would be a scorecard of how people view a certain event, to know in advance if it is worth going or not.”
+- “NAU does a good job of notifying me of events, especially emails”
+- “The email system is pretty good but the problem is I always have my inbox filled.”
+### Assessment:
+- Nice to have, Ricky thinks NAU does a good enough job about notifying him about events, but there are a lot of reasons for him to use the app. Would help him connect with more friends, keep everything organized in one place.
+
