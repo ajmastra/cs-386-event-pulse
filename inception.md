@@ -1,8 +1,8 @@
 # Project Inception
 ---
-Group 06 - "Event Pulse" \
-Date: 9/22/24 \
-Group Members: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza 
+*Group 06* - "Event Pulse" \
+*Date:* 9/22/24 \
+*Group Members:* Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza 
 
 ## 1. Introduction
 
@@ -119,7 +119,7 @@ Inspiring community engagement with event aggregation.
 
 ## Interview 8:
 **Interviewee:** Jalyn Peters  
-**Interviewer:** Anthony Mastrangelo  
+**Interviewer:** Andrew Sliva 
 **Date:** 9/23/24  
 **Customer Segments:** NAU college students, local interior designers  
 ### Key Insights:
@@ -133,7 +133,7 @@ Inspiring community engagement with event aggregation.
 
 ## Interview 9:
 **Interviewee:** Justin Baird  
-**Interviewer:** Anthony Mastrangelo  
+**Interviewer:** Andrew Sliva
 **Date:** 9/22/24  
 **Customer Segments:** Freelance graphic designers, college students  
 ### Key Insights:
@@ -145,9 +145,9 @@ Inspiring community engagement with event aggregation.
 - Must have. This user sees strong potential for Event Pulse as a key tool for promoting smaller events and staying socially connected.
 
 ## Interview 10: 
-**Interviewee:** Carson Redmon
-**Interviewer:** Samuel Butler
-**Date:** September 20, 2024
+**Interviewee:** Carson Redmon \
+**Interviewer:** Samuel Butler \
+**Date:** September 20, 2024 \
 **Customer Segments:** College students, local
 ### Key Insights:
 - Adding a verification system could help filter out events from non-legitimate users.
@@ -160,9 +160,9 @@ Inspiring community engagement with event aggregation.
 Nice to have. Despite her being fairly proficinet at finding local events, she belives it would be convenient to not have to look through multiple places to find events she is interested in.
 
 ## Interview 11:
-**Interviewee:** Sean Lightner
-**Interviewer:** Samuel Butler
-**Date:** September 20, 2024
+**Interviewee:** Sean Lightner \
+**Interviewer:** Samuel Butler \
+**Date:** September 20, 2024 \
 **Customer Segments:** College student, local
 ### Key Insights: 
 - We could benefit from users being able to share how much they enjoyed the event to give others an idea of what it might be like.
@@ -174,9 +174,9 @@ Nice to have. Despite her being fairly proficinet at finding local events, she b
 Nice to have. He believes he would go to more events if he knew more about them before going, but doesn’t currently have a huge issue with his current methods.
 
 
-## Summary
+## Final Value Proposition and Customer Segments
 ### Final Value Proposition:
-Inspiring the local community to connect through local events
+Inspiring the local community to connect through local events.
 
 ### Final Customer Segments:
 - NAU Undergraduate Students
