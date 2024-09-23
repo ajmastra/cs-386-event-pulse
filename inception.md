@@ -144,4 +144,43 @@ Inspiring community engagement with event aggregation.
 ### Assessment:
 - Must have. This user sees strong potential for Event Pulse as a key tool for promoting smaller events and staying socially connected.
 
+## Interview 10: 
+**Interviewee:** Carson Redmon
+**Interviewer:** Samuel Butler
+**Date:** September 20, 2024
+**Customer Segments:** College students, local
+### Key Insights:
+- Adding a verification system could help filter out events from non-legitimate users.
+- It may be important to make sure there is some way that new events are pushed out to people who find them interesting. This avoids the work of having to seek out the event yourself.
+### Representative Quotes:
+- (when asked whether attending events was important to her:) “Extremely important. Probably one of the most important things in my life”
+- “There probably should be a limit of some kind so people don’t troll or spam the feed with random events.”
+- “So many places–mostly in tucson–someone will show me something and I won’t have known about it beforehand.”
+### Assessment:
+Nice to have. Despite her being fairly proficinet at finding local events, she belives it would be convenient to not have to look through multiple places to find events she is interested in.
 
+## Interview 11:
+**Interviewee:** Sean Lightner
+**Interviewer:** Samuel Butler
+**Date:** September 20, 2024
+**Customer Segments:** College student, local
+### Key Insights: 
+- We could benefit from users being able to share how much they enjoyed the event to give others an idea of what it might be like.
+- Making sure there’s a way to filter out events posted in bad-faith would be a good thing to include.
+### Representative Quotes:
+- “Some kind of way to filter out mis-information and make sure it’s safe and not some weird click-bait thing.”
+- “Sharing pictures of the venue to show that the event was enjoyable and promote the event.”
+### Assessment:
+Nice to have. He believes he would go to more events if he knew more about them before going, but doesn’t currently have a huge issue with his current methods.
+
+
+## Summary
+### Final Value Proposition:
+Inspiring the local community to connect through local events
+
+### Final Customer Segments:
+- NAU Undergraduate Students
+- NAU Graduate Students
+- Event Coordinators
+- Visitors
+- Locals
