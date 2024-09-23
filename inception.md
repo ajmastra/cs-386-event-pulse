@@ -1,14 +1,14 @@
-#H1 Project Inception
+# H1 Project Inception
 ---
-Group 06 - "Event Pulse"
-Date: 9/22/24
-Group Members: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza
+Group 06 - "Event Pulse" \
+Date: 9/22/24 \
+Group Members: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza \ 
 
-#H2 1. Introduction
+## H2 1. Introduction
 ---
 Event Pulse provides a centralized platform for discovering and sharing local events, allowing users to stay connected to their community without relying on word of mouth or traditional advertising channels. For users, the value comes from the convenience of having all events in one place, tailored to their interests, and the ability to be more socially engaged by knowing what their friends are attending.  
 
-#H2 2. Initial Value Proposition and Consumer Segments
+## H2 2. Initial Value Proposition and Consumer Segments
 
 **IVP:***
 Inspiring community engagement with event aggregation.
@@ -18,9 +18,9 @@ Inspiring community engagement with event aggregation.
 - Flagstaff Locals
 - Flagstaff Visitors
 
-#H2 3. Interviews Summary
+## H2 3. Interviews Summary
 
-#H1 Interview 1:
+## H1 Interview 1:
 **Interviewee:** Claire Ewert, Marketing lead at NAU Campus Rec
 **Interviewer:** Anthony Mastrangelo
 **Date:** 9/19/24
@@ -34,7 +34,7 @@ Inspiring community engagement with event aggregation.
 **Assessment:**
 - Nice to have: As someone who wants to notify more students about events at Campus Recreation, this interviewee believes that this app would be nice to have for them. This would not only help them go to more events individually, but also encourage them to try and get more people involved.
 
-#H2 Interview 2:
+## H2 Interview 2:
 **Interviewee:** Cole Pace
 **Interviewer:** Anthony Mastrangelo
 **Date:** 9/21/24
