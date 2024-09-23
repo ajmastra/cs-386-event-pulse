@@ -2,7 +2,7 @@
 ---
 Group 06 - "Event Pulse" \
 Date: 9/22/24 \
-Group Members: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza \ 
+Group Members: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza 
 
 ## 1. Introduction
 
@@ -13,7 +13,7 @@ Event Pulse provides a centralized platform for discovering and sharing local ev
 ### IVP:
 Inspiring community engagement with event aggregation.
 
-### Initial Consumer Segments:
+### Initial Customer Segments:
 - NAU Students
 - Flagstaff Locals
 - Flagstaff Visitors
@@ -24,21 +24,21 @@ Inspiring community engagement with event aggregation.
 **Interviewee:** Claire Ewert, Marketing lead at NAU Campus Rec \
 **Interviewer:** Anthony Mastrangelo \
 **Date:** 9/19/24 \
-**Customer Segments:** NAU Student \
+**Customer Segments:** NAU Student 
 ### Key Insights:
 - NAU does a decent job of getting the school events out on social media
-- Neither Campus Recreation or NAU social media does that great of a job encouraging students to go to events outside of campus. \
+- Neither Campus Recreation or NAU social media does that great of a job encouraging students to go to events outside of campus. 
 ### Representative Quotes:
 - When asked about how do they find out about upcoming events: “I have to seek it out on my own, for example if I want to go see something at the Orpheum I go to their website. Otherwise I usually just hear things through word of mouth.”
-- When asked about if they had ever missed out on an event that they were interested in because they were not aware of it happening: “100%. Gregory Alan Isakov came to Flagstaff, which is one of my favorite artists but I had no idea he was coming until it was already sold out.” \
+- When asked about if they had ever missed out on an event that they were interested in because they were not aware of it happening: “100%. Gregory Alan Isakov came to Flagstaff, which is one of my favorite artists but I had no idea he was coming until it was already sold out.” 
 ### Assessment:
-- Nice to have: As someone who wants to notify more students about events at Campus Recreation, this interviewee believes that this app would be nice to have for them. This would not only help them go to more events individually, but also encourage them to try and get more people involved. \
+- Nice to have: As someone who wants to notify more students about events at Campus Recreation, this interviewee believes that this app would be nice to have for them. This would not only help them go to more events individually, but also encourage them to try and get more people involved. 
 
 ## Interview 2:
 **Interviewee:** Cole Pace \
 **Interviewer:** Anthony Mastrangelo \
 **Date:** 9/21/24 \ 
-**Customer Segments:** NAU Student \
+**Customer Segments:** NAU Student 
 ### Key Insights:
 - This interviewee did not see the importance of having a friends system within the app. They thought as though with the current age of social media that people don’t really want another app that they have to add all of the the people they know on once again.
 ### Representative Quotes:
