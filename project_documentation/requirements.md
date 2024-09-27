@@ -8,15 +8,16 @@
 
 ### 1.1 Problem Statement
 
-sdjfjsdjfkljadslkjf;sjdkfjlsdjf  
+The problem of not attending NAU and flagstaff events affects NAU students and Flagstaff residents, the impact of which is not making friends, and missing out on valuable memories and being a part of the community.  
 
 ### 1.2 Product Position Statement
 
-asdakdjaskdjkasjdkasjdkasjdkasjkdjaskd
+For NAU students and Flagstaff residents who want to attend more events, make friends, and interact with their community, EventPulse is an app that that gives users a platform to explore events and find groups of similar people to attend and discuss events; unlike NAU event tracker, our product not only notifies users of events, but helps connect people, supports event organizers, and overall provides an all-in-one space to interact with events and the community.
 
 ### 1.3 Value Proposition and Customer Segment
 
-askdhjashdkjashjkdhsajkdhsajkdhjaskdhjakshdjkashdkjashdjk
+Value Proposition: EventPulse is an event tracker app that provides NAU students and Flagstaff residents with an all in one place to explore local events, find groups of similar people, and discuss events. 
+Customer Segment: NAU students, and Flagstaff residents looking to make friends and interact with the community.
 
 ## 2. Stakeholders
 
