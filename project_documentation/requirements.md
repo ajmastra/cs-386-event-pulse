@@ -36,9 +36,9 @@ askdhjashdkjashjkdhsajkdhsajkdhjaskdhjakshdjkashdkjashdjk
 - three
 
 ## 5. MVP
-- one
-- two
-- three
+- We will have a user authenication system for users to sign up through email. This will be validated by having actual users try to sign up for an account through our web portal.
+- Upon sign up, users will be able to add themselves to various groups of interests for the sake of recieving SMS notifications. This will be tested via implementation, ensuring that the prototype users recieve the correct notifications, and not one thats are unrelated to the interests they selected. For example, users can select tags to assign themselves to these interests.
+- There will be an event homescreen that users can scroll through, seeing all of the events in their area, and a curated list of the events that are pertaining to their selected interests. This will be testing during the prototyping phase, to ensure that all of the interests for events are being properly registered.
 
 ## 6. Use Cases
 
