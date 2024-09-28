@@ -12,7 +12,7 @@ The problem of not attending NAU and flagstaff events affects NAU students and F
 
 ### 1.2 Product Position Statement
 
-For NAU students and Flagstaff residents who want to attend more events, make friends, and interact with their community, EventPulse is an app that that gives users a platform to explore events and find groups of similar people to attend and discuss events; unlike NAU event tracker, our product not only notifies users of events, but helps connect people, supports event organizers, and overall provides an all-in-one space to interact with events and the community.
+For NAU students and Flagstaff residents who want to attend more events, make friends, and interact with their community, EventPulse is an app that gives users a platform to explore events and find groups of similar people to attend and discuss events. Unlike NAU event tracker, our product not only notifies users of events, but helps connect people, supports event organizers, and overall provides an all-in-one space to interact with events and the community.
 
 ### 1.3 Value Proposition and Customer Segment
 
@@ -21,9 +21,10 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 2. Stakeholders
 
-**Users:** ahsdhasjkhdjashjd  
-**Comptetitors:** hajshdkjahskjdhaskjhd  
-**Developers**: asdjashkjdhkashdkhsa   
+**Users:** NAU Students, Event Organizers, Promoters, Community Active Locals, Tourists  
+**Comptetitors:** Meetup, NAUGo, Instagram, Facebook, [Flagstaff Events Calendar](https://www.flagstaff.com/calendar)  
+**Developers:** Our six group members (listed above)  
+**Detractors:** Team experience, project deadline (end of semester) 
 
 ## 3. Functional Requirements (features)
 
@@ -80,9 +81,9 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 7. User Stories
 
-**User Story 1:** ajhsjdkhkashkd  
+**User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.  
 
-**User Story 2:** ajhsjdkhkashkd  
+**User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the evetn so that I can decide better if I want to go or not.  
 
 **User Story 3:** ajhsjdkhkashkd  
 
