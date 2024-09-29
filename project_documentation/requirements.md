@@ -64,7 +64,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 **Decription:** User sets up an account with an email address in order to utilize the application.  
 **Preconditions:**  User has downloaded the app, and has an email account.  
 **Postconditions:** The user now has an account setup for *Event Pulse*.
-**Main Flow:**
+**Main Flow:**  
 1. User opens the app that they have now downloaded.
 2. User selects signup.
 3. User enters name, email address, and password for account setup.
@@ -79,7 +79,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 **Actor**: App User  
 **Decription:** User will select an event within the app, and mark that they are interested in attending the event.  
 **Preconditions:** User has downloaded the *Event Pulse* app and setup an account that they are currently logged into.  
-**Postconditions:** User will now receieve notifications regarding this event.
+**Postconditions:** User will now receieve notifications regarding this event.  
 **Main Flow:**
 1. User selects an event that they are interested in.
 2. User expresses interest in a particular event.
