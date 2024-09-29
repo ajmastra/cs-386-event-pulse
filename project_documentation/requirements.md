@@ -55,7 +55,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 ## 6. Use Cases
 
 ### 6.1 Use Case Diagram:
-![UML Diagram](/D2_media/UML.jpg)
+![UML Diagram](/project_documentation/D2_media/UML.jpg)
 
 ### 6.2 Use Case Decriptions
 
@@ -73,7 +73,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 2. User opens the app
 3. User selects "Login" on the home screen.
 4. User enters their account email and password to sign-in to their account.
-![Sign Up UI](/D2_media/signup.png)
+![Sign Up UI](/project_documentation/D2_media/signup.png)
 
 **Use case**: Mark Interest in Event  
 **Actor**: App User  
@@ -84,7 +84,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 1. User selects an event that they are interested in.
 2. User expresses interest in a particular event.
 3. User is now enrolled in push notification for this event, should anything change.
-![Interest in Event UI](/D2_media/interest_in_event.png)
+![Interest in Event UI](/project_documentation/D2_media/interest_in_event.png)
 
 **Use case**: Posting an Event  
 **Actor**: Event Coordinator  
@@ -96,7 +96,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 2. User enters the information of the event: name, date, time, and place.
 3. User selects the "Submit button".
 4. The event is posted to the events page within the app.
-![Posting An Event UI](/D2_media/posting_an_event.png)
+![Posting An Event UI](/project_documentation/D2_media/posting_an_event.png)
 
 **Use case**: Approve / Deny Event Post  
 **Actor**: Admin  
@@ -110,7 +110,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 4. Admin approves the event and the user that posted it is notified of the status.
 **Alternative Flows:**
 4. Admin denies the event and the user that posted it is notified of the status.
-![Event Approval UI](/D2_media/event_approval.png)
+![Event Approval UI](/project_documentation/D2_media/event_approval.png)
 
 
 ## 7. User Stories
