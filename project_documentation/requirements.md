@@ -89,7 +89,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 **User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in. Priority: ??? Time Estimation: ???
 
-
+**User Story 5:** As a community member, I want to join and follow groups of interest to receive updates on relevant events and friend activity, so I can stay informed and engaged without actively searching. Priority ??? Time Estimation: ???
 ## 8. Github Issues Tracker:
 
 
