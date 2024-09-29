@@ -2,7 +2,7 @@
 
 *Group 06*: Event Pulse  
 *Date:* 9/29/24  
-*Group Members*:  
+*Group Members*: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza  
 
 ## 1. Positioning
 
@@ -116,7 +116,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 7. User Stories
 
-**Priority Scale**: 1-5. 1 being highest priority, 5 being the lowest. 
+**Priority Scale**: 1-5. 1 being highest priority, 5 being the lowest.   
 **Time Estimation Units:** Hours.   
 
 **User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.    
