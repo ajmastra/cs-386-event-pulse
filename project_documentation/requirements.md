@@ -28,9 +28,19 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 3. Functional Requirements (features)
 
+- Event Title: Title/name of event to attract users.
+- Event Location: Location/address of event so users know where to go. 
+- Event Time: Time and date of event. 
+- Event Description: Field to give more information regarding the event. 
+- Interested Button: Button to click if you interested in an event (will trigger notifications feature). 
 - Groups: Individuals may join groups based off their interests.
+- Group Tags: Will be able to select your groups based on if you choose to add a tag or not. 
 - Notifications: Notifications will be sent based off events you have marked as interested in. 
 - User Accounts: Users will have an account to use on this site. 
+- Authentication: User authentication sent through email to verify users. 
+- List of Events: List of events scheduled for users to scroll through. 
+- Related Intrest List: List of events related to your intrests instead of all events. 
+
 
 ## 4. Non-functional Requirements
 - The ability to see reviews about an event is not necessary, it does not show location or other aspects that are mandatory to attend an event.
