@@ -33,9 +33,9 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 - three
 
 ## 4. Non-functional Requirements
-- one
-- two
-- three
+- The ability to see reviews about an event is not necessary, it does not show location or other aspects that are mandatory to attend an event.
+- The event description is almost necessary, however it doesn't ALWAYS have to be part of an event since some events can be deciphered by just their title.
+- Photo attachments to an event aren't necessary, as a title and/or location is good enough to detail the event.
 
 ## 5. MVP
 - We will have a user authenication system for users to sign up through email. This will be validated by having actual users try to sign up for an account through our web portal.
@@ -93,6 +93,11 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 Priority ??? Time Estimation: ???
 
 **User Story 6:** As an event organizer, I want to publish events to relevant groups so that I can reach a targeted audience and ensure community members are aware of activities they might be interested in. Priority ??? Time Estimation: ???
+
+**User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis. Priority: ??? Time Estimation: ???
+
+**User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in. Priority: ??? Time Estimation: ???
+
 
 ## 8. Github Issues Tracker:
 
