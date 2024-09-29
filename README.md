@@ -1,2 +1,2 @@
-# cs-386-event-pulse
-capturing the heartbeat of local events!
+# Event Pulse
+## Capturing the heartbeat of local events!
