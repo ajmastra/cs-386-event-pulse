@@ -81,11 +81,13 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 7. User Stories
 
-**User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.  
+**User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.  Priority: ??? Time Estimation: ???
 
-**User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the evetn so that I can decide better if I want to go or not.  
+**User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the event so that I can decide better if I want to go or not.  Priority: ??? Time Estimation: ???
 
-**User Story 3:** ajhsjdkhkashkd  
+**User Story 3:** As a new user, I want to register an account, so that I can add friends and utilize full functionality. Priority: ??? Time Estimation: ???
+
+**User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in. Priority: ??? Time Estimation: ???
 
 
 ## 8. Github Issues Tracker:
