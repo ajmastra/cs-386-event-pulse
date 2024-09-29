@@ -28,9 +28,9 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 3. Functional Requirements (features)
 
-- one
-- two
-- three
+- Groups: Individuals may join groups based off their interests.
+- Notifications: Notifications will be sent based off events you have marked as interested in. 
+- User Accounts: Users will have an account to use on this site. 
 
 ## 4. Non-functional Requirements
 - The ability to see reviews about an event is not necessary, it does not show location or other aspects that are mandatory to attend an event.
@@ -97,6 +97,10 @@ Priority ??? Time Estimation: ???
 **User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis. Priority: ??? Time Estimation: ???
 
 **User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in. Priority: ??? Time Estimation: ???
+
+**User Story 9:** As an event planner, I want my notifications to be sent to users so that interested users will be alerted of our events. Priority: ??? Time Estimation: ???
+
+**User Story 10:** As a user signing up for events, I want notifications for the events I choose to be interested in so that I can have a reminder before I miss an event. Priority: ??? Time Estimation: ???
 
 
 ## 8. Github Issues Tracker:
