@@ -55,38 +55,62 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 ## 6. Use Cases
 
 ### 6.1 Use Case Diagram:
+![UML Diagram](/D2_media/UML.jpg)
 
 ### 6.2 Use Case Decriptions
 
-**Use case**: 
-**Actor**: 
-**Decription:**
-**Preconditions:**
-**Postconditions:**
+**Use case**: Sign up For Account  
+**Actor**: App User  
+**Decription:** User sets up an account with an email address in order to utilize the application.  
+**Preconditions:**  User has downloaded the app, and has an email account.  
+**Postconditions:** The user now has an account setup for *Event Pulse*.
 **Main Flow:**
-1. one
-2. two
-3. three
+1. User opens the app that they have now downloaded.
+2. User selects signup.
+3. User enters name, email address, and password for account setup.
+**Alternative Flow**: 
+1. User already has an account.
+2. User opens the app
+3. User selects "Login" on the home screen.
+4. User enters their account email and password to sign-in to their account.
+![Sign Up UI](/D2_media/signup.png)
 
-**Use case**: 
-**Actor**: 
-**Decription:**
-**Preconditions:**
-**Postconditions:**
+**Use case**: Mark Interest in Event  
+**Actor**: App User  
+**Decription:** User will select an event within the app, and mark that they are interested in attending the event.  
+**Preconditions:** User has downloaded the *Event Pulse* app and setup an account that they are currently logged into.  
+**Postconditions:** User will now receieve notifications regarding this event.
 **Main Flow:**
-1. one
-2. two
-3. three
+1. User selects an event that they are interested in.
+2. User expresses interest in a particular event.
+3. User is now enrolled in push notification for this event, should anything change.
+![Interest in Event UI](/D2_media/interest_in_event.png)
 
-**Use case**: 
-**Actor**: 
-**Decription:**
-**Preconditions:**
-**Postconditions:**
+**Use case**: Posting an Event  
+**Actor**: Event Coordinator  
+**Decription:** Event coordinator user posts an event to the app, where it is immediately verified and sent to the events page.  
+**Preconditions:** User is a verified Event Coordinator within the app and is currently signed in.  
+**Postconditions:** The event is posted to the events page within the app.  
 **Main Flow:**
-1. one
-2. two
-3. three
+1. User selects "Add an Event" on the events page.
+2. User enters the information of the event: name, date, time, and place.
+3. User selects the "Submit button".
+4. The event is posted to the events page within the app.
+![Posting An Event UI](/D2_media/posting_an_event.png)
+
+**Use case**: Approve / Deny Event Post  
+**Actor**: Admin  
+**Decription:** Every time an event is added from a non-Event Coordinator user, the admin receives a notification in order to approve the event.  
+**Preconditions:** User is an *Event Pulse* admin and is on either the mobile app or web admin view.  
+**Postconditions:** Event is either approved or rejected, and user that posted the event is notified of the status.  
+**Main Flow:**
+1. Non event coordinator user posts an event.
+2. Admin is notified of the event.
+3. Admin goes to the event in the app or web view, and verifies the details of the event ensuring the legitimacy.
+4. Admin approves the event and the user that posted it is notified of the status.
+**Alternative Flows:**
+4. Admin denies the event and the user that posted it is notified of the status.
+![Event Approval UI](/D2_media/event_approval.png)
 
 
 ## 7. User Stories
