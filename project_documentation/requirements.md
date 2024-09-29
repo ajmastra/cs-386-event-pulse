@@ -159,11 +159,11 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 **Priority:** ???  
 **Time Estimation:** ???  
 
-**User Story 11:** As an admin monitoring user event submissions, I want to easily view events submitted for approval on any device of my choosing so I can be as efficient as possible.
+**User Story 11:** As an admin monitoring user event submissions, I want to easily view events submitted for approval on any device of my choosing so I can be as efficient as possible.  
 **Priority:** 5  
 **Time Estimation:** 5  
 
-**User Story 12:** As an admin verifying the validity of event coordinators, I want to be able to see all of the user's information on the screen at once, so I can easily tell if they are a legitamate source.  
+**User Story 12:** As an admin verifying the validity of event coordinators, I want to be able to see all of the user's information on the screen at once, so I can easily tell if they are a legitamate source.    
 **Priority:** 5   
 **Time Estimation:** 2  
 
