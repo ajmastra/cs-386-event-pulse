@@ -56,6 +56,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ### 6.1 Use Case Diagram:
 ![UML Diagram](/project_documentation/D2_media/UML.jpg)
+<img src="/project_documentation/D2_media/UML.jpg" width=300>
 
 ### 6.2 Use Case Decriptions
 
@@ -73,7 +74,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 2. User opens the app
 3. User selects "Login" on the home screen.
 4. User enters their account email and password to sign-in to their account.
-![Sign Up UI](/project_documentation/D2_media/signup.png)
+<img src="/project_documentation/D2_media/signup.jpg" width=300>
 
 **Use case**: Mark Interest in Event  
 **Actor**: App User  
