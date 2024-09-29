@@ -116,28 +116,59 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 
 ## 7. User Stories
 
-**User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.  Priority: ??? Time Estimation: ???
+**Priority Scale**: 1-5. 1 being highest priority, 5 being the lowest. 
+**Time Estimation Units:** Hours.   
 
-**User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the event so that I can decide better if I want to go or not.  Priority: ??? Time Estimation: ???
+**User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.    
+**Priority:**: ???  
+**Time Estimation:** ???  
 
-**User Story 3:** As a new user, I want to register an account, so that I can add friends and utilize full functionality. Priority: ??? Time Estimation: ???
+**User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the event so that I can decide better if I want to go or not.  
+**Priority:**: ???   
+**Time Estimation:** ???  
 
-**User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in. Priority: ??? Time Estimation: ???
+**User Story 3:** As a new user, I want to register an account, so that I can add friends and utilize full functionality.  
+**Priority:**: ???  
+**Time Estimation:** ???  
 
-**User Story 5:** As a community member, I want to join and follow groups of interest to receive updates on relevant events and friend activity, so I can stay informed and engaged without actively searching.
-Priority ??? Time Estimation: ???
+**User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in.  
+**Priority:**: ???  
+**Time Estimation:** ???  
 
-**User Story 6:** As an event organizer, I want to publish events to relevant groups so that I can reach a targeted audience and ensure community members are aware of activities they might be interested in. Priority ??? Time Estimation: ???
+**User Story 5:** As a community member, I want to join and follow groups of interest to receive updates on relevant events and friend activity, so I can stay informed and engaged without actively searching.  
+**Priority:** ???  
+**Time Estimation:** ???  
 
-**User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis. Priority: ??? Time Estimation: ???
+**User Story 6:** As an event organizer, I want to publish events to relevant groups so that I can reach a targeted audience and ensure community members are aware of activities they might be interested in.  
+**Priority:** ???  
+**Time Estimation:** ???  
 
-**User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in. Priority: ??? Time Estimation: ???
+**User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis.  
+**Priority:**: ???  
+**Time Estimation:** ???  
 
-**User Story 9:** As an event planner, I want my notifications to be sent to users so that interested users will be alerted of our events. Priority: ??? Time Estimation: ???
+**User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in.  
+**Priority:**: ???  
+**Time Estimation:** ???  
 
-**User Story 10:** As a user signing up for events, I want notifications for the events I choose to be interested in so that I can have a reminder before I miss an event. Priority: ??? Time Estimation: ???
+**User Story 9:** As an event planner, I want my notifications to be sent to users so that interested users will be alerted of our events.  
+**Priority:**: ???  
+**Time Estimation:** ???  
+
+**User Story 10:** As a user signing up for events, I want notifications for the events I choose to be interested in so that I can have a reminder before I miss an event.  
+**Priority:** ???  
+**Time Estimation:** ???  
+
+**User Story 11:** As an admin monitoring user event submissions, I want to easily view events submitted for approval on any device of my choosing so I can be as efficient as possible.
+**Priority:** 5  
+**Time Estimation:** 5  
+
+**User Story 12:** As an admin verifying the validity of event coordinators, I want to be able to see all of the user's information on the screen at once, so I can easily tell if they are a legitamate source.  
+**Priority:** 5   
+**Time Estimation:** 2  
+
 
 
 ## 8. Github Issues Tracker:
 
-
+**View Our Issues Tracker [Here!](https://github.com/ajmastra/cs-386-event-pulse/issues)**
