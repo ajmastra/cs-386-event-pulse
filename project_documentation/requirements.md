@@ -22,7 +22,7 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 ## 2. Stakeholders
 
 **Users:** NAU Students, Event Organizers, Promoters, Community Active Locals, Tourists  
-**Comptetitors:** Meetup, NAUGo, Instagram, Facebook, [Flagstaff Events Calendar](https://www.flagstaff.com/calendar)  
+**Competitors:** Meetup, NAUGo, Instagram, Facebook, [Flagstaff Events Calendar](https://www.flagstaff.com/calendar)  
 **Developers:** Our six group members (listed above)  
 **Detractors:** Team experience, project deadline (end of semester) 
 
@@ -33,13 +33,15 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 - Event Time: Time and date of event. 
 - Event Description: Field to give more information regarding the event. 
 - Interested Button: Button to click if you interested in an event (will trigger notifications feature). 
-- Groups: Individuals may join groups based off their interests.
-- Group Tags: Will be able to select your groups based on if you choose to add a tag or not. 
+- Groups: Individuals may join "groupings" of events based off their interests.
+- Group Tags: Will be able to select your groups based on if you choose to add a descriptive tag or not. 
 - Notifications: Notifications will be sent based off events you have marked as interested in. 
 - User Accounts: Users will have an account to use on this site. 
 - Authentication: User authentication sent through email to verify users. 
 - List of Events: List of events scheduled for users to scroll through. 
 - Related Intrest List: List of events related to your intrests instead of all events. 
+- User information: Users will sign up with a unique user name and a unique email
+- Event Coordinator Contact: This will allow a user to contact the event coordinator if they have problems.
 
 
 ## 4. Non-functional Requirements
@@ -120,44 +122,44 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 **Time Estimation Units:** Hours.   
 
 **User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.    
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 4
+**Time Estimation:** 4 
 
 **User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the event so that I can decide better if I want to go or not.  
-**Priority:**: ???   
-**Time Estimation:** ???  
+**Priority:**: 4
+**Time Estimation:** 6 
 
 **User Story 3:** As a new user, I want to register an account, so that I can add friends and utilize full functionality.  
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 1
+**Time Estimation:** 9 
 
 **User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in.  
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 3
+**Time Estimation:** 5 
 
 **User Story 5:** As a community member, I want to join and follow groups of interest to receive updates on relevant events and friend activity, so I can stay informed and engaged without actively searching.  
-**Priority:** ???  
-**Time Estimation:** ???  
+**Priority:** 2
+**Time Estimation:** 5 
 
 **User Story 6:** As an event organizer, I want to publish events to relevant groups so that I can reach a targeted audience and ensure community members are aware of activities they might be interested in.  
-**Priority:** ???  
-**Time Estimation:** ???  
+**Priority:** 4
+**Time Estimation:** 6  
 
 **User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis.  
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 1
+**Time Estimation:** 7 
 
 **User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in.  
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 5
+**Time Estimation:** 5
 
 **User Story 9:** As an event planner, I want my notifications to be sent to users so that interested users will be alerted of our events.  
-**Priority:**: ???  
-**Time Estimation:** ???  
+**Priority:**: 5
+**Time Estimation:** 3 
 
 **User Story 10:** As a user signing up for events, I want notifications for the events I choose to be interested in so that I can have a reminder before I miss an event.  
-**Priority:** ???  
-**Time Estimation:** ???  
+**Priority:** 2
+**Time Estimation:** 3 
 
 **User Story 11:** As an admin monitoring user event submissions, I want to easily view events submitted for approval on any device of my choosing so I can be as efficient as possible.  
 **Priority:** 5  
