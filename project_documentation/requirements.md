@@ -180,20 +180,20 @@ from myproject.module import MyClass
 
 ## 7. User Stories
 
-**Priority Scale**: 1-5. 1 being highest priority, 5 being the lowest.   
+**Priority Scale**: 1-8. 1 being highest priority, 5 being the lowest.   
 **Time Estimation Units:** Hours.   
 
 **User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.    
 **Priority:**: 4
-**Time Estimation:** 4 
+**Time Estimation:** 5 
 
 **User Story 2:** As a person is interested in attending new events, I want to know how and if other attendees enjoyed the event so that I can decide better if I want to go or not.  
 **Priority:**: 4
-**Time Estimation:** 6 
+**Time Estimation:** 5 
 
 **User Story 3:** As a new user, I want to register an account, so that I can add friends and utilize full functionality.  
 **Priority:**: 1
-**Time Estimation:** 9 
+**Time Estimation:** 8 
 
 **User Story 4:** As a new user, I want to be added to certain event group tags, so that I can get notifications specifically for the categories of events I am interested in.  
 **Priority:**: 3
@@ -205,11 +205,11 @@ from myproject.module import MyClass
 
 **User Story 6:** As an event organizer, I want to publish events to relevant groups so that I can reach a targeted audience and ensure community members are aware of activities they might be interested in.  
 **Priority:** 4
-**Time Estimation:** 6  
+**Time Estimation:** 5  
 
 **User Story 7:** As a college student, I want to see what my friends are doing so that I can interact with them more on a daily basis.  
 **Priority:**: 1
-**Time Estimation:** 7 
+**Time Estimation:** 8 
 
 **User Story 8:** As a new user, I want to see what events are in my area so that I can learn more about the community I'm in.  
 **Priority:**: 5
