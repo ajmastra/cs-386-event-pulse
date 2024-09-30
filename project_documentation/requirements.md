@@ -180,7 +180,7 @@ from myproject.module import MyClass
 
 ## 7. User Stories
 
-**Priority Scale**: 1-8. 1 being highest priority, 5 being the lowest.   
+**Priority Scale**: 1-5. 1 being highest priority, 5 being the lowest.   
 **Time Estimation Units:** Hours.   
 
 **User Story 1:** As a person who attends lot of events, I want to be notified of new events I'd be interested so that I don't have to spend time searching for them.    
