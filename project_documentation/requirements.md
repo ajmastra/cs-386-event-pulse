@@ -49,6 +49,68 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 - The event description is almost necessary, however it doesn't ALWAYS have to be part of an event since some events can be deciphered by just their title.
 - Photo attachments to an event aren't necessary, as a title and/or location is good enough to detail the event.
 
+## 4.1. Non-Functional Requirements for Python syntax
+
+ ## **Naming Conventions**
+
+### **Case Naming**
+- **Class Names:** PascalCase.
+  - Example: `MyClass`, `UserProfile`.
+- **Function Names:** snake_case (lowercase words separated by underscores).
+  - Example: `get_user_data()`, `calculate_total_price()`.
+- **Variable Names:** snake_case (lowercase words separated by underscores).
+  - Example: `user_id`, `total_amount`.
+- **Constants:** UPPERCASE with words separated by underscores.
+  - Example: `MAX_RETRY_LIMIT`, `DEFAULT_TIMEOUT`.
+
+### **File and Module Names**
+- Use snake_case for file and module names.
+  - Example: `user_service.py`, `data_processor.py`.
+
+### **Package Names**
+- Use all lowercase for package names, without underscores if possible.
+  - Example: `mypackage`, `utils`.
+
+## 4.2. **Function Design and Structure**
+
+### **Function Length**
+- Keep functions short and focused on a single task. A function should ideally not exceed 30 lines of code, excluding documentation and comments.
+
+### **Function Arguments**
+- Limit the number of function arguments to 5 or fewer. If more parameters are needed, consider using a dictionary or an object.
+
+### **Return Values**
+- Ensure functions have a single, clear return path whenever possible.
+
+## 4.3. **Code Formatting**
+
+### **Indentation**
+- Use **4 spaces** per indentation level (no tabs).
+
+### **Line Length**
+- Limit all lines to a maximum of **79 characters**.
+
+### **Blank Lines**
+- Use blank lines to separate functions and class definitions.
+- Two blank lines between top-level functions and class definitions.
+- One blank line between methods within a class.
+
+### **Imports**
+- Imports should be on separate lines and grouped as follows:
+  1. Standard library imports.
+  2. Third-party imports.
+  3. Local application/library imports.
+  
+Example:
+```python
+import os
+import sys
+
+import requests
+
+from myproject.module import MyClass
+```
+
 ## 5. MVP
 - We will have a user authenication system for users to sign up through email. This will be validated by having actual users try to sign up for an account through our web portal.
 - Upon sign up, users will be able to add themselves to various groups of interests for the sake of recieving SMS notifications. This will be tested via implementation, ensuring that the prototype users recieve the correct notifications, and not one thats are unrelated to the interests they selected. For example, users can select tags to assign themselves to these interests.
