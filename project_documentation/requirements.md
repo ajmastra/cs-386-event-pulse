@@ -174,3 +174,5 @@ Customer Segment: NAU students, and Flagstaff residents looking to make friends 
 ## 8. Github Issues Tracker:
 
 **View Our Issues Tracker [Here!](https://github.com/ajmastra/cs-386-event-pulse/issues)**
+
+![Issue Tracker](/project_documentation/D2_media/issue_tracker.png)
