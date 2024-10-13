@@ -12,21 +12,7 @@ EventPulse will be a system that will be able to capture *data* from either ***s
 
 
 ## 2. Model
-
-Provide the conceptual model of your system as a UML class diagram. Represent proper cardinalities (multiplicities) for all associations. Also include the association names. 
-
-Some points to consider:
-* Use UML adequately. Do not use graphical elements that are not part of the language. Represent compositions and aggregations when relevant. 
-* This model is not an ER diagram (entity-relationship model), which is focused on relational database systems. However, both diagrams have similarities. 
-* Do not overcomplicate how you represent the elements of your model (e.g., using inheritance or an association when they are * not necessary). Pay attention to simplicity, maintainability, unnecessary repetition, cohesion, and coupling.
-* Do not represent actions that don’t need to be registered in the system. 
-* Do not represent technical elements, such as user interface or programming language libraries in the model. At this point, we are modeling the business logic/domain of your system. The model will be refined during the design phase to include technology-specific elements and decisions. 
-* Do not represent "System" as a class in your model. Everything that you are modeling is part of the system.
-* If you need to justify your decisions, you can write your rationale in this section or use UML comments in the diagram.
-
-The model must have at least 8 classes. If you need more classes, you can add requirements in the system description that did not appear in D2. 
-
-Grading criteria: You should correctly use the UML specification. Your model should have the minimum number of classes. Your domain should be adequately modeled. The model should avoid unnecessary complexity, repetition, lack of cohesion, and coupling. The classes should be at an adequate abstraction level.
+<img src="/project_documentation/D3_media/d3ClassDiagram.png" width=200>
 
 
 
