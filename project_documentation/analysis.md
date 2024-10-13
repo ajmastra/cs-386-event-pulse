@@ -1,8 +1,8 @@
 # Analysis
 
-*Group 06*: Event Pulse  
-*Date:* 10/13/24
-*Group Members*: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza  
+**Group 06**: Event Pulse  
+**Date:** 10/13/24
+**Group Members**: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza  
 
 ## 1. System Description
 
