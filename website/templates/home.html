@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<h1 align="center">Events</h1>
+
+<ul class="list-group list-group-flush" id="events">
+    {% for event in user.events %}
+    <li class="list-group-item">{{event.title}}
+        <button type="button" class="close" onClick="deleteEvent({{ event.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="POST">
+    <textarea name="event" id="event", class="form-control"></textarea>
+    <br />
+        <div align="center">
+            <button type="submit" class="btn btn-primary">Add Event</button>
+        </div>
+</form>
+
+{% endblock %}
