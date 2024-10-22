@@ -92,5 +92,4 @@ def sign_up():
             # send the user to the home page
             return redirect(url_for('views.home'))
 
-
     return render_template("sign_up.html", user=current_user)

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ event.title }}</h1>
+<h5>Description:</h5>
+<p>{{ event.description }}</p>
+<h5>Date:</h5>
+<p>{{ event.date_of_event.strftime('%m-%d-%Y') }} at {{ event.time_of_event.strftime('%I:%M %p') }}</p>
+<h5>Posted by:</h5>
+<!-- Displaying the first name of the user -->
+<p>{{ event.creator.first_name }}</p>  
+<p>Event Created: {{ event.date_created.strftime('%m-%d-%Y at %I:%M %p') }} this is actually showing the incorrect time and I am not sure as to why</p>
+
+<a href="{{ url_for('views.home') }}" class="btn btn-secondary">Back to Events</a>
+{% endblock %}
