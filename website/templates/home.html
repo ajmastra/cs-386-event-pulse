@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 
-
 {% block content %}
 <h1 align="center">Events</h1>
 
-<ul class="list-group list-group-flush" id="events">
-    {% for event in user.events %}
-    <li class="list-group-item">{{event.title}}
-        <button type="button" class="close" onClick="deleteEvent({{ event.id }})">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="text-left" style="margin-bottom: 20px;">
+        <a href="{{ url_for('views.add_event') }}" class="btn btn-primary">Add Event</a>
+    </div>
 
-<form method="POST">
-    <textarea name="event" id="event", class="form-control"></textarea>
-    <br />
-        <div align="center">
-            <button type="submit" class="btn btn-primary">Add Event</button>
-        </div>
-</form>
+    <ul class="list-group list-group-flush" id="events">
+        {% for event in events %}  <!-- Use the events variable passed from the view -->
+        <li class="list-group-item">
+            <a href="{{ url_for('views.event_details', event_id=event.id) }}">{{ event.title }}</a>
+            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_date }}</span>  <!-- Displaying the formatted date -->
+            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_time }}</span>  <!-- Displaying the formatted time -->
+            <button type="button" class="close" onClick="deleteEvent({{ event.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}
