@@ -10,13 +10,15 @@
     </div>
 
     <ul class="list-group list-group-flush" id="events">
-        {% for event in events %}  <!-- Use the events variable passed from the view -->
+        <!-- use the events variable passed from the view -->
+        {% for event in events %}  
         <li class="list-group-item">
             <a href="{{ url_for('views.event_details', event_id=event.id) }}">{{ event.title }}</a>
-            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_date }}</span>  <!-- Displaying the formatted date -->
-            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_time }}</span>  <!-- Displaying the formatted time -->
-            <button type="button" class="close" onClick="deleteEvent({{ event.id }})">
-                <span aria-hidden="true">&times;</span>
+            <!-- displaying the formatted date -->
+            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_date }}</span>  
+            <!-- displaying the formatted time -->
+            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_time }}</span>  
+            
             </button>
         </li>
         {% endfor %}

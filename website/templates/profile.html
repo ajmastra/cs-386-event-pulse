@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ user_profile.first_name }}'s Profile
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ user_profile.first_name }}'s Profile</h2>
+    <p><strong>Email:</strong> {{ user_profile.email }}</p>
+    <p><strong>First Name:</strong> {{ user_profile.first_name }}</p>
+
+    {% if is_own_profile %}
+    <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+    {% endif %}
+</div>
+{% endblock %}

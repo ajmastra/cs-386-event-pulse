@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Search Events and Users
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Search for Events or Users</h2>
+
+    <!-- search form -->
+    <form method="POST" action="/search">
+        <div class="form-group">
+            <!-- the reason we have the or for the value, is because otherwise the searchbar will autopopulate with 'None' upon loading the page -->
+            <input type="text" name="query" class="form-control" placeholder="Search for events or users" value="{{ query or '' }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <!-- check if there is anything in the search bar -->
+    {% if events or users %}
+    <hr>
+    <h3>Search Results</h3>
+    <br>
+
+    <!-- check if there were any events matching the query-->
+    {% if events %}
+    <h4>Events</h4>
+    <ul class="list-group">
+        <!-- if so, display the events -->
+        {% for event in events %}
+        <li class="list-group-item">
+            <h5><a href="{{ url_for('views.event_details', event_id=event.id) }}">{{ event.title }}</a></h5>
+            <p>{{ event.description }}</p>
+            <p><strong>Posted by:</strong> <a href="{{ url_for('views.view_profile', user_id=event.creator.id) }}">{{ event.creator.first_name }}</a></p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <!-- otherwise we didnt find any events, so tell user nothing found -->
+    <p>No events found for "{{ query }}".</p>
+    {% endif %}
+
+    <br>
+    <hr>
+
+    <!-- check if there were any users matching the query-->
+    {% if users %}
+    <br>
+    <h4>Users</h4>
+    <ul class="list-group">
+        <!-- if so, display the users -->
+        {% for user in users %}
+        <li class="list-group-item">
+            <h5><a href="{{ url_for('views.view_profile', user_id=user.id) }}">{{ user.first_name }}</a></h5>
+            <p>{{ user.email }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- otherwise we did not find any users with the given query -->
+    {% else %}
+    <p>No users found for "{{ query }}".</p>
+    {% endif %}
+
+    {% else %}
+    <hr>
+    <p>Enter a search query above to find events or users.</p>
+    {% endif %}
+</div>
+{% endblock %}
