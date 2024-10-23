@@ -10,8 +10,17 @@
 <p>{{ event.date_of_event.strftime('%m-%d-%Y') }} at {{ event.time_of_event.strftime('%I:%M %p') }}</p>
 <h5>Posted by:</h5>
 <!-- Displaying the first name of the user -->
-<p>{{ event.creator.first_name }}</p>  
-<p>Event Created: {{ event.date_created.strftime('%m-%d-%Y at %I:%M %p') }} this is actually showing the incorrect time and I am not sure as to why</p>
+<p><a href="{{ url_for('views.view_profile', user_id=event.creator.id) }}">{{ event.creator.first_name }}</a></p>
+
+<!-- okay this is showing the wrong time cause SQLalchemy func.now in the view.py takes UTC, 
+                which is 5 hours ahead of us. looks like we have to force it to a different timezone -->
+<p>Event Created: {{ event.date_created.strftime('%m-%d-%Y at %I:%M %p') }}</p>
+
+<!-- check if the user viewing the event is the event creator -->
+{% if current_user.id == event.creator.id %}
+<!-- if so, allow them the ability to delete teh event -->
+<button class="btn btn-danger" onClick="deleteEvent({{ event.id }})">Delete Event</button>
+{% endif %}
 
 <a href="{{ url_for('views.home') }}" class="btn btn-secondary">Back to Events</a>
 {% endblock %}
