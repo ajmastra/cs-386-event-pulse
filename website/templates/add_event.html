@@ -2,52 +2,76 @@
 {% block title %}Add Event{% endblock %}
 
 {% block content %}
-<h1 align="center">Add a New Event</h1>
+<div class="container mt-5 p-4 bg-light shadow rounded">
+    <h1 class="text-center mb-4" style="color: #003366;">Add a New Event</h1>
 
-<div class="container">
-
-    <!-- start form -->
+    <!-- form start -->
     <form method="POST">
+        <!-- event title -->
         <div class="form-group">
-            <label for="eventTitle">Event Title</label>
-            <input type="text" class="form-control" id="eventTitle" name="event" required>
+            <label for="eventTitle" class="font-weight-bold">Event Title</label>
+            <input type="text" class="form-control" id="eventTitle" name="event" placeholder="Enter the event title" required>
         </div>
+
+        <!-- date of event -->
         <div class="form-group">
-            <label for="eventDate">Date of Event</label>
+            <label for="eventDate" class="font-weight-bold">Date of Event</label>
             <input type="date" class="form-control" id="eventDate" name="date_of_event" required>
         </div>
+
+        <!-- time of event -->
         <div class="form-group">
-            <label for="eventTime">Time of Event</label>
-            <input type="time" class="form-control" id="event_time" name="time_of_event" required>
+            <label for="eventTime" class="font-weight-bold">Time of Event</label>
+            <input type="time" class="form-control" id="eventTime" name="time_of_event" required>
         </div>
+
+        <!-- description -->
         <div class="form-group">
-            <label for="eventDescription">Description</label>
-            <input type="text" class="form-control" id="eventDescription" name="description" required>
+            <label for="eventDescription" class="font-weight-bold">Description</label>
+            <textarea class="form-control" id="eventDescription" name="description" rows="3" placeholder="Provide a brief description" required></textarea>
         </div>
-        <div class "form-group">
-            <label for="eventType">Type of Event</label>
-            <select class="form-control" id="eventType" name="type_of_event">
-                <option value="None">Choose the Type of Event</option>
+
+        <!-- type of event -->
+        <div class="form-group">
+            <label for="eventType" class="font-weight-bold">Type of Event</label>
+            <select class="form-control" id="eventType" name="type_of_event" required>
+                <option value="" disabled selected>Choose the Type of Event</option>
                 <option value="Live Music">Live Music</option>
                 <option value="Theatre">Theatre</option>
                 <option value="Community Event">Community Event</option>
                 <option value="Political">Political Event</option>
             </select>
         </div>
-        <div align="center">
-            <button type="submit" class="btn btn-primary">Add Event</button>
+
+        <!-- submit button -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg px-5">Add Event</button>
         </div>
     </form>
-    <!-- end form -->
- 
-    <!-- grab all flashing messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
+    <!-- Form end -->
+
+
 </div>
+
+<!-- Custom styles for the form -->
+<style>
+    .container {
+        max-width: 600px;
+    }
+
+    .form-group label {
+        color: #555;
+    }
+
+    .btn-primary {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .btn-primary:hover {
+        background-color: #003d80;
+        border-color: #003d80;
+    }
+</style>
 
 {% endblock %}

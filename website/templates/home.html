@@ -5,24 +5,62 @@
 <h1 align="center">Events</h1>
 
 <div class="container">
-    <div class="text-left" style="margin-bottom: 20px;">
-        <a href="{{ url_for('views.add_event') }}" class="btn btn-primary">Add Event</a>
+    <div class="text-left mt-4">
+        <button type="submit" class="btn btn-primary btn-lg px-5">Add Event</button>
     </div>
+    <br>
 
-    <ul class="list-group list-group-flush" id="events">
-        <!-- use the events variable passed from the view -->
-        {% for event in events %}  
-        <li class="list-group-item">
-            <a href="{{ url_for('views.event_details', event_id=event.id) }}">{{ event.title }}</a>
-            <!-- displaying the formatted date -->
-            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_date }}</span>  
-            <!-- displaying the formatted time -->
-            <span class="text-muted" style="margin-left: 10px;">{{ event.formatted_time }}</span>  
-            
-            </button>
-        </li>
+    <div class="list-group" id="events">
+        <!-- loop through the events and create a button for each one -->
+        {% for event in events %}
+        <a href="{{ url_for('views.event_details', event_id=event.id) }}" class="btn btn-event">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <span>{{ event.title }}</span>
+                    <small class="text-muted d-block">Type: {{ event.type_of_event }}</small>
+                </div>
+                <!-- display the formatted date and time -->
+                <span class="text-muted">
+                    {{ event.formatted_date }} | {{ event.formatted_time }}
+                </span>
+            </div>
+        </a>
         {% endfor %}
-    </ul>
+    </div>
 </div>
+
+<style>
+    /* css for the event 'buttons' */
+    .btn-event {
+        display: block;
+        width: 100%;
+        /* light gray background */
+        background-color: #f0f0f5; 
+        /* dark blue text */
+        color: #003366; 
+        margin-bottom: 10px;
+        text-align: left;
+        padding: 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-event:hover {
+        /* slightly darker on hover */
+        background-color: #dce1e8; 
+    }
+
+    .btn-event span {
+        /* slightly larger font for the event name*/
+        font-size: 1.1em; 
+    }
+
+    .btn-event small {
+        /* lighter color and smaller text for the event type */
+        font-size: 0.9em;
+        color: #666; 
+    }
+</style>
 
 {% endblock %}
