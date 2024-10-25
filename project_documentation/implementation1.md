@@ -1,7 +1,7 @@
 # Implementation 1
 
 **Group 06**: Event Pulse  
-**Date:** 10/27/24
+**Date:** 10/27/24  
 **Group Members**: Anthony Mastrangelo, Andrew Gajewski, Andrew Sliva, Benjamin Levine, Samuel Butler, Zachary Garza  
 
 ## 1. Introduction
@@ -12,21 +12,177 @@ Grading criteria (1 point): This section will be evaluated in terms of correctne
 
 ## 2. Implemented Requirements  
 
-List in this section each requirement and associated pull request each member implemented for this release. Follow the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement features you specified in your MVP (c.f. D.2 Requirements). All implemented features should have an automated test to verify their correct functioning.    
+List in this section each requirement and associated pull request each member implemented for this release. Follow the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement features you specified in your MVP (c.f. D.2 Requirements). All implemented features should have an automated test to verify their correct functioning. 
 
-Create subsections for each group member. All group members should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches   
-
-EXAMPLE:
-
-Requirement: As a Student, I want to add a homework assignment so that I can organize my ToDo list.   
-Issue: https://github.com/fake-user/project/issues/45Links to an external site.   
-Pull request: https://github.com/fake-user/project/pull/426Links to an external site.   
-Implemented by: Martin Fowler   
-Approved by: Ada Lovelace   
-Print screen: A print screen that depicts the implemented feature (if applicable)   
+Create subsections for each group member. All group members should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches. 
 
 
-Grading criteria (10 points): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, adequate use of language, and amount of work put into the implementation. Students can receive different grades depending on their involvement. It is expected that all members contribute with non-trivial implementation. All pull requests should be approved and integrated by the Reviewer. You should follow an adequate workflow (description of the requirement on the issue tracker, submission of the implemented requirement as a pull request, and review of the pull request by another developer).    
+**Requirement:** *Event Title - Title/name of event to attract users.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/126  
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza  
+**Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)
+
+
+**Requirement:** *Event Location - Location/address of event so users know where to go.*   
+**Issue:** link  
+**Pull request:** link  
+**Implemented by:** name  
+**Approved by:** name  
+**Print screen:**   
+
+**Requirement:** *Event Time - Time and date of event.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/129    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza   
+**Print screen:** ![Event Time](/project_documentation/D4_media/eventTime.png)
+
+
+**Requirement:** *Event Description - Field to give more information regarding the event.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/130    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/114  
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza  
+**Print screen:** ![Event Desc](/project_documentation/D4_media/eventDesc.png)
+
+
+**Requirement:** *Interest Button - Button to click if you interested in an event (will trigger notifications feature).*   
+**Issue:** link  
+**Pull request:** link  
+**Implemented by:** person  
+**Approved by:** person  
+**Print screen:** screenshotLink
+
+
+**Requirement:** *Groups - Individuals may join "groupings" of events based off their interests.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/106   
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/115   
+**Implemented by:** Zachary Garza  
+**Approved by:** Benjamin Levine  
+**Print screen:** ![Event Contents](/project_documentation/D4_media/questionnaireInfo.png)
+
+
+**Requirement:** *Group Tags - Will be able to select your groups based on if you choose to add a descriptive tag or not.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/128   
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/113   
+**Implemented by:** Benjamin Levine  
+**Approved by:** Zachary Garza  
+**Print screen:** ![Event Contents](/project_documentation/D4_media/eventTags.png)
+
+
+**Requirement:** *Notifications - will be sent based off events you have marked as interested in.*   
+**Issue:** link  
+**Pull request:** link  
+**Implemented by:** person  
+**Approved by:** person  
+**Print screen:** screenshotLink
+
+
+**Requirement:** *User Accounts - Users will have an account to use on this site.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/85   
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza  
+**Print screen:** ![User Account](/project_documentation/D4_media/profileInfo.png)
+
+
+**Requirement:** *Authentification - User authentication sent through email to verify users.*   
+**Issue:** link  
+**Pull request:** link  
+**Implemented by:** person  
+**Approved by:** person  
+**Print screen:** screenshotLink
+
+
+**Requirement:** *List of Events - List of events scheduled for users to scroll through.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/132    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72   
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza  
+**Print screen:** ![Event List](/project_documentation/D4_media/eventList.png)
+
+
+**Requirement:** *Related Interest List - List of events related to your intrests instead of all events.*   
+**Issue:** link  
+**Pull request:** link  
+**Implemented by:** person  
+**Approved by:** person  
+**Print screen:** screenshotLink
+
+
+**Requirement:** *User Information - Users will sign up with a unique user name and a unique email*   
+**Issue:**   
+Unique Email: https://github.com/ajmastra/cs-386-event-pulse/issues/131    
+Unique Username: https://github.com/ajmastra/cs-386-event-pulse/issues/120    
+**Pull request:**  
+Unique Email: https://github.com/ajmastra/cs-386-event-pulse/pull/72  
+Unique Username: https://github.com/ajmastra/cs-386-event-pulse/pull/125   
+**Implemented by:**   
+Unique Email: Anthony Mastrangelo  
+Unique Username: Zachary Garza  
+**Approved by:**   
+Unique Email: Zachary Garza  
+Unique Username: Anthony Mastrangelo, Benjamin Levine  
+**Print screen:** ![User Info](/project_documentation/D4_media/profileInfo.png)
+
+
+**Requirement:** *Event Coordinator Contact - This will allow a user to contact the event coordinator if they have problems.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/123  
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72    
+**Implemented by:** Anthony Mastrangelo  
+**Approved by:** Zachary Garza  
+**Print screen:** ![Event Contact](/project_documentation/D4_media/contactEventCoord.png)
+
+
+### Anthony Mastrangelo
+#### Features Implemented:
+1. Event Title
+1. Event Time
+1. Event Description
+1. User Accounts
+1. List of Events 
+1. User Information
+1. Event Coordinator Contact
+#### Features Approved: 
+1. User Information
+
+### Benjamin Levine
+#### Features Implemented:   
+1. Group Tags
+#### Features Approved:   
+1. Groups
+1. User Information
+
+### Zachary Garza
+#### Features Implemented:   
+1. Groups
+1. User Information
+#### Features Approved:   
+1. Event Title
+1. Event Time
+1. Event Description
+1. Group Tags
+1. User Accounts
+1. List of Events 
+1. User Information
+1. Event Coordinator Contact
+
+### Andrew Gajewski
+#### Features Implemented:   
+
+#### Features Approved:   
+
+### Andrew Sliva
+#### Features Implemented:   
+
+#### Features Approved:   
+
+### Samuel Butler
+#### Features Implemented:   
+
+#### Features Approved:   
 
 ## 3. Test  
 You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:  
@@ -58,9 +214,11 @@ Provide a link for the system in production and describe how you are deploying y
  https://github.com/ajmastra/cs-386-event-pulse/blob/main/LICENSE  
 
  ## 8. README File
-
-( REMOVE THIS SECTION ONCE README IS DONE)   
- Grading criteria (3 points): This section will be based on the presence and quality of the information presented in the files.  
+Check out our README and other important documentation!
+* [README.md](/README.md)
+* [CONTRIBUTING.md](/CONTRIBUTING.md) 
+* [LICENSE.md](/LICENSE.md) 
+* [CODE_OF_CONDUCT.md](/CODE_OF_CONDUCT.md)
 
  ## 9. Look and Feel
  Describe the approach you adopted to design your user interface. Include some screenshots.   
