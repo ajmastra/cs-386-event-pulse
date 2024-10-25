@@ -65,7 +65,9 @@ def add_event():
         date_of_event_str = request.form.get('date_of_event')
         # Get the time
         time_of_event_str = request.form.get('time_of_event')
-        
+        # Get type of event
+        type_of_event = request.form.get('type_of_event')
+
         # Combine date and time strings into a single datetime object
         date_of_event = datetime.strptime(date_of_event_str, '%Y-%m-%d')
         time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()  # Get only the time part
@@ -75,7 +77,8 @@ def add_event():
             description=description, 
             date_of_event=date_of_event,
             time_of_event=time_of_event,
-            user_id=current_user.id
+            user_id=current_user.id, 
+            type_of_event=type_of_event
         )
         # add it to the database
         db.session.add(new_event)
@@ -111,6 +114,8 @@ def edit_profile():
         # Get the updated data from the form
         new_email = request.form.get('email')
         new_first_name = request.form.get('first_name')
+
+        
 
         # Update the current user's data
         current_user.email = new_email
