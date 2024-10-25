@@ -1,15 +1,26 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path
+from os import path, getenv
 from flask_login import LoginManager
+from dotenv import load_dotenv
+
+# load environment files:
+load_dotenv()
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'secret key haha lololol'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SECRET_KEY'] = getenv('SECRET_KEY')
+    
+    # USE THIS FOR LOCAL TESTING
+    #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+
+    # USE THIS FOR SERVER
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+
+
     db.init_app(app)
 
     from .views import views
