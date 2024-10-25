@@ -88,7 +88,7 @@ def sign_up():
             db.session.add(new_user)
             # commit user to db
             db.session.commit()
-
+ 
             # login the user once account created
             login_user(new_user, remember=True)
             # alert user of account creation
