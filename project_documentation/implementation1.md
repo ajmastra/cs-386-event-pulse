@@ -67,6 +67,9 @@ Provide a link for the system in production and describe how you are deploying y
 
 Grading criteria (3 points): This section will be graded based on the appearance (aesthetics) and usability (ease of use) of the system.   
 
+# Lessons learned
+In retrospective, describe what your team learned during this first release and what you are planning to change for the second release.
+
 ## 10. Demo
 Include a link to a video showing the system working.  
 Grading criteria (6 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).   
