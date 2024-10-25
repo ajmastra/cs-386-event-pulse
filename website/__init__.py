@@ -12,7 +12,7 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = getenv('SECRET_KEY')
+    app.config['SECRET_KEY'] = 'super duper secret key'
     
     # USE THIS FOR LOCAL TESTING
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
