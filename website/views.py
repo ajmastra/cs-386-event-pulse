@@ -146,3 +146,28 @@ def search():
         users = User.query.filter((User.first_name.ilike(f'%{query}%')) | (User.email.ilike(f'%{query}%'))).all()
 
     return render_template('search.html', user=current_user, events=events, users=users, query=query)
+
+# ROUTING FOR QUESTIONNAIRE
+@views.route('/questionnaire', methods=['GET', 'POST'])
+@login_required
+def questionnaire():
+    if request.method == 'POST':
+
+        tempList = []
+        if request.form.get('live-music') == "on":
+            tempList.append("live-music")
+        if request.form.get('theatre') == "on":
+            tempList.append("theatre")
+        if request.form.get('community-event') == "on":
+            tempList.append("community-event")
+        if request.form.get('political-event') == "on":
+            tempList.append("political-event")
+        
+        # lowkey this is a horrible strat but it basically just puts the genres in a long string separated by commas
+        tempString = str(tempList).replace('[', "").replace(']', "").replace(' ', "").replace('\'', "")
+
+        current_user.interests = tempString
+        db.session.commit() 
+
+        return redirect(url_for('views.home'))  
+    return render_template("questionnaire.html", user=current_user)

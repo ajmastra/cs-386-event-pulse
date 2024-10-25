@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(150))
     # interests: either a list or a stirng
-    # interests = db.Column(db.String(150))
+    interests = db.Column(db.String(150))
     
     # every time an event is created, add id into this list
     # this will essentially store a list of all of the events owned by the user
@@ -28,3 +28,6 @@ class Event(db.Model):
     type_of_event = db.Column(db.String(200))
     # foreign key means we need to pass a valid id of an existing user
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+# interests
+# class Interests(db.Model): yeah idk lol -zach
