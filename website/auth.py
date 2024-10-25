@@ -57,15 +57,20 @@ def sign_up():
     # if the method is a post, grab all of the data
     if request.method == 'POST':
         email = request.form.get('email')
+        username = request.form.get('username')
         first_name = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
         user = User.query.filter_by(email=email).first()
 
+
         # first check if the email is already associated with an account
         if user:
             flash("Email already has an account", category='error')
+        # then check if username is already associated with an account
+        elif ( User.query.filter_by(username=username).first() ):
+            flash("Username already has an acccount", category='error')
         # otherwise check data validity
         elif len(email) < 4:
             flash("Email must be greater than 3 characters.", category='error')
@@ -78,7 +83,7 @@ def sign_up():
         else:
             # add user to the database
                     # hash the password to ensure data security using sha256 method
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='pbkdf2:sha256'))
+            new_user = User(email=email, username=username, first_name=first_name, password=generate_password_hash(password1, method='pbkdf2:sha256'))
             # add user
             db.session.add(new_user)
             # commit user to db
