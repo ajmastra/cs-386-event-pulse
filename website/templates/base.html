@@ -31,6 +31,7 @@
                     <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
                     <a class="nav-item nav-link" id="search" href="/search">Search</a>
                     <a class="nav-item nav-link" id="profile" href="{{ url_for('views.view_profile', user_id=current_user.id) }}">Profile</a>
+                    <a class="nam-item nav-link" id="questionnaire" href="/questionnaire">Questionnaire</a>
                     {% else %}
                     <a class="nav-item nav-link" id="login" href="/login">Login</a>
                     <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>

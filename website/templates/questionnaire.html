@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Questionnaire{% endblock %}
+
+
+{% block content %}
+<form method="POST">
+    <h3 align="center">Which Events are you Interested In?</h3>
+    <div class="form-group" align="center">
+        <label for="live-music">Live Music
+        <input
+            type="checkbox"
+            class="form-control"
+            id="live-music"
+            name="live-music" 
+        /></label>
+        <br />
+        <label for="theatre">Theatre
+        <input
+            type="checkbox"
+            class="form-control"
+            id="theatre"
+            name="theatre" 
+        /></label>
+        <br />
+        <label for="community-event">Community Event
+        <input
+            type="checkbox"
+            class="form-control"
+            id="community-event"
+            name="community-event" 
+        /></label>
+        <br />
+        <label for="political-event">Political Event
+        <input
+            type="checkbox"
+            class="form-control"
+            id="political-event"
+            name="political-event" 
+        /></label>
+        <br />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock %}
