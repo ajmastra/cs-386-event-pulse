@@ -54,8 +54,8 @@ Provide a link for the system in production and describe how you are deploying y
  Grading criteria (3 points): This section will be graded based on the adequate use of the technology and its adequate description.   
 
  ## 7. Licensing 
- Inform the license you adopted for your source code (remember to configure GitHub accordingly). Explain why you adopted this license.   
- Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language.   
+ We have chosen the MIT License. This license fits our needs as it is simple, permissive, and most importantly, free. For our needs of developing this project for class, the MIT License was the best option. 
+ https://github.com/ajmastra/cs-386-event-pulse/blob/main/LICENSE  
 
  ## 8. README File
 

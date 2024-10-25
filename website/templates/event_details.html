@@ -26,7 +26,7 @@
             <!-- posted by -->
             <h5>Posted by:</h5>
             <p class="card-text">
-                <a href="{{ url_for('views.view_profile', user_id=event.creator.id) }}">{{ event.creator.first_name }}</a>
+                <a href="{{ url_for('views.view_profile', user_id=event.creator.id) }}">{{ event.creator.first_name }} ({{ event.creator.username }})</a>
             </p>
 
             <!-- created on -->
