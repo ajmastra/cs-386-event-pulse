@@ -67,6 +67,8 @@ def add_event():
         time_of_event_str = request.form.get('time_of_event')
         # Get type of event
         type_of_event = request.form.get('type_of_event')
+        # Get the location
+        location = request.form.get('location')
 
         # Combine date and time strings into a single datetime object
         date_of_event = datetime.strptime(date_of_event_str, '%Y-%m-%d')
@@ -78,7 +80,8 @@ def add_event():
             date_of_event=date_of_event,
             time_of_event=time_of_event,
             user_id=current_user.id, 
-            type_of_event=type_of_event
+            type_of_event=type_of_event,
+            location=location
         )
         # add it to the database
         db.session.add(new_event)
