@@ -6,9 +6,8 @@
 
 ## 1. Introduction
 
-Provide a short paragraph that describes your system. This paragraph should contain the value proposition and a description of the software's main features. Include a link to your project on GitHub at the end of the introduction.   
-
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language. The description should be consistent with the current state of the project. You should include the link to GitHub.   
+Welcome to EventPulse! EventPulse is an event tracker application that provides NAU students and Flagstaff residents with an all-in-one place to explore local events and find groups of people with similar interests. Upon signing in, you will be able to scroll through events other users have posted. In addition, as a user you will be able to create your own events.When creating an event, you choose the type of event, date and time, location, and give a brief description. If the user has done their questionnaire to determine the events they may be interested in, they will be able to see a tailored “For You” event list. 
+https://github.com/ajmastra/cs-386-event-pulse 
 
 ## 2. Implemented Requirements  
 
