@@ -22,21 +22,21 @@ Create subsections for each group member. All group members should have worked o
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
 **Implemented by:** Anthony Mastrangelo  
 **Approved by:** Zachary Garza  
-**Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)
+**Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)   
 
 
 **Requirement:** *Displaying Event Location on Home Screen - Displaying the location on the button of each event on the home screen.*   
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/138
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141   
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/138   
 **Implemented by:** Andrew Sliva  
 **Approved by:** Andrew Gajewski  
 **Print screen:** ![Event Time](/project_documentation/D4_media/eventLocation.png)  
 
 **Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/136
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121  
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/136  
 **Implemented by:** Andrew Gajewski  
-**Approved by:** Samuel Butler
+**Approved by:** Samuel Butler  
 **Print screen:** ![Event Location](/project_documentation/D4_media/eventLocation2.PNG)
 
 **Requirement:** *Event Time - Time and date of event.*   
@@ -202,23 +202,43 @@ Grading criteria (4 points): You should have an adequate number of automated tes
 
 ## 4. Adopted Technologies
 
-List the adopted technologies with a brief description and justification for choosing them.  
+**Python**: Python is the primary programming language for this project, chose for its readability, versatility, and large ecosystem. It supports rapid development is well suited for web-applciations due to its rich set of libraries and frameworks available.  
 
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language.  
+**Flask**: Flask is the core web framework for this application, providing us with a lightweight and flexible foundation for building a web application. It was chose due to its ease of learning, and the ability o extend functionality through many extensions, making it a great fit for our use case.  
+
+**Jinja**: Jinja is used as the templating engine for rendering HTML pages in Flask applications. It allow for dynamic content, rendering embedded python logic directly into the HTML templates, enabling a seamless user interface experience and integration with backend data.  
+
+**SQLite / SQLAlchemy**: SQLite serves as the database for storing application data, with SQLAlchemy as the Object-Relational Mapper for managing the database interactions. This combinationwas chosen due to the fairly simplistic setup, and maintainability.  
+
+**PostgreSQL**: PostgreSQL is a powerful open-source relational database system. This was selected for its robustness, and ability to handle complex queries. It is also highly scalable, making it ideal for production environments where the data consistency and query performance are high priorities. It also has great compatibiltiy with SQLAlchemy, streamlining development by enabling object relational mapping within the Flask framework.  
+
+**Bootstrap**: Bootstrap is a front-end framework that enabled rapid and responsive UI development. By utilizing Boostrap, our application can maintain a consistent and very user-friedly design across all devices, without extensive custom CSS.  
+
+**Render**: Render is the deployment platform for this application. It was chose for its developer-friendly setup and support for continuous integration. Render's automatic scaling and simplified configuration make it a reliable choice for hosting our Flask application.  
+
+**Werkzeug**: We utilized Werkzeug's security module, providing us with the tools necessary for secruely managing user passwords, particularly through hashing and verification functions. It was chosen due to its ease of implementation with Flask, and for its highly trusted and sercure solutions for managing important information within the Flask framework.  
 
 ## 5. Learning / Training
-Describe the strategies employed by the team to learn the adopted technologies.    
+To effectively utilize the adopted technologies that we chose for Event Pulse, our team implemented a variety of techniques to learn and understand each technology. This approach's goal was to ensure that all team members were equipped with the necessary skills to contribute effectively to the project.
 
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language.   
+1. **Collaborative Learning**: We organized weekly team meetings focused on specific technologies. This was usually organized in a classroom like environment, where one person would try to teach the rest of the group about a specific technology. This prompted many questions amongst other team members, and we felt as though this was an effective way to learn about each one.
+2. **Online Resources**: Each team member was heavily encouraged to explore as many online tutorials as they could. We utilized platforms such as YouTube, Comeacademy, and the documentation for technologies like Flask, and SQLite. This was primarily done in the early stages of development, with the hope that all group members could have a collaborative knowledge on all technologies.
+3. **Hands on Practice**: Before actually starting our own software development, we utilized hands on learning by creating small, simplisitc prototypes. This came in tandem with the online resources, and we were all encouraged to walk through tutorials, performing the same practices so that we could understand what our software would look like.
 
 ## 6. Deployment
 
-Provide a link for the system in production and describe how you are deploying your system.   
- Grading criteria (3 points): This section will be graded based on the adequate use of the technology and its adequate description.   
+[Here is our Project!](https://cs-386-event-pulse.onrender.com/)  
 
- ## 7. Licensing 
- We have chosen the MIT License. This license fits our needs as it is simple, permissive, and most importantly, free. For our needs of developing this project for class, the MIT License was the best option. 
- https://github.com/ajmastra/cs-386-event-pulse/blob/main/LICENSE  
+The deployment of the system is facilitated through Render, a cloud platform that simplifies the hosting and management of web applications. The deployment process involves the following steps:
+1. **Code Repository**: The application code is stored here in our GitHub repository.
+2. **Render Configuration**: Once linked to the GitHub repository, Render automatically detects the Flask application and configures the necessary build and run settings.
+3. **Database Setup**: A PostgreSQL database is provisioned through Render, ensuring that we have reliable and consitent data storage/management. The application is configured to connect to this database, via the enrionment variables set in the __int__.py file.
+4. **Continous Deployment**: Render enables us to have continuous deployment, allowing for all updates pushed to the main branch to be automatically deployed to the live environment. This ensures that users always have access to the latest version of our application, without having to do anything on their end.
+
+
+## 7. Licensing 
+We have chosen the MIT License. This license fits our needs as it is simple, permissive, and most importantly, free. For our needs of developing this project for class, the MIT License was the best option. 
+https://github.com/ajmastra/cs-386-event-pulse/blob/main/LICENSE  
 
  ## 8. README File
 Check out our README and other important documentation!
@@ -232,9 +252,19 @@ Check out our README and other important documentation!
 
 Grading criteria (3 points): This section will be graded based on the appearance (aesthetics) and usability (ease of use) of the system.   
 
-# Lessons learned
-In retrospective, describe what your team learned during this first release and what you are planning to change for the second release.
+## 10. Lessons learned
+In reflecting on the first release of **Event Pulse**, our team has gained some valuable insight into the development process, and team collaboration that help to better our approach for the second release.
 
-## 10. Demo
+### Key Lessons
+1. **Effective Communication**: Regular, and consistent communication amongst team members was crucial in addressing challenges we faced, and maintaining the overall momentum of the project. We discovered that while our weekly meetings were effective, our overall coordination could have been better for a quicker resolution of issues.
+2. **Time Management**: Our initial timelines were overly optimistic. This lead to a fairly rushed development phase, forcing us to cut some corners in the list of features we had hoped to implement.
+3. **Testing and Quality Assurance**: The more testing we performed, the more bugs we were able to detect. This was great, but the rushed timeline made us realize that we were likely unable to uncover all of the bugs within the system. We now better understand the importance of implementing cohesive tests in tandem with development, in hopes that we can rid of the bugs sooner rather than later.
+
+### Plans for Second Release
+1. **Enhanced User Engagement**: For the second release of our software, we plan to implement a more structured approach to gather more user feedback. Our first release did not have a lot of users testing the system, and we believe that incorporating this will allow us to better see our software from a different perspective.
+2. **Refined Communication**: We aim to enhance our communication strategies, ensuring that everyone knows exactly what is going on, all the time. We want to make sure that everyone always has somethign to work on, and that there is never a question as to what they should be doing.
+3. **Robust Testing Procedures**: We will establish a dedicated testing phase in our development cycle for our second release. This will be focused on not only the automated tests, but also manual user testing to identify and fix issues prior to the next release.
+
+## 11. Demo
 Include a link to a video showing the system working.  
 Grading criteria (6 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).   
