@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Event, User
+from .models import Event, User, Interest
 from . import db
 import json
 from datetime import datetime
@@ -101,6 +101,8 @@ def add_event():
 def view_profile(user_id):
     # Fetch the user by ID
     user_profile = User.query.get_or_404(user_id)
+
+    print( user_profile.interests )
     
     # Check if the profile belongs to the current user
     is_own_profile = current_user.id == user_id
@@ -155,22 +157,28 @@ def search():
 @login_required
 def questionnaire():
     if request.method == 'POST':
-
-        tempList = []
         if request.form.get('live-music') == "on":
-            tempList.append("live-music")
+            new_interest = Interest( name = "Live Music" )
+            db.session.add( new_interest )
+            User
         if request.form.get('theatre') == "on":
-            tempList.append("theatre")
+            new_interest = Interest( name = "Theatre" )
+            db.session.add( new_interest )
         if request.form.get('community-event') == "on":
-            tempList.append("community-event")
+            new_interest = Interest( name = "Community Event" )
         if request.form.get('political-event') == "on":
-            tempList.append("political-event")
+            new_interest = Interest( name = "Live Music" )
+            db.session.add( new_interest )
         
-        # lowkey this is a horrible strat but it basically just puts the genres in a long string separated by commas
-        tempString = str(tempList).replace('[', "").replace(']', "").replace(' ', "").replace('\'', "")
-
-        current_user.interests = tempString
+        # slightly better maybe??
         db.session.commit() 
+
+        maybe_interests = Interest.query.all()
+
+        for interest in maybe_interests:
+            print(interest)
+            print(interest.name)
+            print(interest.users)
 
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user)

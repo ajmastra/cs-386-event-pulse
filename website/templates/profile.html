@@ -10,6 +10,7 @@
     <p><strong>Email:</strong> {{ user_profile.email }}</p>
     <p><strong>Username:</strong> {{ user_profile.username }}</p>
     <p><strong>First Name:</strong> {{ user_profile.first_name }}</p>
+    <p><strong>Interests:</strong> {{ user_profile.interests }}</p>
 
     {% if is_own_profile %}
     <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
