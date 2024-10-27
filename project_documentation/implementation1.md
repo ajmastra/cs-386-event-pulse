@@ -33,7 +33,7 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event Time](/project_documentation/D4_media/eventLocation.png)  
 
 **Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/136
 **Implemented by:** Andrew Gajewski  
 **Approved by:** Samuel Butler
