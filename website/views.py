@@ -168,17 +168,25 @@ def search():
 @login_required
 def questionnaire():
 
+    # This need to be moved to a different location, only needs to be run once, tried putting it in __init__ but I
+    # was running into errors.
     def default_interests():
+        # List of default interests, if changing this you may want to reset db as the old defaults will likely remain
         list = ("Live Music", "Theatre", "Political Event", "Community Events" )
 
+        # Tracker for if a new Interest is added to the db
+        new_interest_added = False;
+        # Go through default list and add them to the db if not already added
         for interest_name in list:
-            query_result = Interest.query.filter_by(name=interest_name).first()
+            query_result = Interest.query.filter_by(name = interest_name).first()
             if query_result is None:
-                print("Not found")
+                new_interest_added = True
                 new_interest = Interest( name=interest_name )
                 db.session.add( new_interest )
-            else:
-                print("Found " + query_result.name)
+            
+        # Commit any changes to database if a new Interest is added to the db
+        if new_interest_added:
+            db.session.commit()
 
     # create some default interests if they aren't already present
     default_interests()
@@ -191,7 +199,7 @@ def questionnaire():
             interest_to_add = Interest.query.get(interest_id)
             current_user.interests.append(interest_to_add)
     
-        # slightly better maybe??
+        # Commit changes to db
         db.session.commit()
 
         return redirect(url_for('views.home'))  
