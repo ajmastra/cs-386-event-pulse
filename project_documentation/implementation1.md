@@ -25,12 +25,19 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)
 
 
-**Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121
+**Requirement:** *Displaying Event Location on Home Screen - Displaying the location on the button of each event on the home screen.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/138
 **Implemented by:** Andrew Sliva  
 **Approved by:** Andrew Gajewski  
 **Print screen:** ![Event Time](/project_documentation/D4_media/eventLocation.png)  
+
+**Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/136
+**Implemented by:** Andrew Gajewski  
+**Approved by:** Samuel Butler
+**Print screen:** ![Event Location](/project_documentation/D4_media/eventLocation2.png)
 
 **Requirement:** *Event Time - Time and date of event.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/129    
