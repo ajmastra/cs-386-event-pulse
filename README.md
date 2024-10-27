@@ -42,20 +42,29 @@ To set up the EventPulse application locally, follow these steps:
 Feel free to make accounts and events to test out the software!   
 
 ## Deployment
-To deploy Event Pulse on a server/website such as Heroku with PostgreSQL...
-1. Start by creating a Heroku app, and add the Heroku Postgres add-on, setting up the necessary environment variables in the config settings. 
+To deploy Event Pulse on a server/website such as Render with PostgreSQL...
 
-2. Ensure you have a Procfile with 
+1. Ensure you have a Procfile in the root directory with 
    ```bash
    web: gunicorn main:app
    ```
-3. Include all dependencies in requirements.txt and push the    code to Heroku. 
+1. Create a Render PostgreSQL databse, and copy the Interal address for the DB that will look something like:
+   ```bash
+   postgresql://example_db_user:some-long-string-of-characters/example_db
+   ```
+4. Create a 'Web Service' on Render, and connect it to your GitHub repository.
+   During the setup, ensure that you put this in your Build Command:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   And this in your start command:
+   ```bash
+   gunicorn main:app
+   ```
 
-4. Finally, verify the deployment of the app by opening the app in your terminal with with 
-   ```
-   heroku open
-   ```
-Congratulations! Event Pulse is deployed!
+6. Now, add a new environment variable named DATABASE_URL, and set it to the PostgreSQL internal address you copied earlier.
+
+7. Now wait for Render to build and deploy your app, and you should be all set!
 
 ## Built With
 
