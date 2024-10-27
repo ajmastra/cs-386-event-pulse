@@ -19,6 +19,10 @@
                 {{ event.date_of_event.strftime('%B %d, %Y') }} at {{ event.time_of_event.strftime('%I:%M %p') }}
             </p>
 
+            <!-- location -->
+            <h5>Location:</h5>
+            <p class="card-text">{{ event.location }}</p>
+
             <!-- type of event -->
             <h5>Type of Event:</h5>
             <p class="card-text">{{ event.type_of_event }}</p>

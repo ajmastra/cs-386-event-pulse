@@ -27,6 +27,7 @@ class Event(db.Model):
     date_of_event = db.Column(db.DateTime(timezone=True))
     time_of_event = db.Column(db.Time(timezone=True))
     type_of_event = db.Column(db.String(200))
+    location = db.Column(db.String(200))
     # foreign key means we need to pass a valid id of an existing user
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
