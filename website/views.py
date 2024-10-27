@@ -167,6 +167,22 @@ def search():
 @views.route('/questionnaire', methods=['GET', 'POST'])
 @login_required
 def questionnaire():
+
+    def default_interests():
+        list = ("Live Music", "Theatre", "Political Event", "Community Events" )
+
+        for interest_name in list:
+            query_result = Interest.query.filter_by(name=interest_name).first()
+            if query_result is None:
+                print("Not found")
+                new_interest = Interest( name=interest_name )
+                db.session.add( new_interest )
+            else:
+                print("Found " + query_result.name)
+
+    # create some default interests if they aren't already present
+    default_interests()
+
     interests = Interest.query.all()
     
     if request.method == 'POST':
