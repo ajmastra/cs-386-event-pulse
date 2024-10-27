@@ -227,9 +227,21 @@ Check out our README and other important documentation!
 * [CODE_OF_CONDUCT.md](/CODE_OF_CONDUCT.md)
 
  ## 9. Look and Feel
- Describe the approach you adopted to design your user interface. Include some screenshots.   
+We built the look and feel of our website to be simple and intuitive, without over-crowding the user or taking focus away from the content of the events.
 
-Grading criteria (3 points): This section will be graded based on the appearance (aesthetics) and usability (ease of use) of the system.   
+Opening the page for the first time, you will se we've restricted much of content behind a login screen, making sure that those who are not logged in will only see the availible options as "Log In" and "Sign Up." This design choice allows the user to immediately direct themselves to one of the two options, avoiding the need for hunting across an extensive navigation bar.
+
+![Login Page Look and Feel](/project_documentation/D4_media/look_and_feel_login.png)
+
+Once they are logged in, the user is immediately presented with the home screen and list of events. A small alert will inform the user they were logged in as well. These alerts are consistent throughout the website, with the green color contrasting against the generally neutral site design, allowing high visibility without obstructing the users' view. In the following screenshot we can see one of these alerts being used to inform the user that a newly created event was added successfully.
+
+![Home Page Look and Feel](/project_documentation/D4_media/look_and_feel_home.png)
+
+Pictured above, the event page is the heart of the website. This is where you can view any created event on the site, as well as add new ones. The view is simple but put events from and center, with an increased focus on the title across the top, and the date separated to right of the viewport. This focus on date and time allows users to easy determine what events they might be able to attend at a glance.
+
+![Event Details Page Look and Feel](/project_documentation/D4_media/look_and_feel_event_details.png)
+
+Event details provides a location for user to take a closer look at an event they are potentialy interested in, providing the event description, as well as further details layed out in simple section. The no-nonsense approach of header and text here allows the user to get the information they need intuitively even if you've never used the site before. The delete button appears only for the user who created the event, and the back to events button is present fo all user, allow a simple way to return again to the list of events.
 
 # Lessons learned
 In retrospective, describe what your team learned during this first release and what you are planning to change for the second release.
