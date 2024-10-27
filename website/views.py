@@ -102,13 +102,25 @@ def view_profile(user_id):
     # Fetch the user by ID
     user_profile = User.query.get_or_404(user_id)
 
-    print( user_profile.interests )
-    
+    print(current_user.interests)
+
+    # Create list of user's interests
+    interest_list = ""
+    for cur_interest in current_user.interests:
+        print(cur_interest.name)
+        interest_list += cur_interest.name + ", "
+    print(interest_list)
+    interest_list = interest_list
     # Check if the profile belongs to the current user
     is_own_profile = current_user.id == user_id
     
     # Render the profile template
-    return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user)
+    return render_template(
+        'profile.html', 
+        user_profile=user_profile,
+        is_own_profile=is_own_profile,
+        user=current_user,
+        interest_list=interest_list)
 
 
 # ROUTING FOR EDITING USER PROFILE
@@ -160,16 +172,23 @@ def questionnaire():
         if request.form.get('live-music') == "on":
             new_interest = Interest( name = "Live Music" )
             db.session.add( new_interest )
-            User
+            current_user.interests.append(new_interest)
+
         if request.form.get('theatre') == "on":
             new_interest = Interest( name = "Theatre" )
             db.session.add( new_interest )
+            current_user.interests.append(new_interest)
+
         if request.form.get('community-event') == "on":
             new_interest = Interest( name = "Community Event" )
+            current_user.interests.append(new_interest)
+
         if request.form.get('political-event') == "on":
             new_interest = Interest( name = "Live Music" )
             db.session.add( new_interest )
+            current_user.interests.append(new_interest)
         
+
         # slightly better maybe??
         db.session.commit() 
 
