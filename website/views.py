@@ -107,7 +107,6 @@ def view_profile(user_id):
     # Create list of user's interests
     interest_list = ""
     for cur_interest in current_user.interests:
-        print(cur_interest.name)
         interest_list += cur_interest.name + ", "
     print(interest_list)
     interest_list = interest_list
@@ -168,36 +167,16 @@ def search():
 @views.route('/questionnaire', methods=['GET', 'POST'])
 @login_required
 def questionnaire():
+    interests = Interest.query.all()
+    
     if request.method == 'POST':
-        if request.form.get('live-music') == "on":
-            new_interest = Interest( name = "Live Music" )
-            db.session.add( new_interest )
-            current_user.interests.append(new_interest)
-
-        if request.form.get('theatre') == "on":
-            new_interest = Interest( name = "Theatre" )
-            db.session.add( new_interest )
-            current_user.interests.append(new_interest)
-
-        if request.form.get('community-event') == "on":
-            new_interest = Interest( name = "Community Event" )
-            current_user.interests.append(new_interest)
-
-        if request.form.get('political-event') == "on":
-            new_interest = Interest( name = "Live Music" )
-            db.session.add( new_interest )
-            current_user.interests.append(new_interest)
-        
-
+        selected_interests = request.form
+        for interest_id in selected_interests:
+            interest_to_add = Interest.query.get(interest_id)
+            current_user.interests.append(interest_to_add)
+    
         # slightly better maybe??
-        db.session.commit() 
-
-        maybe_interests = Interest.query.all()
-
-        for interest in maybe_interests:
-            print(interest)
-            print(interest.name)
-            print(interest.users)
+        db.session.commit()
 
         return redirect(url_for('views.home'))  
-    return render_template("questionnaire.html", user=current_user)
+    return render_template("questionnaire.html", user=current_user, interests=interests)

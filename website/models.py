@@ -39,7 +39,7 @@ class Event(db.Model):
 # I gotchu :P
 class Interest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
+    name = db.Column(db.String(200), nullable=False, unique=True)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     # Used to relate interests and users
     users = db.relationship('User', secondary = 'user_interest', back_populates = 'interests')
