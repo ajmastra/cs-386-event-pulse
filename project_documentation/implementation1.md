@@ -25,11 +25,11 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)
 
 
-**Requirement:** *Event Location - Location/address of event so users know where to go.*   
+**Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/138
 **Implemented by:** Andrew Sliva  
-**Approved by:** Samuel Butler  
+**Approved by:** Andrew Gajewski  
 **Print screen:** ![Event Time](/project_documentation/D4_media/eventLocation.png)  
 
 **Requirement:** *Event Time - Time and date of event.*   
@@ -176,7 +176,7 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 
 ### Andrew Sliva
 #### Features Implemented:   
-
+1. Displaying Event Location
 #### Features Approved:   
 
 ### Samuel Butler
