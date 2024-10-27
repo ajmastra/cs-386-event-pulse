@@ -37,7 +37,7 @@ Create subsections for each group member. All group members should have worked o
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/136
 **Implemented by:** Andrew Gajewski  
 **Approved by:** Samuel Butler
-**Print screen:** ![Event Location](/project_documentation/D4_media/eventLocation2.png)
+**Print screen:** ![Event Location](/project_documentation/D4_media/eventLocation2.PNG)
 
 **Requirement:** *Event Time - Time and date of event.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/129    
