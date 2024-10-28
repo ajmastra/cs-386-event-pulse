@@ -275,4 +275,4 @@ In reflecting on the first release of **Event Pulse**, our team has gained some 
 3. **Robust Testing Procedures**: We will establish a dedicated testing phase in our development cycle for our second release. This will be focused on not only the automated tests, but also manual user testing to identify and fix issues prior to the next release.
 
 ## 11. Demo
-![Demo Video](/project_documentation/implementation1-demo.mp4)
+[![Demo Video](https://img.youtube.com/vi/1xkLbj1CosQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=1xkLbj1CosQ)
