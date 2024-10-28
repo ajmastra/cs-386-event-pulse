@@ -275,5 +275,4 @@ In reflecting on the first release of **Event Pulse**, our team has gained some 
 3. **Robust Testing Procedures**: We will establish a dedicated testing phase in our development cycle for our second release. This will be focused on not only the automated tests, but also manual user testing to identify and fix issues prior to the next release.
 
 ## 11. Demo
-Include a link to a video showing the system working.  
-Grading criteria (6 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).   
+![Demo Video](/project_documentation/implementation1-demo.mp4)
