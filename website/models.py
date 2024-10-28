@@ -29,10 +29,12 @@ class Event(db.Model):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     date_of_event = db.Column(db.DateTime(timezone=True))
     time_of_event = db.Column(db.Time(timezone=True))
-    type_of_event = db.Column(db.String(200))
     location = db.Column(db.String(200))
     # foreign key means we need to pass a valid id of an existing user
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    # Used to relate interests and events
+    interests = db.relationship('Interest', secondary = 'event_interest', back_populates = 'events')
 
 # interests schema
 # class Interests(db.Model): yeah idk lol -zach
@@ -43,10 +45,18 @@ class Interest(db.Model):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     # Used to relate interests and users
     users = db.relationship('User', secondary = 'user_interest', back_populates = 'interests')
+    events = db.relationship('Event', secondary = 'event_interest', back_populates = 'interests')
 
-# user to interest table relationship
+# User to Interest many-to-many relation table
 user_interest = db.Table(
     'user_interest',
     db.Column('user_id', db.ForeignKey('user.id')),
+    db.Column('interest_id', db.ForeignKey('interest.id'))
+)
+
+# Event to Interest many-to-many relation table 
+event_interest = db.Table(
+    'event_interest',
+    db.Column('event_id', db.ForeignKey('event.id')),
     db.Column('interest_id', db.ForeignKey('interest.id'))
 )

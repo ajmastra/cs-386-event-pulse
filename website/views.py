@@ -14,8 +14,13 @@ def home():
     # grab ALL events from the database
     events = Event.query.all()
 
-    # format date and time for each event to pass into the home.html
+
+    # Add supporting variables for the html
     for event in events:
+        # format the interest list as a string for each event
+        event.interest_list = interest_list_str(event)
+
+        # format date and time for each event to pass into the home.html
         if event.date_of_event:
             event.formatted_date = event.date_of_event.strftime('%m-%d-%Y')
         else:
@@ -48,15 +53,24 @@ def delete_event():
 @views.route('/event/<int:event_id>')
 def event_details(event_id):
     # grab the event or show 404 if not found
-    event = Event.query.get_or_404(event_id)  
+    event = Event.query.get_or_404(event_id)
+
+    # get string of interests using function
+    # !! not checking if a 404 was returned, not sure how to handle this gracefully
+    interest_list = interest_list_str(event)
+
     # render event details template
-    return render_template('event_details.html', event=event, user=current_user)  
+    return render_template('event_details.html', event=event, user=current_user, interest_list=interest_list)  
 
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
 def add_event():
+    # Get all potential interest that could be selected for event
+    interests = Interest.query.all()
+
     if request.method == 'POST':
+        # Get information from the submitted form:
         # get the title
         title = request.form.get('event')
         # get the description
@@ -65,8 +79,8 @@ def add_event():
         date_of_event_str = request.form.get('date_of_event')
         # Get the time
         time_of_event_str = request.form.get('time_of_event')
-        # Get type of event
-        type_of_event = request.form.get('type_of_event')
+        # Get selected interest id
+        selected_interest_id = request.form.get('type_of_event')
         # Get the location
         location = request.form.get('location')
 
@@ -80,9 +94,12 @@ def add_event():
             date_of_event=date_of_event,
             time_of_event=time_of_event,
             user_id=current_user.id, 
-            type_of_event=type_of_event,
             location=location
         )
+        # Add the interest selected
+        new_interest_to_add = Interest.query.get(selected_interest_id)
+        new_event.interests.append(new_interest_to_add)
+
         # add it to the database
         db.session.add(new_event)
         # commit it to the database
@@ -92,7 +109,7 @@ def add_event():
         # redirect to home
         return redirect(url_for('views.home'))  
     # render the template
-    return render_template('add_event.html', user=current_user)  
+    return render_template('add_event.html', user=current_user, interests=interests)  
 
 
 # ROUTING FOR VIEWING USER PROFILES
@@ -102,14 +119,9 @@ def view_profile(user_id):
     # Fetch the user by ID
     user_profile = User.query.get_or_404(user_id)
 
-    print(current_user.interests)
-
     # Create list of user's interests
-    interest_list = ""
-    for cur_interest in current_user.interests:
-        interest_list += cur_interest.name + ", "
-    print(interest_list)
-    interest_list = interest_list
+    interest_list = interest_list_str(user_profile)
+
     # Check if the profile belongs to the current user
     is_own_profile = current_user.id == user_id
     
@@ -204,3 +216,25 @@ def questionnaire():
 
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user, interests=interests)
+
+# Extra function to avoid redundancy
+
+# Create list of interests as a string for easy html rendering
+def interest_list_str( obj_with_interests ):
+    # Create list of user's interests
+
+    # start with empty string
+    interest_str = ""
+
+    # create an iterator of all the interests
+    all_interests_iterator = iter(obj_with_interests.interests)
+
+    # add the first item to the string
+    cur_interest = next(all_interests_iterator)
+    interest_str += cur_interest.name
+
+    # now add the remaining items to the string  
+    for cur_interest in all_interests_iterator:
+        interest_str +=  ", " + cur_interest.name
+
+    return interest_str

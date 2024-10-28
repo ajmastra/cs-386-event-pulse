@@ -42,10 +42,9 @@
             <label for="eventType" class="font-weight-bold">Type of Event</label>
             <select class="form-control" id="eventType" name="type_of_event" required>
                 <option value="" disabled selected>Choose the Type of Event</option>
-                <option value="Live Music">Live Music</option>
-                <option value="Theatre">Theatre</option>
-                <option value="Community Event">Community Event</option>
-                <option value="Political">Political Event</option>
+                {% for potential_interest in interests %}
+                <option value="{{ potential_interest.id }}">{{ potential_interest.name }}</option>
+                {% endfor %}
             </select>
         </div>
 
