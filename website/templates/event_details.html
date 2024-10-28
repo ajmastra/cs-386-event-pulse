@@ -25,7 +25,7 @@
 
             <!-- type of event -->
             <h5>Type of Event:</h5>
-            <p class="card-text">{{ event.type_of_event }}</p>
+            <p class="card-text">{{ event.type_of_event.replace("-"," ").title() }}</p>
 
             <!-- posted by -->
             <h5>Posted by:</h5>
