@@ -55,44 +55,54 @@ def event_details(event_id):
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
+@login_required  # Ensure user is logged in
 def add_event():
     if request.method == 'POST':
+        # make sure user is logged in
+        if not current_user.is_authenticated:
+            # Forbidden if user is not authenticated
+            abort(403)  
+
         # get the title
         title = request.form.get('event')
         # get the description
         description = request.form.get('description')
-        # Get the date
+        # get the date
         date_of_event_str = request.form.get('date_of_event')
-        # Get the time
+        # get the time
         time_of_event_str = request.form.get('time_of_event')
-        # Get type of event
+        # get the type of event
         type_of_event = request.form.get('type_of_event')
-        # Get the location
+        # get the location
         location = request.form.get('location')
 
-        # Combine date and time strings into a single datetime object
+         # Combine date and time strings into a single datetime object
         date_of_event = datetime.strptime(date_of_event_str, '%Y-%m-%d')
-        time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()  # Get only the time part
+        time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()
+
         # create the new event, assuming you currently have user authentication
         new_event = Event(
             title=title, 
             description=description, 
             date_of_event=date_of_event,
             time_of_event=time_of_event,
-            user_id=current_user.id, 
+            user_id=current_user.id,  # This is now safe
             type_of_event=type_of_event,
             location=location
         )
-        # add it to the database
+
+        # add it to the db
         db.session.add(new_event)
-        # commit it to the database
+
+        # commit it to the db
         db.session.commit()
 
         flash('Event added successfully!', category='success')
-        # redirect to home
-        return redirect(url_for('views.home'))  
+
+        # redirect home
+        return redirect(url_for('views.home'))
     # render the template
-    return render_template('add_event.html', user=current_user)  
+    return render_template('add_event.html', user=current_user)
 
 
 # ROUTING FOR VIEWING USER PROFILES
