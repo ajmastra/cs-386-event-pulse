@@ -11,11 +11,6 @@ https://github.com/ajmastra/cs-386-event-pulse
 
 ## 2. Implemented Requirements  
 
-List in this section each requirement and associated pull request each member implemented for this release. Follow the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement features you specified in your MVP (c.f. D.2 Requirements). All implemented features should have an automated test to verify their correct functioning. 
-
-Create subsections for each group member. All group members should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches. 
-
-
 **Requirement:** *Event Title - Title/name of event to attract users.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/126  
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
@@ -24,12 +19,13 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event Title](/project_documentation/D4_media/eventTitle.png)   
 
 
-**Requirement:** *Displaying Event Location on Home Screen - Displaying the location on the button of each event on the home screen.*   
+**Requirement:** *Display Event Location Easily - Displaying the location on the button of each event on the home screen.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/141   
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/138   
 **Implemented by:** Andrew Sliva  
 **Approved by:** Andrew Gajewski  
 **Print screen:** ![Event Time](/project_documentation/D4_media/eventLocation.png)  
+
 
 **Requirement:** *Displaying Event Location - Location/address of event so users know where to go.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/121  
@@ -37,6 +33,7 @@ Create subsections for each group member. All group members should have worked o
 **Implemented by:** Andrew Gajewski  
 **Approved by:** Samuel Butler  
 **Print screen:** ![Event Location](/project_documentation/D4_media/eventLocation2.PNG)
+
 
 **Requirement:** *Event Time - Time and date of event.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/129    
@@ -52,14 +49,6 @@ Create subsections for each group member. All group members should have worked o
 **Implemented by:** Anthony Mastrangelo  
 **Approved by:** Zachary Garza  
 **Print screen:** ![Event Desc](/project_documentation/D4_media/eventDesc.png)
-
-
-**Requirement:** *Interest Button - Button to click if you interested in an event (will trigger notifications feature).*   
-**Issue:** link  
-**Pull request:** link  
-**Implemented by:** person  
-**Approved by:** person  
-**Print screen:** screenshotLink
 
 
 **Requirement:** *Groups - Individuals may join "groupings" of events based off their interests.*   
@@ -78,28 +67,12 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event Contents](/project_documentation/D4_media/eventTags.png)
 
 
-**Requirement:** *Notifications - will be sent based off events you have marked as interested in.*   
-**Issue:** link  
-**Pull request:** link  
-**Implemented by:** person  
-**Approved by:** person  
-**Print screen:** screenshotLink
-
-
 **Requirement:** *User Accounts - Users will have an account to use on this site.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/85   
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/72  
 **Implemented by:** Anthony Mastrangelo  
 **Approved by:** Zachary Garza  
 **Print screen:** ![User Account](/project_documentation/D4_media/profileInfo.png)
-
-
-**Requirement:** *Authentification - User authentication sent through email to verify users.*   
-**Issue:** link  
-**Pull request:** link  
-**Implemented by:** person  
-**Approved by:** person  
-**Print screen:** screenshotLink
 
 
 **Requirement:** *List of Events - List of events scheduled for users to scroll through.*   
@@ -110,12 +83,12 @@ Create subsections for each group member. All group members should have worked o
 **Print screen:** ![Event List](/project_documentation/D4_media/eventList.png)
 
 
-**Requirement:** *Related Interest List - List of events related to your intrests instead of all events.*   
-**Issue:** link  
-**Pull request:** link  
-**Implemented by:** person  
-**Approved by:** person  
-**Print screen:** screenshotLink
+**Requirement:** *Highlight Interest Title - Highlights the interest so users can see events they're interested in.*   
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/146    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/148  
+**Implemented by:** Samuel Butler, Zachary Garza  
+**Approved by:** Andrew Sliva  
+**Print screen:** ![Interest Image](/project_documentation/D4_media/interests.png)
 
 
 **Requirement:** *User Information - Users will sign up with a unique user name and a unique email*   
@@ -165,6 +138,8 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 #### Features Implemented:   
 1. Groups
 1. User Information
+1. Highlight Interest Title  
+
 #### Features Approved:   
 1. Event Title
 1. Event Time
@@ -177,18 +152,24 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 
 ### Andrew Gajewski
 #### Features Implemented:   
+1. Added Location to Database
 
 #### Features Approved:   
+1. Display Event Location Easily  
 
 ### Andrew Sliva
 #### Features Implemented:   
-1. Displaying Event Location
+1. Displaying Event Location  
+
 #### Features Approved:   
+1. Highlight Interest Title  
 
 ### Samuel Butler
 #### Features Implemented:   
+1. Highlight Interest Title  
 
 #### Features Approved:   
+1. Added Location to Database  
 
 ## 3. Test  
 1. **Test Framework**: Pytest
