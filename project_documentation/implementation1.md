@@ -191,13 +191,11 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 #### Features Approved:   
 
 ## 3. Test  
-You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:  
-
-Test framework you used to develop your tests (e.g., JUnit, unittest, pytest, etc.)  
-Link to your GitHub folder where your automated unit tests are located  
-An example of a test case. Include in your answer a GitHub link to the class being tested and to the test  
-A print screen showing the result of the execution of the automated tests  
-Grading criteria (4 points): You should have an adequate number of automated tests. They should be well-written to exercise the main components of your system, covering the relevant inputs.  
+1. **Test Framework**: Pytest
+2. **Automated Test Files**: https://github.com/ajmastra/cs-386-event-pulse/tree/main/unit_testing
+3. **Example Test Case**: We created a variety of test cases for this implementation, but one of the most important ones was testing for the 'Add Event' functionality. For this, there needs to be a user account setup and logged in, and then they can try to post an event to the database. The routing that we were testing comes from the [views.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py) file, where we have the add_event() function. The test case for this is in the [test_view.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/unit_testing/test_view.py) file.
+4. **Result of the Testing**: The testing was done locally through a cloned version of our repository
+![Unit Testing](/project_documentation/D4_media/unit_testing_screenshot.png)
 
 ## 4. Adopted Technologies
 
