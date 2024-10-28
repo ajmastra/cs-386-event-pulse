@@ -1,47 +1,63 @@
 {% extends "base.html" %}
 {% block title %}Questionnaire{% endblock %}
 
-
 {% block content %}
-<form method="POST">
-    <h3 align="center">Which Events are you Interested In?</h3>
-    <div class="form-group" align="center">
-        <label for="live-music">Live Music
-        <input
-            type="checkbox"
-            class="form-control"
-            id="live-music"
-            name="live-music" 
-        /></label>
-        <br />
-        <label for="theatre">Theatre
-        <input
-            type="checkbox"
-            class="form-control"
-            id="theatre"
-            name="theatre" 
-        /></label>
-        <br />
-        <label for="community-event">Community Event
-        <input
-            type="checkbox"
-            class="form-control"
-            id="community-event"
-            name="community-event" 
-        /></label>
-        <br />
-        <label for="political-event">Political Event
-        <input
-            type="checkbox"
-            class="form-control"
-            id="political-event"
-            name="political-event" 
-        /></label>
-        <br />
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h3 class="text-center text-primary mb-4">Which Events Are You Interested In?</h3>
+        <form method="POST">
+            <div class="form-group">
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="live-music"
+                        name="live-music">
+                    <label class="form-check-label" for="live-music">Live Music</label>
+                </div>
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="theatre"
+                        name="theatre">
+                    <label class="form-check-label" for="theatre">Theatre</label>
+                </div>
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="community-event"
+                        name="community-event">
+                    <label class="form-check-label" for="community-event">Community Event</label>
+                </div>
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="political-event"
+                        name="political-event">
+                    <label class="form-check-label" for="political-event">Political Event</label>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-4">Submit</button>
+            </div>
+        </form>
     </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
 
-
+<style>
+    .text-primary {
+        color: #003366;
+    }
+    .card {
+        max-width: 500px;
+        margin: auto;
+    }
+    .form-check-label {
+        font-size: 1.1rem;
+        color: #555;
+    }
+</style>
 {% endblock %}

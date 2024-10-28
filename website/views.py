@@ -143,7 +143,7 @@ def edit_profile():
     return render_template('edit_profile.html', user=current_user)
 
 
-
+# ROUTING FOR SEARCH
 @views.route('/search', methods=['GET', 'POST'])
 @login_required
 def search():
@@ -181,6 +181,7 @@ def questionnaire():
 
         current_user.interests = tempString
         db.session.commit() 
+        flash('Interests updated successfully!', category='success')
 
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user)
