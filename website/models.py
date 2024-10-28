@@ -21,7 +21,7 @@ class User(db.Model, UserMixin):
 # event schema for database
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200))
+    title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.String(1000))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     date_of_event = db.Column(db.DateTime(timezone=True))
