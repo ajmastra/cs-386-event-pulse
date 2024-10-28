@@ -6,7 +6,7 @@
 
 ## 1. Introduction
 
-Welcome to EventPulse! EventPulse is an event tracker application that provides NAU students and Flagstaff residents with an all-in-one place to explore local events and find groups of people with similar interests. Upon signing in, you will be able to scroll through events other users have posted. In addition, as a user you will be able to create your own events.When creating an event, you choose the type of event, date and time, location, and give a brief description. If the user has done their questionnaire to determine the events they may be interested in, they will be able to see a tailored “For You” event list. 
+Welcome to EventPulse! EventPulse is an event tracker application that provides NAU students and Flagstaff residents with an all-in-one place to explore local events and find groups of people with similar interests. Upon signing in, you will be able to scroll through events other users have posted. In addition, as a user you will be able to create your own events. When creating an event, you choose the type of event, date and time, location, and give a brief description. If the user has done their questionnaire to determine the events they may be interested in, they will be able to see highlighted events that pertain to their interests.
 https://github.com/ajmastra/cs-386-event-pulse 
 
 ## 2. Implemented Requirements  
@@ -180,21 +180,21 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 
 ## 4. Adopted Technologies
 
-**Python**: Python is the primary programming language for this project, chose for its readability, versatility, and large ecosystem. It supports rapid development is well suited for web-applciations due to its rich set of libraries and frameworks available.  
+**Python**: Python is the primary programming language for this project, chosen for its readability, versatility, and large ecosystem. It supports rapid development and is well-suited for web applications due to its rich set of libraries and frameworks available.
 
-**Flask**: Flask is the core web framework for this application, providing us with a lightweight and flexible foundation for building a web application. It was chose due to its ease of learning, and the ability o extend functionality through many extensions, making it a great fit for our use case.  
+**Flask**: Flask is the core web framework for this application, providing us with a lightweight and flexible foundation for building a web application. It was chosen due to its ease of learning and the ability to extend functionality through many extensions, making it a great fit for our use case.
 
-**Jinja**: Jinja is used as the templating engine for rendering HTML pages in Flask applications. It allow for dynamic content, rendering embedded python logic directly into the HTML templates, enabling a seamless user interface experience and integration with backend data.  
+**Jinja**: Jinja is used as the templating engine for rendering HTML pages in Flask applications. It allows for dynamic content, rendering embedded Python logic directly into the HTML templates, enabling a seamless user interface experience and integration with backend data.
 
-**SQLite / SQLAlchemy**: SQLite serves as the database for storing application data, with SQLAlchemy as the Object-Relational Mapper for managing the database interactions. This combinationwas chosen due to the fairly simplistic setup, and maintainability.  
+**SQLite / SQLAlchemy**: SQLite serves as the database for storing application data, with SQLAlchemy as the Object-Relational Mapper for managing the database interactions. This combination was chosen due to its simplicity in setup and maintainability.
 
-**PostgreSQL**: PostgreSQL is a powerful open-source relational database system. This was selected for its robustness, and ability to handle complex queries. It is also highly scalable, making it ideal for production environments where the data consistency and query performance are high priorities. It also has great compatibiltiy with SQLAlchemy, streamlining development by enabling object relational mapping within the Flask framework.  
+**PostgreSQL**: PostgreSQL is a powerful open-source relational database system. This was selected for its robustness and ability to handle complex queries. It is also highly scalable, making it ideal for production environments where data consistency and query performance are high priorities. Additionally, it has great compatibility with SQLAlchemy, streamlining development by enabling object-relational mapping within the Flask framework.
 
-**Bootstrap**: Bootstrap is a front-end framework that enabled rapid and responsive UI development. By utilizing Boostrap, our application can maintain a consistent and very user-friedly design across all devices, without extensive custom CSS.  
+**Bootstrap**: Bootstrap is a front-end framework that enables rapid and responsive UI development. By utilizing Bootstrap, our application can maintain a consistent and user-friendly design across all devices, without extensive custom CSS.
 
-**Render**: Render is the deployment platform for this application. It was chose for its developer-friendly setup and support for continuous integration. Render's automatic scaling and simplified configuration make it a reliable choice for hosting our Flask application.  
+**Render**: Render is the deployment platform for this application. It was chosen for its developer-friendly setup and support for continuous integration. Render's automatic scaling and simplified configuration make it a reliable choice for hosting our Flask application.
 
-**Werkzeug**: We utilized Werkzeug's security module, providing us with the tools necessary for secruely managing user passwords, particularly through hashing and verification functions. It was chosen due to its ease of implementation with Flask, and for its highly trusted and sercure solutions for managing important information within the Flask framework.  
+**Werkzeug**: We utilized Werkzeug's security module, providing us with the tools necessary for securely managing user passwords, particularly through hashing and verification functions. It was chosen due to its ease of implementation with Flask, and for its highly trusted and secure solutions for managing important information within the Flask framework.
 
 ## 5. Learning / Training
 To effectively utilize the adopted technologies that we chose for Event Pulse, our team implemented a variety of techniques to learn and understand each technology. This approach's goal was to ensure that all team members were equipped with the necessary skills to contribute effectively to the project.
@@ -256,4 +256,5 @@ In reflecting on the first release of **Event Pulse**, our team has gained some 
 3. **Robust Testing Procedures**: We will establish a dedicated testing phase in our development cycle for our second release. This will be focused on not only the automated tests, but also manual user testing to identify and fix issues prior to the next release.
 
 ## 11. Demo
-[![Demo Video](https://img.youtube.com/vi/1xkLbj1CosQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=1xkLbj1CosQ)
+[![Demo Video](https://img.youtube.com/vi/OpVSM1696NY/0.jpg)](https://www.youtube.com/watch?v=OpVSM1696NY)
+
