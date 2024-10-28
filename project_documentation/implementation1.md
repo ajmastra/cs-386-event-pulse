@@ -85,7 +85,7 @@ https://github.com/ajmastra/cs-386-event-pulse
 
 **Requirement:** *Highlight Interest Title - Highlights the interest so users can see events they're interested in.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/146    
-**Pull request:** link  
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/148  
 **Implemented by:** Samuel Butler, Zachary Garza  
 **Approved by:** Andrew Sliva  
 **Print screen:** ![Interest Image](/project_documentation/D4_media/interests.png)
