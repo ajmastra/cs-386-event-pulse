@@ -83,10 +83,10 @@ https://github.com/ajmastra/cs-386-event-pulse
 **Print screen:** ![Event List](/project_documentation/D4_media/eventList.png)
 
 
-**Requirement:** *Related Interest List - List of events related to your intrests instead of all events.*   
+**Requirement:** *Highlight Interest Title - Highlights the interest so users can see events they're interested in.*   
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/146    
 **Pull request:** link  
-**Implemented by:** Samuel Butler  
+**Implemented by:** Samuel Butler, Zachary Garza  
 **Approved by:** Andrew Sliva  
 **Print screen:** ![Interest Image](/project_documentation/D4_media/interests.png)
 
@@ -138,6 +138,8 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 #### Features Implemented:   
 1. Groups
 1. User Information
+1. Highlight Interest Title  
+
 #### Features Approved:   
 1. Event Title
 1. Event Time
@@ -160,9 +162,11 @@ Unique Username: Anthony Mastrangelo, Benjamin Levine
 1. Displaying Event Location  
 
 #### Features Approved:   
+1. Highlight Interest Title  
 
 ### Samuel Butler
 #### Features Implemented:   
+1. Highlight Interest Title  
 
 #### Features Approved:   
 1. Added Location to Database  
