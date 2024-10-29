@@ -158,7 +158,7 @@ def edit_profile():
     return render_template('edit_profile.html', user=current_user)
 
 
-
+# ROUTING FOR SEARCH
 @views.route('/search', methods=['GET', 'POST'])
 @login_required
 def search():
@@ -174,6 +174,19 @@ def search():
         users = User.query.filter((User.first_name.ilike(f'%{query}%')) | (User.email.ilike(f'%{query}%'))).all()
 
     return render_template('search.html', user=current_user, events=events, users=users, query=query)
+
+# ROUTING FOR INTERESTS
+@views.route('/interests', methods=['GET', 'POST'])
+@login_required
+def interests():
+    query = request.form.get('query')  # Get the search query from the form
+    interests = Interest.query.all()
+
+    if query is not None:
+        # Search for interest by name
+       interests = Interest.query.filter ( Interest.name.ilike(f'%{query}%') ).all()
+
+    return render_template('interests.html', user=current_user, interests=interests, query=query)
 
 # ROUTING FOR QUESTIONNAIRE
 @views.route('/questionnaire', methods=['GET', 'POST'])

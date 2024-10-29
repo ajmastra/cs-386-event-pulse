@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Interests
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Select Your Interests or Add New Ones</h2>
+
+    <!-- search form -->
+    <form method="POST" action="/interests">
+        <div class="form-group">
+            <!-- the reason we have the or for the value, is because otherwise the searchbar will autopopulate with 'None' upon loading the page -->
+            <input type="text" name="query" class="form-control" placeholder="Search for potential interests" value="{{ query or '' }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <!-- check if there is anything in the search bar -->
+    {% if interests %}
+    <hr>
+    <h3>Search Results</h3>
+    <br>
+    <ul class="list-group">
+        <!-- if so, display the interests -->
+        {% for potential_interest in interests %}
+        <li class="list-group-item">
+            <h5>{{ potential_interest.name }}
+                <input
+                    type="checkbox"
+                    class="form-control"
+                    id="{{ potential_interest.id }}"
+                    name="{{ potential_interest.id }}" 
+                />
+            </h5>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <!-- otherwise we didnt find any events, so tell user nothing found -->
+    <p>No interests found for "{{ query }}".</p>
+    {% endif %}
+
+    <br>
+    <hr>
+</div>
+{% endblock %}
