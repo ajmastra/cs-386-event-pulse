@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
+from sqlalchemy import select
 from .models import Event, User, Interest
 from . import db
 import json
@@ -187,6 +188,31 @@ def interests():
        interests = Interest.query.filter ( Interest.name.ilike(f'%{query}%') ).all()
 
     return render_template('interests.html', user=current_user, interests=interests, query=query)
+
+# ROUTING FOR NEW INTEREST
+@views.route('/new_interest', methods=['GET', 'POST'])
+@login_required
+def new_interest():
+    # Test queries
+    # First, create a new query statement, we'll use the select statment here
+    statement = select(User, Interest).join(Interest.users)
+    # Now execute the statment and print the results
+    for row in db.session.execute( statement ):
+        print( f" User ID and Username { row.User.id }, { row.User.username }, Interest ID and Name: { row.Interest.id }, { row.Interest.name }")
+
+    interests = Interest.query.all()
+
+    if request.method == 'POST':
+        new_interest_name = request.form.get('new_interest_name')  # get the potentially filled in interest field
+        print("new_interest_name: " + str(new_interest_name))
+        if new_interest_name:
+            # Add new interest
+            print("Adding new interest...")
+            new_interest = Interest( name=new_interest_name )
+            db.session.add( new_interest )
+            db.session.commit()
+
+    return render_template('new_interest.html', user=current_user, interests=interests)
 
 # ROUTING FOR QUESTIONNAIRE
 @views.route('/questionnaire', methods=['GET', 'POST'])
