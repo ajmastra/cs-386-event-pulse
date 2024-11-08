@@ -17,7 +17,7 @@ Present a refined class diagram of your system, including implementation details
 
 The difference between this class diagram and the one you presented in D.3 is that the latter focuses on the domain's conceptual model, while the former reflects the implementation. Therefore, the implementation details are relevant in this case.
 
-![Class Diagram](/project_documentation/D5_media/project_class_diagram.PNG)
+![Class Diagram](/project_documentation/D5_media/project_class_diagram.png)
 
 _Grading criteria_ (6 points): Adequate use of UML; Adequate choice of classes and relationships; Completeness of the diagram; Adequate presentation of implementation details.
 
