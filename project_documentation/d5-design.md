@@ -73,6 +73,4 @@ _Grading criteria_ (6 points, 3 for each pattern): Correct use of the design pat
 
 ## 6. Design Principles
 
-How does your design observe the SOLID principles? Provide a short description of the principles followed and give concrete examples from your classes.
-
-Grading criteria (6 points): Show correct understanding of SOLID principles; Provide enough details to justify how the principles were observed.
+Starting on line 56, I believe we have a display of OCP working. While we have many options for the user to create an event with as much detail as possible, we don’t go as far as letting users control the entire form. With a template given, the user can do as much as possible without going overboard or past our original limits. I also believe that throughout our code, SRP is displayed. Our functions do one thing at a time, with simplicity for each action in mind at all times. For instance, the “edit profile” seen starting at line 123 has one responsibility; to change the inserted data in your profile. It doesn’t try to do too much and keeps “KISS” in mind. 
