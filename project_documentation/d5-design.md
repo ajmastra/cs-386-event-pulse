@@ -4,18 +4,13 @@ In this deliverable, you should describe the architectural design of your system
 
 ## 1. Description
 
-Provide 1-2 paragraphs to describe your system to help understand the context of your design decisions. You can reuse and update text from the previous deliverables.
-
-_Grading criteria_ (2 points): Completeness; Consistency with the rest of the document; Adequate language.
+The EventPulse application utilizes a few key functionalities. There are account creation/login, user profiles, event posts, and user interests. There is a database for users and events. When users create an account, they are required to use a unique username and password. Once a user is logged into an account, they can access the rest of EventPulse's content. Users can edit their user profile, they can change their email and first name. The user database supports all of the user data. It holds a unique user id, email, username, password, first name, ineterests, and events. The list of interests that each user has can be updated at any time by completing the questionare. The questionare allows users to select which types of events they are interested in. Events are an essential feature of the EventPulse application. The Event database stores data about the event posts, such as location, title, address, etc. When a user creates an event, they are assigned to that event as a creator. Events and users are searchable by their title and first name or email. 
 
 ## 2. Architecture
 
-Present a diagram of the high-level architecture of your system. Use a UML package diagram to describe the main modules and their interrelation. Please check these  [examples](https://www.uml-diagrams.org/package-diagrams-overview.html). Make clear the layers of your architecture (if they exist) as described in  [Multi-Layered Application: UML Model Diagram Example](https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html).
+![](D5_media/package-diagram.png)
 
-Provide a brief rationale of your architecture explaining why you designed it that way.
-
-_Grading criteria_ (5 points): Adequate use of UML; Adequate design of an architecture for the system; Adequate description of the rationale.
-
+The Event Pulse architecture is built in four layers to keep everything organized. The Presentation Layer is the front end that users interact with; it displays information and handles input through HTML, CSS, and JavaScript. The Application Logic layer manages user actions, such as logging in and navigating the app, making sure each request goes to the right place. The Service Layer contains the core functions, like creating and managing events, applying the app’s main rules and logic. Lastly, the Data Layer stores and retrieves all information in the database, ensuring data is safe and accessible. Each layer only interacts with the one below it, which keeps the system clean and easy to manage.
 ## 3. Class diagram
 
 Present a refined class diagram of your system, including implementation details such as visibilities, attributes to represent associations, attribute types, return types, parameters, etc. The class diagram should match the code you have produced so far but not be limited to it (e.g., it can contain classes not implemented yet).
@@ -26,9 +21,37 @@ _Grading criteria_ (6 points): Adequate use of UML; Adequate choice of classes a
 
 ## 4. Sequence diagram
 
-Present a sequence diagram that represents how the objects in your system interact for a specific use case. Also include the use case's description in this section. The sequence diagram should be consistent with the class diagram and architecture.
+**Use Case**: Post an Event  
+**Actor**: User  
+**Trigger**: Goes to the 'add event' page  
+**Pre-Conditions**: Must be logged in to post an event.  
+**Post-Conditions**: The event feed has a new event post.  
 
-_Grading criteria_ (5 points): Adequate use of UML; Adequate design of the sequence diagram; Consistency with the class diagram; Consistency with the use case description; Not including the use case description; Over simplistic diagram.
+**Scenario**: The user posts an event to the home page.  
+
+- User successfully logs into their account.
+- User navigates to the add event page.
+- System validates user is logged in.
+- The system renders the new event page.
+- User posts event.
+- The system adds the event to the database.
+- The system flashes a success message to the user.
+- The post is visible.
+
+**Alternative Scenario**: An unregistered user tries to create a post  
+- A user tries to navigate to the add event page.
+- The system validates if the user is logged in.
+- The system flashes an error message to the user.
+- The user signs up for an account and logs in.
+- The user navigates to the add event page.
+- The system validates that the user is logged in.
+- The system renders the new event page.
+- User posts event.
+- The system adds the event to the database.
+- The system flashes a success message to the user.
+- The post is visible.
+
+![Sequence Diagram](/project_documentation/D5_media/d5_sequence_diagram.png)
 
 ## 5. Design Patterns
 
