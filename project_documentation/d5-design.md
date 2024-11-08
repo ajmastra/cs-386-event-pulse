@@ -10,12 +10,9 @@ _Grading criteria_ (2 points): Completeness; Consistency with the rest of the do
 
 ## 2. Architecture
 
-Present a diagram of the high-level architecture of your system. Use a UML package diagram to describe the main modules and their interrelation. Please check these  [examples](https://www.uml-diagrams.org/package-diagrams-overview.html). Make clear the layers of your architecture (if they exist) as described in  [Multi-Layered Application: UML Model Diagram Example](https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html).
+![](D5_media/package-diagram.png)
 
-Provide a brief rationale of your architecture explaining why you designed it that way.
-
-_Grading criteria_ (5 points): Adequate use of UML; Adequate design of an architecture for the system; Adequate description of the rationale.
-
+The Event Pulse architecture is built in four layers to keep everything organized. The Presentation Layer is the front end that users interact with; it displays information and handles input through HTML, CSS, and JavaScript. The Application Logic layer manages user actions, such as logging in and navigating the app, making sure each request goes to the right place. The Service Layer contains the core functions, like creating and managing events, applying the app’s main rules and logic. Lastly, the Data Layer stores and retrieves all information in the database, ensuring data is safe and accessible. Each layer only interacts with the one below it, which keeps the system clean and easy to manage.
 ## 3. Class diagram
 
 Present a refined class diagram of your system, including implementation details such as visibilities, attributes to represent associations, attribute types, return types, parameters, etc. The class diagram should match the code you have produced so far but not be limited to it (e.g., it can contain classes not implemented yet).
