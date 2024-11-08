@@ -44,7 +44,16 @@ IBreakBehavior: [https://github.com/user/repo/blob/master/src/com/proj/main/IBre
 
 BrakeWithABS: [https://github.com/user/repo/blob/master/src/com/proj/main/BrakeWithABS.java](https://github.com/user/repo/blob/master/src/com/proj/main/BrakeWithABS.java)
 
-Brake: [https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java](https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java)
+Brake: [https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java](https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java)  
+
+### Structural Class: Bridge
+
+
+### Creational Class: Composite
+
+
+
+
 
 _Grading criteria_ (6 points, 3 for each pattern): Correct use of the design pattern as described in the literature; Adequate choice of the design pattern; Adequate implementation of the design pattern.
 
