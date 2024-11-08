@@ -23,9 +23,37 @@ _Grading criteria_ (6 points): Adequate use of UML; Adequate choice of classes a
 
 ## 4. Sequence diagram
 
-Present a sequence diagram that represents how the objects in your system interact for a specific use case. Also include the use case's description in this section. The sequence diagram should be consistent with the class diagram and architecture.
+**Use Case**: Post an Event  
+**Actor**: User  
+**Trigger**: Goes to the 'add event' page  
+**Pre-Conditions**: Must be logged in to post an event.  
+**Post-Conditions**: The event feed has a new event post.  
 
-_Grading criteria_ (5 points): Adequate use of UML; Adequate design of the sequence diagram; Consistency with the class diagram; Consistency with the use case description; Not including the use case description; Over simplistic diagram.
+**Scenario**: The user posts an event to the home page.  
+
+- User successfully logs into their account.
+- User navigates to the add event page.
+- System validates user is logged in.
+- The system renders the new event page.
+- User posts event.
+- The system adds the event to the database.
+- The system flashes a success message to the user.
+- The post is visible.
+
+**Alternative Scenario**: An unregistered user tries to create a post  
+- A user tries to navigate to the add event page.
+- The system validates if the user is logged in.
+- The system flashes an error message to the user.
+- The user signs up for an account and logs in.
+- The user navigates to the add event page.
+- The system validates that the user is logged in.
+- The system renders the new event page.
+- User posts event.
+- The system adds the event to the database.
+- The system flashes a success message to the user.
+- The post is visible.
+
+![Sequence Diagram](/project_documentation/D5_media/d5_sequence_diagram.png)
 
 ## 5. Design Patterns
 
