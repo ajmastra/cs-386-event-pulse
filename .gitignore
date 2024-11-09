@@ -11,3 +11,6 @@ env/
 venv/
 ENV/
 myenv/
+
+
+file: .DS_Store
