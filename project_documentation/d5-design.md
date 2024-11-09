@@ -84,4 +84,17 @@ _Grading criteria_ (6 points, 3 for each pattern): Correct use of the design pat
 
 ## 6. Design Principles
 
-Starting on line 56, I believe we have a display of OCP working. While we have many options for the user to create an event with as much detail as possible, we don’t go as far as letting users control the entire form. With a template given, the user can do as much as possible without going overboard or past our original limits. I also believe that throughout our code, SRP is displayed. Our functions do one thing at a time, with simplicity for each action in mind at all times. For instance, the “edit profile” seen starting at line 123 has one responsibility; to change the inserted data in your profile. It doesn’t try to do too much and keeps “KISS” in mind. 
+SCP - Single Responsibility Principle
+Our classes are all only used once. An example of this would be in models.py, with our “user” class. The definition of SCP is “a class should have only a single responsibility,” and based on our code we follow this. Our user class is created with the sole purpose of being used to create a full user profile with the different options in it. 
+
+OCP - Open/Closed Principle
+Our project follows OCP, with an example being the create event actions. When a user goes to create an event, they are able to use as much detail as possible. However, we don’t let them create their own sections or categories for the information. All their information is tied up into a single form, which they can do whatever they want inside of, but not edit how the form works. With OCP being “software entities ... should be open for extension, but closed for modification,” there is a clear way of extension without modifying the forms completely. 
+
+LSP - Liskov Substitution Principle
+We find LSP in our project through the use of interests users can select through the questionnaire. LSP is defined as “objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.” When filling out the questionnaire, you are selecting your own personal interests. These interests will help us determine what events might interest you the most, but it won’t affect other users’ or the overall program, just that specific user’s end of it. 
+
+ISP - Interface Segregation Principle 
+I believe that our project follows ISP, which is that “many client-specific” interfaces are better than one general-purpose interface.” If a user creates an event, only that user is able to edit/delete it. Not every user gets to see the delete event button when viewing the details of events. This makes it so not every user sees the same thing, but the format is very similar. An example of this in the code is the event class in models.py. You can see that there is a user id section, and if the user id matches the current user, that user will be able to edit or delete that event. 
+
+DIP - Dependency Inversion Principle
+The DIP is defined as follows: ‘one should “Depend upon Abstractions. Do not depend upon concretions.” Our project uses this with the different routes being used throughout the code, leading to different interfaces. These different interfaces keep our project from violating DIP and keeping the design simplistic in use.
