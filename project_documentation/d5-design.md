@@ -57,30 +57,21 @@ _Grading criteria_ (6 points): Adequate use of UML; Adequate choice of classes a
 
 ## 5. Design Patterns
 
-Split this section into two subsections. For each subsection, present a UML class diagram showing the application of a design pattern to your system (a different pattern for each section). Each class diagram should contain only the classes involved in the specific pattern (you don’t need to represent the whole system). Choose patterns from two different categories: Behavioral, Structural, and Creational. You are not limited to design patterns studied in class.
+### Structural Class: Bridge  
 
-Tip: Your system may not be appropriate for any design pattern. In this case, for didactic purposes, be creative and extend the scope of your system slightly to make the design patterns appropriate.
+![Bridge UML Diagram](/project_documentation/D5_media/d5-5-bridge-uml.png)  
 
-Implement each design pattern in your system and provide GitHub links to the corresponding classes. For example (the links are illustrative, aka fake!):
+User: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
+ 
+Event: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
 
-Car: [https://github.com/user/repo/blob/master/src/com/proj/main/Car.java](https://github.com/user/repo/blob/master/src/com/proj/main/Car.java)
+### Behavioral Class: Command   
 
-IBreakBehavior: [https://github.com/user/repo/blob/master/src/com/proj/main/IBreakBehavior.java](https://github.com/user/repo/blob/master/src/com/proj/main/IBreakBehavior.java)
+![Command UML Diagram](/project_documentation/D5_media/d5-5-command-uml.png)  
 
-BrakeWithABS: [https://github.com/user/repo/blob/master/src/com/proj/main/BrakeWithABS.java](https://github.com/user/repo/blob/master/src/com/proj/main/BrakeWithABS.java)
+User: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
 
-Brake: [https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java](https://github.com/user/repo/blob/master/src/com/proj/main/Brake.java)  
-
-### Structural Class: Bridge
-
-
-### Creational Class: Composite
-
-
-
-
-
-_Grading criteria_ (6 points, 3 for each pattern): Correct use of the design pattern as described in the literature; Adequate choice of the design pattern; Adequate implementation of the design pattern.
+Questionnaire: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py)  
 
 ## 6. Design Principles
 
