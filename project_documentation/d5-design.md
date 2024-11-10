@@ -57,21 +57,23 @@ _Grading criteria_ (6 points): Adequate use of UML; Adequate choice of classes a
 
 ## 5. Design Patterns
 
-### Structural Class: Bridge  
+### Structural Class: Facade  
 
-![Bridge UML Diagram](/project_documentation/D5_media/d5-5-bridge-uml.png)  
+![Facade UML Diagram](/project_documentation/D5_media/d5-5-facade-uml.png)  
+
+User: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
+
+Auth: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/auth.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/auth.py)  
+
+### Behavioral Class: Observer   
+
+![Observer UML Diagram](/project_documentation/D5_media/d5-5-observer-uml.png)  
 
 User: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
  
 Event: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
 
-### Behavioral Class: Command   
-
-![Command UML Diagram](/project_documentation/D5_media/d5-5-command-uml.png)  
-
-User: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/models.py)  
-
-Questionnaire: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py)  
+Views: [https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py](https://github.com/ajmastra/cs-386-event-pulse/blob/main/website/views.py)  
 
 ## 6. Design Principles
 
