@@ -33,3 +33,17 @@ class Event(db.Model):
 
 # interests
 # class Interests(db.Model): yeah idk lol -zach
+
+
+# comment schema for database
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(500), nullable=False)
+    date_created = db.Column(db.DateTime(timezone=True), default=func.now())
+    # forieng key so we have to pass existing user
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    # we have to pass existing event
+    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
+    #relationships
+    user = db.relationship('User', backref='comments')
+    event = db.relationship('Event', backref='comments')
