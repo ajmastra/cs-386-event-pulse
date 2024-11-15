@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Event, User
+from .models import Event, User, Comment
 from . import db
 import json
 from datetime import datetime
@@ -185,3 +185,20 @@ def questionnaire():
 
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user)
+
+# ROUTING FOR COMMENTS
+@views.route('/add-comment/<int:event_id>', methods=['POST'])
+@login_required
+def add_comment(event_id):
+    content = request.form.get('content')
+    if not content:
+        flash('Comment cannot be empty!', category='error')
+        return redirect(url_for('views.event_details', event_id=event_id))
+    
+    event = Event.query.get_or_404(event_id)
+    new_comment = Comment(content=content, user_id=current_user.id, event_id=event.id)
+    db.session.add(new_comment)
+    db.session.commit()
+    
+    flash('Comment added successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=event_id))

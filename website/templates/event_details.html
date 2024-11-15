@@ -51,6 +51,38 @@
             </div>
         </div>
     </div>
+
+    <!-- COMMENTS SECTION -->
+    <div class="mt-5">
+        <h5>Comments:</h5>
+        <div class="list-group">
+            {% for comment in event.comments %}
+            <div class="list-group-item">
+                <p class="mb-1">{{ comment.content }}</p>
+                <small class="text-muted">
+                    Posted by 
+                    <a href="{{ url_for('views.view_profile', user_id=comment.user.id) }}">{{ comment.user.first_name }}</a> 
+                    on {{ comment.date_created.strftime('%B %d, %Y at %I:%M %p') }}
+                </small>
+            </div>
+            {% else %}
+            <div class="list-group-item">
+                <p class="mb-1">No comments yet. Be the first to comment!</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Add Comment Form -->
+        <form method="POST" action="{{ url_for('views.add_comment', event_id=event.id) }}" class="mt-4">
+            <div class="form-group">
+                <textarea name="content" class="form-control" rows="3" placeholder="Add a comment..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+        </form>
+    </div>
+    <!-- END COMMENTS SECTION -->
+
+
 </div>
 
 <style>
