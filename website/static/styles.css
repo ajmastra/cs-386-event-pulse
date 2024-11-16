@@ -1,0 +1,222 @@
+/* Global Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6a0dad; /* Main navbar color */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ad0da0 !important; /* Hover text color */
+}
+
+.dropdown-menu {
+    background-color: #6a0dad;
+    border: none;
+}
+
+.dropdown-item {
+    color: #6a0dad !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #ad0da0 !important;
+}
+
+/* Global Button Styles */
+.btn-primary {
+    background-color: #6a0dad !important;/* Purple color */
+    border-color: #6a0dad !important;/* Purple border */
+    color: white !important; /* White text */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #540b87; /* Darker purple on hover */
+    border-color: #540b87;
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+.btn {
+    border-radius: 5px; /* Rounded buttons */
+    font-size: 1rem; /* Slightly larger text */
+}
+
+/* Optional - Secondary Button Style */
+.btn-secondary {
+    background-color: #8c8c8c !important; /* Lighter purple for secondary buttons */
+    border-color: #8c8c8c !important;
+    color: white !important;
+}
+
+.btn-secondary:hover {
+    background-color: #686868 !important; /* Darker purple for secondary hover */
+    border-color: #686868 !important;
+}
+
+/* Other Global Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: Arial, sans-serif;
+}
+
+/* Adjustments for Cards, Forms, and Other Elements */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.btn-danger:hover {
+    background-color: #c12e2a;
+    border-color: #c12e2a;
+}
+
+
+/* Forms */
+.form-control {
+    border-radius: 5px;
+}
+
+.form-group label {
+    color: #555;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #003366;
+}
+
+.card-body h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Flash Messages */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Specific Styles */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Event Details Page */
+.card-body h1 {
+    font-size: 2rem;
+    color: #003366;
+}
+
+.list-group-item {
+    border: none;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #6a0dad;
+}
+
+.list-group-item a:hover {
+    color: #540b87;
+}
+
+/* Forms Page-Specific */
+.text-primary {
+    color: #6a0dad !important;
+}
+
+.btn-custom {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: #540b87;
+    color: white;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.shadow {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+    border-radius: 10px;
+}

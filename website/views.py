@@ -202,3 +202,23 @@ def add_comment(event_id):
     
     flash('Comment added successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=event_id))
+
+# ROUTING FOR DELETING A COMMENT
+
+# ROUTING FOR DELETING COMMENT
+@views.route('/delete-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    
+    # ensure the comment belongs to the current user
+    if comment.user_id != current_user.id:
+        flash('You do not have permission to delete this comment.', category='error')
+        return redirect(url_for('views.event_details', event_id=comment.event_id))
+    
+    # delete the comment from the db
+    db.session.delete(comment)
+    db.session.commit()
+    
+    flash('Comment deleted successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=comment.event_id))
