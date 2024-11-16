@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary px-4">Submit</button>
+                <button type="submit" class="btn btn-custom px-4">Submit</button>
             </div>
         </form>
     </div>
@@ -49,7 +49,7 @@
 
 <style>
     .text-primary {
-        color: #003366;
+        color: #6a0dad !important;
     }
     .card {
         max-width: 500px;
@@ -58,6 +58,15 @@
     .form-check-label {
         font-size: 1.1rem;
         color: #555;
+    }
+    .btn-custom {
+        background-color: #6a0dad;
+        color: white;
+        border: none;
+    }
+    .btn-custom:hover {
+        background-color: #540b87;
+        color: white;
     }
 </style>
 {% endblock %}
