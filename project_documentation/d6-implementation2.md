@@ -39,7 +39,7 @@ our example:
 
 **Requirement:** *Add Friend Functionality - Allows users to connect with their peers and go to events together*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/152     
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/197    
 **Implemented by:** Zachary Garza      
 **Approved by:** appName    
 **Print screen:** ![Friends 1](/project_documentation/D6_media/d6-2-friends-1.png)  
