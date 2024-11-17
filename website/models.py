@@ -2,6 +2,14 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+
+# 'follow' table to handle friends
+follow = db.Table(
+    'follow',
+    db.Column('following_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id'))
+)
+
 # user schema for database
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,6 +20,16 @@ class User(db.Model, UserMixin):
     # interests: either a list or a stirng
     interests = db.Column(db.String(150))
     
+    
+    # handles many to many relationship with itself for friends
+    friends = db.relationship(
+        'User',
+        secondary = follow,
+        primaryjoin = (follow.c.following_id == id),
+        secondaryjoin = (follow.c.follower_id == id),
+        backref = 'folllowing'
+    )
+
     # every time an event is created, add id into this list
     # this will essentially store a list of all of the events owned by the user
 

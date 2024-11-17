@@ -20,7 +20,63 @@ See the example:
 **Approved by:** Ada Lovelace  
 **Print screen:** A print screen that depicts the implemented feature (if applicable)  
 
-Remember that all code contributions should be submitted via pull requests and the reviewer should review and approve each pull request. 
+our example:
+**Requirement:** *WhatYouDid - How it makes software better*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/ISSUENUMBER   
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Implemented by:** impName    
+**Approved by:** appName    
+**Print screen:** ![ImpTitle](/project_documentation/D6_media/linkToImageFile)  
+
+---
+
+**Requirement:** *Comments under Events - Allows user to get a feel of the event from the community*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/154    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/193    
+**Implemented by:** Anthony Mastrangelo    
+**Approved by:** Andrew Sliva    
+**Print screen:** ![Comments](/project_documentation/D6_media/d6-2-comments.png)  
+
+**Requirement:** *Add Friend Functionality - Allows users to connect with their peers and go to events together*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/152     
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/197    
+**Implemented by:** Zachary Garza      
+**Approved by:** appName    
+**Print screen:** ![Friends 1](/project_documentation/D6_media/d6-2-friends-1.png)  
+![Friends 2](/project_documentation/D6_media/d6-2-friends-2.png)  
+![Friends 3](/project_documentation/D6_media/d6-2-friends-3.png)  
+![Friends 4](/project_documentation/D6_media/d6-2-friends-4.png)  
+
+**Requirement:** *Added Comment Like Count - Allows users to know the most popular comments to get an accurate feel of an event*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/182     
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Implemented by:** Benjamin Levine      
+**Approved by:** appName    
+**Print screen:** ![Comment Likes](/project_documentation/D6_media/d6-2-FILENAME)  
+
+**Requirement:** *Added Interested Button - Allows the user to virtual display they're interested in an event*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Implemented by:** Samuel Butler      
+**Approved by:** appName    
+**Print screen:** ![Interested Button](/project_documentation/D6_media/d6-2-FILENAME)  
+
+**Requirement:** *Added For You Page - Allows the user to have a centralized page of events dedicated towards their interests*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/105     
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Implemented by:** Andrew Gajewski    
+**Approved by:** appName    
+**Print screen:** ![For You Page](/project_documentation/D6_media/d6-2-FILENAME)  
+
+**Requirement:** *Added Admin User - Allows users to have a moderated experience by giving select people the ability to moderate pages*  
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/194     
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Implemented by:** Andrew Sliva      
+**Approved by:** appName    
+**Print screen:** ![Admin Users](/project_documentation/D6_media/d6-2-FILENAME)  
+
+
+Remember that all code contributions should be submitted via pull requests and the reviewer should review and approve each pull request.
 
 Grading criteria (20 points): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, adequate use of language, and amount of work put into the implementation. Students can receive different grades depending on their involvement. It is expected that all members contribute with non-trivial implementation. All pull requests should be approved and integrated by the scrum master. You should follow an adequate workflow (description of the requirement on the issue tracker, submission of the implemented requirement as a pull request, and review of the pull request by another developer). 
 
