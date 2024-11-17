@@ -106,17 +106,83 @@ def add_event():
 
 
 # ROUTING FOR VIEWING USER PROFILES
-@views.route('/profile/<int:user_id>', methods=['GET'])
+@views.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def view_profile(user_id):
-    # Fetch the user by ID
-    user_profile = User.query.get_or_404(user_id)
+    if request.method == 'GET':
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+        
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
+
+        # get empty lists for both queries
+        cur_user_friends = []
+        cur_search_friends = []
+
+        # fill each list with ids of each person
+        for i in list(current_user.friends):
+            cur_user_friends.append(i.id)
+        for i in list(user_profile.friends):
+            cur_search_friends.append(i.id)
+        
+        # 3 - User and Searched User sent FR to each other (friends)
+        # 2 - Searched User Sent FR to User
+        # 1 - User Sent FR to Searched User
+        # 0 - No interaction 
+        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
+            friend_status = 3
+        elif current_user.id in cur_search_friends:
+            friend_status = 2
+        elif user_profile.id in cur_user_friends:
+            friend_status = 1
+        else:
+            friend_status = 0
+
+        # Render the profile template
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
     
-    # Check if the profile belongs to the current user
-    is_own_profile = current_user.id == user_id
-    
-    # Render the profile template
-    return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user)
+    if request.method == 'POST':
+
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
+        # add searched user into current user's friend
+        current_user.friends.append(user_profile)
+
+        # commit it to the db
+        db.session.commit()
+
+        # get empty lists for both queries
+        cur_user_friends = []
+        cur_search_friends = []
+
+        # fill each list with ids of each person
+        for i in list(current_user.friends):
+            cur_user_friends.append(i.id)
+        for i in list(user_profile.friends):
+            cur_search_friends.append(i.id)
+        
+        # 3 - User and Searched User sent FR to each other (friends)
+        # 2 - Searched User Sent FR to User
+        # 1 - User Sent FR to Searched User
+        # 0 - No interaction 
+        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
+            friend_status = 3
+        elif current_user.id in cur_search_friends:
+            friend_status = 2
+        elif user_profile.id in cur_user_friends:
+            friend_status = 1
+        else:
+            friend_status = 0
+
+        flash('Friend added successfully!', category='success')
+
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
 
 
 # ROUTING FOR EDITING USER PROFILE
