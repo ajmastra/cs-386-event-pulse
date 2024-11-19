@@ -51,34 +51,49 @@
             </div>
         </div>
     </div>
+
+    <!-- COMMENTS SECTION -->
+    <div class="mt-5">
+        <h5>Comments:</h5>
+        <div class="list-group">
+            {% for comment in event.comments %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="mb-1">{{ comment.content }}</p>
+                    <small class="text-muted">
+                        Posted by 
+                        <a href="{{ url_for('views.view_profile', user_id=comment.user.id) }}">{{ comment.user.username }}</a> 
+                        on {{ comment.date_created.strftime('%B %d, %Y at %I:%M %p') }}
+                    </small>
+                </div>
+                {% if comment.user.id == current_user.id %}
+                <form method="POST" action="{{ url_for('views.delete_comment', comment_id=comment.id) }}" class="m-0">
+                    <button type="submit" class="btn btn-link p-0 text-danger" onclick="return confirm('Are you sure you want to delete this comment?');">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="list-group-item">
+                <p class="mb-1">No comments yet. Be the first to comment!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+        <!-- Add Comment Form -->
+        <form method="POST" action="{{ url_for('views.add_comment', event_id=event.id) }}" class="mt-4">
+            <div class="form-group">
+                <textarea name="content" class="form-control" rows="3" placeholder="Add a comment..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+        </form>
+    </div>
+    <!-- END COMMENTS SECTION -->
+
+
 </div>
-
-<style>
-    .card-title {
-        font-size: 2.5rem;
-        font-weight: 600;
-        color: #003366; 
-    }
-
-    .card-body h5 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: #555; 
-    }
-
-    .card-text {
-        font-size: 1.1rem;
-        color: #333; 
-    }
-
-    .btn-danger {
-        background-color: #d9534f; 
-    }
-
-    .btn-secondary {
-        background-color: #6c757d; 
-    }
-</style>
 
 <script>
     // SCRIPT FOR CONFIRMING THE DELETION OF THE EVENT

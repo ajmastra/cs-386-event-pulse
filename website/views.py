@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from sqlalchemy import select
-from .models import Event, User, Interest
+from .models import Event, User, Interest, Comment
 from . import db
 import json
 from datetime import datetime
@@ -66,35 +66,42 @@ def event_details(event_id):
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
+@login_required  # Ensure user is logged in
 def add_event():
     # Get all potential interest that could be selected for event
     interests = Interest.query.all()
 
     if request.method == 'POST':
+        # make sure user is logged in
+        if not current_user.is_authenticated:
+            # Forbidden if user is not authenticated
+            abort(403)  
+
         # Get information from the submitted form:
         # get the title
         title = request.form.get('event')
         # get the description
         description = request.form.get('description')
-        # Get the date
+        # get the date
         date_of_event_str = request.form.get('date_of_event')
-        # Get the time
+        # get the time
         time_of_event_str = request.form.get('time_of_event')
         # Get selected interest id
         selected_interest_id = request.form.get('type_of_event')
         # Get the location
         location = request.form.get('location')
 
-        # Combine date and time strings into a single datetime object
+         # Combine date and time strings into a single datetime object
         date_of_event = datetime.strptime(date_of_event_str, '%Y-%m-%d')
-        time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()  # Get only the time part
+        time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()
+
         # create the new event, assuming you currently have user authentication
         new_event = Event(
             title=title, 
             description=description, 
             date_of_event=date_of_event,
             time_of_event=time_of_event,
-            user_id=current_user.id, 
+            user_id=current_user.id,  # This is now safe
             location=location
         )
         # Add the interest selected
@@ -103,36 +110,99 @@ def add_event():
 
         # add it to the database
         db.session.add(new_event)
-        # commit it to the database
+
+        # commit it to the db
         db.session.commit()
 
         flash('Event added successfully!', category='success')
-        # redirect to home
-        return redirect(url_for('views.home'))  
+
+        # redirect home
+        return redirect(url_for('views.home'))
     # render the template
     return render_template('add_event.html', user=current_user, interests=interests)  
 
 
 # ROUTING FOR VIEWING USER PROFILES
-@views.route('/profile/<int:user_id>', methods=['GET'])
+@views.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def view_profile(user_id):
-    # Fetch the user by ID
-    user_profile = User.query.get_or_404(user_id)
-
     # Create list of user's interests
     interest_list = interest_list_str(user_profile)
 
-    # Check if the profile belongs to the current user
-    is_own_profile = current_user.id == user_id
+    if request.method == 'GET':
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+        
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
+
+        # get empty lists for both queries
+        cur_user_friends = []
+        cur_search_friends = []
+
+        # fill each list with ids of each person
+        for i in list(current_user.friends):
+            cur_user_friends.append(i.id)
+        for i in list(user_profile.friends):
+            cur_search_friends.append(i.id)
+        
+        # 3 - User and Searched User sent FR to each other (friends)
+        # 2 - Searched User Sent FR to User
+        # 1 - User Sent FR to Searched User
+        # 0 - No interaction 
+        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
+            friend_status = 3
+        elif current_user.id in cur_search_friends:
+            friend_status = 2
+        elif user_profile.id in cur_user_friends:
+            friend_status = 1
+        else:
+            friend_status = 0
+
+        # Render the profile template
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
     
-    # Render the profile template
-    return render_template(
-        'profile.html', 
-        user_profile=user_profile,
-        is_own_profile=is_own_profile,
-        user=current_user,
-        interest_list=interest_list)
+    if request.method == 'POST':
+
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
+        # add searched user into current user's friend
+        current_user.friends.append(user_profile)
+
+        # commit it to the db
+        db.session.commit()
+
+        # get empty lists for both queries
+        cur_user_friends = []
+        cur_search_friends = []
+
+        # fill each list with ids of each person
+        for i in list(current_user.friends):
+            cur_user_friends.append(i.id)
+        for i in list(user_profile.friends):
+            cur_search_friends.append(i.id)
+        
+        # 3 - User and Searched User sent FR to each other (friends)
+        # 2 - Searched User Sent FR to User
+        # 1 - User Sent FR to Searched User
+        # 0 - No interaction 
+        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
+            friend_status = 3
+        elif current_user.id in cur_search_friends:
+            friend_status = 2
+        elif user_profile.id in cur_user_friends:
+            friend_status = 1
+        else:
+            friend_status = 0
+
+        flash('Friend added successfully!', category='success')
+
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, interest_list=interest_list, friend_status=friend_status)
 
 
 # ROUTING FOR EDITING USER PROFILE
@@ -159,6 +229,7 @@ def edit_profile():
     return render_template('edit_profile.html', user=current_user)
 
 
+# ROUTING FOR SEARCH
 # ROUTING FOR SEARCH
 @views.route('/search', methods=['GET', 'POST'])
 @login_required
@@ -252,6 +323,7 @@ def questionnaire():
     
         # Commit changes to db
         db.session.commit()
+        flash('Interests updated successfully!', category='success')
 
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user, interests=interests)
@@ -277,3 +349,40 @@ def interest_list_str( obj_with_interests ):
         interest_str +=  ", " + cur_interest.name
 
     return interest_str
+
+# ROUTING FOR COMMENTS
+@views.route('/add-comment/<int:event_id>', methods=['POST'])
+@login_required
+def add_comment(event_id):
+    content = request.form.get('content')
+    if not content:
+        flash('Comment cannot be empty!', category='error')
+        return redirect(url_for('views.event_details', event_id=event_id))
+    
+    event = Event.query.get_or_404(event_id)
+    new_comment = Comment(content=content, user_id=current_user.id, event_id=event.id)
+    db.session.add(new_comment)
+    db.session.commit()
+    
+    flash('Comment added successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=event_id))
+
+# ROUTING FOR DELETING A COMMENT
+
+# ROUTING FOR DELETING COMMENT
+@views.route('/delete-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    
+    # ensure the comment belongs to the current user
+    if comment.user_id != current_user.id:
+        flash('You do not have permission to delete this comment.', category='error')
+        return redirect(url_for('views.event_details', event_id=comment.event_id))
+    
+    # delete the comment from the db
+    db.session.delete(comment)
+    db.session.commit()
+    
+    flash('Comment deleted successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=comment.event_id))

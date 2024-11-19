@@ -5,15 +5,62 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2>{{ user_profile.first_name }}'s Profile</h2>
-    <p><strong>Email:</strong> {{ user_profile.email }}</p>
-    <p><strong>Username:</strong> {{ user_profile.username }}</p>
-    <p><strong>First Name:</strong> {{ user_profile.first_name }}</p>
-    <p><strong>Interests:</strong> {{ interest_list }}</p>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h1 class="card-title">{{ user_profile.first_name }}'s Profile</h1>
+            
+            <h5 class="mt-4">Email:</h5>
+            <p class="card-text">{{ user_profile.email }}</p>
+            
+            <h5>Username:</h5>
+            <p class="card-text">{{ user_profile.username }}</p>
+            
+            <h5>First Name:</h5>
+            <p class="card-text">{{ user_profile.first_name }}</p>
 
-    {% if is_own_profile %}
-    <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
-    {% endif %}
+            <h5>Interests:</h5>
+            <p class="card-text">{{ interest_list }}</p>
+            
+            <!-- Checks if the current profile is the user's profile -->
+            {% if is_own_profile %}
+            <div class="mt-3">
+                <!-- Displays Edit Profile Button -->
+                <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+            </div>
+            <!-- Otherwise, this handles the friend button -->
+            {% else %}
+                <!-- If Searched user is friends with current user -->
+                {% if friend_status == 3 %}
+                <div class="mt-3">
+                    <p class="card-text">You are friends with {{ user_profile.username }}</p>
+                </div>
+                <!-- If Searched user added current user as friend -->
+                {% elif friend_status == 2 %}
+                <form method="POST">
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg px-5">Accept {{ user_profile.username }}'s Friend Request</button>
+                    </div>
+                </form>
+                <!-- If current user added searched user as a friend -->
+                {% elif friend_status == 1 %}
+                <div class="mt-3">
+                    <p class="card-text">You sent a friend request to {{ user_profile.username }}</p>
+                </div>
+                <!-- If neither searched or current user added each other as friends -->
+                {% elif friend_status == 0 %}
+                <form method="POST">
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg px-5">Add Friend</button>
+                    </div>
+                </form>
+                {% endif %}
+            {% endif %}
+            
+            <div class="mt-4">
+                <a href="{{ url_for('views.home') }}" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,25 +1,50 @@
 {% extends "base.html" %}
 {% block title %}Questionnaire{% endblock %}
 
-
 {% block content %}
-<form method="POST">
-    <h3 align="center">Which Events are you Interested In?</h3>
-    <div class="form-group" align="center">
-        {% for potential_interest in interests %}
-        <label for="{{ potential_interest.id }}">{{ potential_interest.name }}
-            <input
-                type="checkbox"
-                class="form-control"
-                id="{{ potential_interest.id }}"
-                name="{{ potential_interest.id }}" 
-            /></label>
-            <br />
-        {% endfor %}
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h3 class="text-center text-primary mb-4">Which Events Are You Interested In?</h3>
+        <form method="POST">
+            <div class="form-group">
+                {% for potential_interest in interests %}
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="{{ potential_interest.id }}"
+                        name="{{ potential_interest.id }}">
+                    <label class="form-check-label" for="{{ potential_interest.id }}">{{ potential_interest.name }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-custom px-4">Submit</button>
+            </div>
+        </form>
     </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
 
-
+<style>
+    .text-primary {
+        color: #6a0dad !important;
+    }
+    .card {
+        max-width: 500px;
+        margin: auto;
+    }
+    .form-check-label {
+        font-size: 1.1rem;
+        color: #555;
+    }
+    .btn-custom {
+        background-color: #6a0dad;
+        color: white;
+        border: none;
+    }
+    .btn-custom:hover {
+        background-color: #540b87;
+        color: white;
+    }
+</style>
 {% endblock %}
