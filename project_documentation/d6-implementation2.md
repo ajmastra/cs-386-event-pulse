@@ -2,28 +2,13 @@
 This deliverable should describe the second release of your project. A release is a fully functional software that delivers a set of features (it doesn’t need to be the complete set, but the software needs to be usable). Structure your deliverable into the following sections. See the “Team Project Instructions” for details about formatting. 
 
 ## 1. Introduction
-*Provide 1-2 paragraphs to describe your system. This description should contain the value proposition and the main features. At the end of the introduction, include a link to your project on GitHub.*
-
-*Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language. The description should be consistent with the current state of the project. You should include the link to GitHub.*
-
-
 EventPulse is an event tracker app that provides NAU students and Flagstaff residents with an all in one place to share and discover local events, find groups of similar people, and discuss events.
 
-EventPulse was originally created out of a desire to connect people, making it easy for events to be broadcast and discovered. The main "Events" page follows through on that idea, putting the list of upcoming events front-and-center while also allowing users to jump right in and start sharing their own events. Upon selecting the prominent "Add Event" button, user will be prompted to add details such as the events' title, time, location, and importantly, the type of event. Depending on the "Type of Event" selected by the user it will change the platform interacts with user who have selected that as one of their interests.
+EventPulse was created out of a desire to connect people, provding a streamlined for events to be broadcast and discovered. The main "Events" page follows through on that idea, putting the list of upcoming events front-and-center while also allowing users to jump right in and start sharing their own events. Upon selecting the prominent "Add Event" button, user will be prompted to add details such as the events' title, time, location, and importantly, the type of event. Depending on the "Type of Event" selected by the user it will change the platform interacts with user who have selected that as one of their interests.
 
-Interests, as selected via a small questionaire, power the another core idea of the platform, the "For You" page, which pushes events that match the users' interest to the top, providing an unique aspect of discovery for EventPulse. 
+Interests, as selected for the user profile via a small questionaire, is the other half that powers another core idea of the platform, the "For You" page. This provides a place for users to find new things to do, pushing events that match the users' interest at the top, lending an unique aspect of discovery to EventPulse. 
 
-Friend and comment systems have also been built in, supporting community building without over-burdening the site in social features. This allows questions to be answered by event runners and builds further connections between users.
-
-Community building continues to be is supported through the ability for users to add comments to events, creating conversation and allowing event-runners to answer questions. A simple friend system has also been implmented, allowing users to further engage with others.
-
-The primary feature of EventPulse is the ability for users to add new events to the site, ensuring that the newest and most up-to-date events are present on the site. The simplicity of this supports our goal of making hub for anyone to go and learn about events happening.
-
-We also allow comments to be posted on events, allowing interaction between users on the site.
-
-Friend between users have been implemented as well, allowing users to add other users as freinds, further encouraging socialization and intereaction between users.
-
-A "For You" page has been added as well, pushing events to the top you are more likely to be interested in over others.
+Friend and comment systems have also been built in, supporting community building without over-burdening the site in social features. For example, this might allow questions to be answered by event runners and build further connections between users.
 
 [Link to EventPulse on GitHub](https://github.com/ajmastra/cs-386-event-pulse)
 
