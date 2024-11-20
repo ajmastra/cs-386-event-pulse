@@ -34,7 +34,7 @@ class User(db.Model, UserMixin):
     # this will essentially store a list of all of the events owned by the user
 
     # establish the relationship of events to the user
-    events = db.relationship('Event', backref='creator') 
+    events = db.relationship('Event', backref='creator', cascade='all, delete')
 
 # event schema for database
 class Event(db.Model):
@@ -48,6 +48,7 @@ class Event(db.Model):
     location = db.Column(db.String(200))
     # foreign key means we need to pass a valid id of an existing user
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    comments = db.relationship('Comment', back_populates='event', cascade='all, delete')
 
 # interests
 # class Interests(db.Model): yeah idk lol -zach
@@ -64,4 +65,4 @@ class Comment(db.Model):
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)
     #relationships
     user = db.relationship('User', backref='comments')
-    event = db.relationship('Event', backref='comments')
+    event = db.relationship('Event', back_populates='comments')
