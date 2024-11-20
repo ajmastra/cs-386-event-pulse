@@ -2,9 +2,15 @@
 This deliverable should describe the second release of your project. A release is a fully functional software that delivers a set of features (it doesn’t need to be the complete set, but the software needs to be usable). Structure your deliverable into the following sections. See the “Team Project Instructions” for details about formatting. 
 
 ## 1. Introduction
-Provide 1-2 paragraphs to describe your system. This description should contain the value proposition and the main features. At the end of the introduction, include a link to your project on GitHub.
+EventPulse is an event tracker app that provides NAU students and Flagstaff residents with an all in one place to share and discover local events, find groups of similar people, and discuss events.
 
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language. The description should be consistent with the current state of the project. You should include the link to GitHub.
+EventPulse was created out of a desire to connect people, provding a streamlined for events to be broadcast and discovered. The main "Events" page follows through on that idea, putting the list of upcoming events front-and-center while also allowing users to jump right in and start sharing their own events. Upon selecting the prominent "Add Event" button, user will be prompted to add details such as the events' title, time, location, and importantly, the type of event. Depending on the "Type of Event" selected by the user it will change the platform interacts with user who have selected that as one of their interests.
+
+Interests, as selected for the user profile via a small questionaire, is the other half that powers another core idea of the platform, the "For You" page. This provides a place for users to find new things to do, pushing events that match the users' interest at the top, lending an unique aspect of discovery to EventPulse. 
+
+Friend and comment systems have also been built in, supporting community building without over-burdening the site in social features. For example, this might allow questions to be answered by event runners and build further connections between users.
+
+[Link to EventPulse on GitHub](https://github.com/ajmastra/cs-386-event-pulse)
 
 ## 2. Implemented requirements
 List in this section the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue,  a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). Order the requirements by the name of the student who implemented them. Everyone in the group is expected to have code contributions documented by means of pull requests. Every pull request should be reviewed and approved before the merge. 
