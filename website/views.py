@@ -42,6 +42,8 @@ def delete_event():
         if event.user_id == current_user.id:
             db.session.delete(event)
             db.session.commit()
+            flash('Event deleted successfully!', category='success')
+
     return jsonify({})
 
 # ROUTING FOR EVENT DETAILS PAGE
