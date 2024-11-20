@@ -126,17 +126,16 @@ def add_event():
 @views.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def view_profile(user_id):
+    # Fetch the user by ID
+    user_profile = User.query.get_or_404(user_id)
+    
+    # Check if the profile belongs to the current user
+    is_own_profile = current_user.id == user_id
+
     # Create list of user's interests
     interest_list = interest_list_str(user_profile)
 
     if request.method == 'GET':
-        # Fetch the user by ID
-        user_profile = User.query.get_or_404(user_id)
-        
-        # Check if the profile belongs to the current user
-        is_own_profile = current_user.id == user_id
-
-
         # get empty lists for both queries
         cur_user_friends = []
         cur_search_friends = []
@@ -161,16 +160,9 @@ def view_profile(user_id):
             friend_status = 0
 
         # Render the profile template
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, interest_list=interest_list, friend_status=friend_status)
     
     if request.method == 'POST':
-
-        # Fetch the user by ID
-        user_profile = User.query.get_or_404(user_id)
-
-        # Check if the profile belongs to the current user
-        is_own_profile = current_user.id == user_id
-
         # add searched user into current user's friend
         current_user.friends.append(user_profile)
 
@@ -230,7 +222,6 @@ def edit_profile():
 
 
 # ROUTING FOR SEARCH
-# ROUTING FOR SEARCH
 @views.route('/search', methods=['GET', 'POST'])
 @login_required
 def search():
@@ -289,30 +280,6 @@ def new_interest():
 @views.route('/questionnaire', methods=['GET', 'POST'])
 @login_required
 def questionnaire():
-
-    # This need to be moved to a different location, only needs to be run once, tried putting it in __init__ but I
-    # was running into errors.
-    def default_interests():
-        # List of default interests, if changing this you may want to reset db as the old defaults will likely remain
-        list = ("Live Music", "Theatre", "Political Event", "Community Events" )
-
-        # Tracker for if a new Interest is added to the db
-        new_interest_added = False;
-        # Go through default list and add them to the db if not already added
-        for interest_name in list:
-            query_result = Interest.query.filter_by(name = interest_name).first()
-            if query_result is None:
-                new_interest_added = True
-                new_interest = Interest( name=interest_name )
-                db.session.add( new_interest )
-            
-        # Commit any changes to database if a new Interest is added to the db
-        if new_interest_added:
-            db.session.commit()
-
-    # create some default interests if they aren't already present
-    default_interests()
-
     interests = Interest.query.all()
     
     if request.method == 'POST':
@@ -328,12 +295,9 @@ def questionnaire():
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user, interests=interests)
 
-# Extra function to avoid redundancy
 
 # Create list of interests as a string for easy html rendering
 def interest_list_str( obj_with_interests ):
-    # Create list of user's interests
-
     # start with empty string
     interest_str = ""
 
@@ -368,8 +332,6 @@ def add_comment(event_id):
     return redirect(url_for('views.event_details', event_id=event_id))
 
 # ROUTING FOR DELETING A COMMENT
-
-# ROUTING FOR DELETING COMMENT
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):

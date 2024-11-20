@@ -1,7 +1,10 @@
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy.event import listens_for
 
+# List of default interests to be added
+DEFAULT_INTERESTS = ("Live Music", "Theatre", "Political Event", "Community Events")
 
 # 'follow' table to handle friends
 follow = db.Table(
@@ -54,9 +57,6 @@ class Event(db.Model):
     # Used to relate interests and events
     interests = db.relationship('Interest', secondary = 'event_interest', back_populates = 'events')
 
-# interests schema
-# class Interests(db.Model): yeah idk lol -zach
-
 
 # comment schema for database
 class Comment(db.Model):
@@ -71,7 +71,7 @@ class Comment(db.Model):
     user = db.relationship('User', backref='comments')
     event = db.relationship('Event', backref='comments')
 
-
+# interests schema
 class Interest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False, unique=True)
@@ -79,6 +79,13 @@ class Interest(db.Model):
     # Used to relate interests and users
     users = db.relationship('User', secondary = 'user_interest', back_populates = 'interests')
     events = db.relationship('Event', secondary = 'event_interest', back_populates = 'interests')
+
+# listener to add default interests from list when table is created
+@listens_for(Interest.__table__, 'after_create')
+def insert_default_interests(target, connection, **kwargs):
+    """Insert default interests into the database after the table is created."""
+    for interest_name in DEFAULT_INTERESTS:
+        connection.execute(target.insert().values(name=interest_name))
 
 # User to Interest many-to-many relation table
 user_interest = db.Table(
@@ -92,5 +99,4 @@ event_interest = db.Table(
     'event_interest',
     db.Column('event_id', db.ForeignKey('event.id')),
     db.Column('interest_id', db.ForeignKey('interest.id'))
-    
 )
