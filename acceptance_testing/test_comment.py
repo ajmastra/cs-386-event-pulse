@@ -9,12 +9,11 @@ from selenium.webdriver.support import expected_conditions as EC
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Constant for delay
-DELAY = 2  # Change if needed
+    # Change if needed
+DELAY = 2  
 
 def test_make_comment(email, password, post_title, comment_text):
-    """
-    Test making a comment on a specific post with enhanced error handling.
-    """
+    
     logging.info("Starting the comment test...")
     driver = webdriver.Chrome()
 
