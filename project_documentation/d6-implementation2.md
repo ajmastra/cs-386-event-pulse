@@ -99,18 +99,31 @@ Grading criteria (2 points): adequate choice of a test framework, coverage of th
 
 ### 3.2 Acceptance tests
 
-An acceptance test is a test that verifies the correct implementation of a feature from the user interface perspective. An acceptance test is a black box test (the system is tested without knowledge about its internal implementation). Provide the following information:
+Link: 
+[Link to acceptance tests folder](https://github.com/ajmastra/cs-386-event-pulse/acceptance_tests)
 
-Test framework you used to develop your tests (e.g., Selenium, Katalon Studio, Espresso2, Cucumber, etc.)
-Link to your GitHub folder where your automated acceptance tests are located
-An example of an acceptance test. Include a GitHub link to the test and an explanation about the tested feature in your answer.
-A print screen/video showing the acceptance test execution
-Grading criteria (2 points): adequate choice of a test framework, coverage of the tests, quality of the tests, adequate example of an acceptance test, print screen/video showing successful test execution.
+**Login Test**
+![login](/project_documentation/D6_media/test_login_results.png)
 
-## 4. Demo
+**Event Search Test** 
+![event search](/project_documentation/D6_media/test_search-results.png)
+
+**Event Creation Test**
+![event creation](/project_documentation/D6_media/test_event_creation.png)
+
+**Comment Test**
+![comment](/project_documentation/D6_media/test_event_comment.png)
+
+**Sign-Up Test** 
+![sign up](/project_documentation/D6_media/test_sign_up_results.png)
+
+**These acceptance tests ensure that the core functionalities of the application work seamlessly from a user's perspective:**
+- **1. Login Test** Verifies that users can log in successfully by providing valid credentials and navigating to the homepage.
+- **2. Event Search Test** Ensures that users can search for events using the search bar and view relevant results.
+- **3. Event Creation Test** Confirms that users can create new events by filling in all required fields (title, date, time, location, description, and event type) and successfully submitting the form.
+- **4. Comment Test** Validates that users can add a comment to an event, post it successfully, and see it displayed in the comments section.
 Include a link to a video showing the system working.
-
-Grading criteria (10 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).
+- **5. Sign-Up Test** Ensures that new users can register by completing all required fields, such as email, username, and password, and successfully submitting the registration form.
 
 ## 5. Code quality
 At the root of our team's code quality is our standards for Python syntax that we defined back in deliverable 2. We have clear and simple standards that ensure any code that is developed is of high quality and consistent across developers. We developed these guidelines and standards before starting the development, and as a result all of our code is very uniform and coherent.
