@@ -34,17 +34,20 @@ def home():
 # ROUTING FOR DELETING EVENT
 @views.route('/delete-event', methods=['POST'])
 def delete_event():
-    event = json.loads(request.data)
-    eventId = event['eventId']
-    event = Event.query.get(eventId)
+    event_data = json.loads(request.data)
+    event_id = event_data.get('eventId')
+    event = Event.query.get_or_404(event_id)
 
-    if event:
-        if event.user_id == current_user.id:
-            db.session.delete(event)
-            db.session.commit()
-            flash('Event deleted successfully!', category='success')
+    # Ensure the current user is either the owner or an admin
+    if event.user_id != current_user.id and not current_user.is_admin:
+        flash('You do not have permission to delete this event.', category='error')
+        return jsonify({'success': False}), 403
 
-    return jsonify({})
+    # Delete the event if authorized
+    db.session.delete(event)
+    db.session.commit()
+    flash('Event deleted successfully!', category='success')
+    return jsonify({'success': True})
 
 # ROUTING FOR EVENT DETAILS PAGE
 @views.route('/event/<int:event_id>')
@@ -52,8 +55,7 @@ def event_details(event_id):
     # grab the event or show 404 if not found
     event = Event.query.get_or_404(event_id)  
     # render event details template
-    return render_template('event_details.html', event=event, user=current_user)  
-
+    return render_template('event_details.html', event=event, user=current_user)
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
@@ -271,22 +273,21 @@ def add_comment(event_id):
     flash('Comment added successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=event_id))
 
-# ROUTING FOR DELETING A COMMENT
 
 # ROUTING FOR DELETING COMMENT
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):
+    # Fetch the comment by ID or return a 404 if not found
     comment = Comment.query.get_or_404(comment_id)
-    
-    # ensure the comment belongs to the current user
-    if comment.user_id != current_user.id:
+
+    # Ensure the current user is either the owner or an admin
+    if comment.user_id != current_user.id and not current_user.is_admin:
         flash('You do not have permission to delete this comment.', category='error')
         return redirect(url_for('views.event_details', event_id=comment.event_id))
-    
-    # delete the comment from the db
+
+    # Delete the comment if authorized
     db.session.delete(comment)
     db.session.commit()
-    
     flash('Comment deleted successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=comment.event_id))

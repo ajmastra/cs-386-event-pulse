@@ -19,7 +19,8 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     # interests: either a list or a stirng
     interests = db.Column(db.String(150))
-    
+    # Admin user 
+    is_admin = db.Column(db.Boolean, default=False)
     
     # handles many to many relationship with itself for friends
     friends = db.relationship(
