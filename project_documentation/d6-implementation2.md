@@ -76,11 +76,14 @@ our example:
 
 **Requirement:** *Added Admin User - Allows users to have a moderated experience by giving select people the ability to moderate pages*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/194     
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Pull request:** [PR](https://github.com/ajmastra/cs-386-event-pulse/pull/204)    
 **Implemented by:** Andrew Sliva      
 **Approved by:** appName    
-**Print screen:** ![Admin Users](/project_documentation/D6_media/d6-2-FILENAME)  
-
+**Print screen:** 
+Admin View
+![admin](/project_documentation/D6_media/admin-view.png)
+Non-admin View
+![non-admin](/project_documentation/D6_media/non-admin-view.png)
 
 Remember that all code contributions should be submitted via pull requests and the reviewer should review and approve each pull request.
 
