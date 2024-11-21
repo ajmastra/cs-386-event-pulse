@@ -113,9 +113,34 @@ Include a link to a video showing the system working.
 Grading criteria (10 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).
 
 ## 5. Code quality
-Describe how your team managed code quality. What were your policies, conventions, adopted best practices, etc., to foster high-quality code? 
+At the root of our team's code quality is our standards for Python syntax that we defined back in deliverable 2. We have clear and simple standards that ensure any code that is developed is of high quality and consistent across developers. We developed these guidelines and standards before starting the development, and as a result all of our code is very uniform and coherent.
 
-Grading criteria (3 points): Adequate list of practices that were adopted to improve code quality and clear description with adequate use of language.
+1.	Naming Conventions
+
+We have rules for naming conventions of different things, for example, class names are in PascalCase, constants are UPPERCASE, while functions are in snake_case. These naming conventions help us identify and differentiate what everything is, while also keeping the code looking clean and structured.
+
+2.	Function Design and Structure
+
+We also have guidelines that define how functions should be designed. Functions should be short and focused on a single task, have no more than 5 parameters, and have a single clear return path when possible. 
+
+3.	Code Formatting
+
+We also have rules for general code formatting that help keep the code structured and uniform. For example, all lines have a maximum of 79 characters, and use four spaces per indentation level (no tabs). 
+
+4.	Metrics
+
+One metric that our code measures well in is complexity. The issue with complexity arises in “the large and complex methods problem”. In our project, we have methods that do one task at a time (this is also what we were taught in design principles in D5). If your method only focuses on one thing and doesn't attempt to do multiple things at the same time, it is much easier to limit the complexity and scale of a method.
+
+5.	Best Practices
+
+“User variable names that mean something” - Throughout our project you will see that all our naming is of the same form. All our variable names have meanings related to their functionalities and dependencies. Throughout models.py you can see examples of this. 
+
+Comments - Throughout our code we can see comments labeling what classes do what. Our comments aren't explaining the functionality of the code, simply just giving it a label to make it easier. 
+
+6.	Testing Standards
+
+Whenever developing code, and testing the software, we always do so in a virtual environment. This ensures that any testing we do provides consistent results, as we are all testing in the same environment. With consistent testing results, we can be confident our code will run as expected in all scenarios.
+
 
 ## 6. Lessons learned
 During this release, we had to fulfill a lot of daunting requirements we made back in D2. We were pretty nervous regarding relationships and the additions of models to our system, so comments, friends, and interests were pretty scary to implement. During the early stages, interests were returned as strings and set into the User, but now we've worked on Comments, which have their own class, and then a N:N relationship with User towards itself, which was relatively easy to implement. Doing these created a commenting system to be added to events as well as users being able to friend each other. This allowed our software to focus on its core values, like allowing users to connect with one another, learning about what it means to align with our core values. With this in mind, we dedicated some time to learn how to add side-by-side HTML elements and override a previously-existing element in our software, like the previous "interest" system. Having an "admin" user was easy to implement, but doing so meant we had to learn how to previously rewrite a good portion of our if statements in the system. All in all, it's important to see how rewriting a system can take a lot of time and head-scratching, especially since our project is relatively tiny compared to bigger industry software.  
