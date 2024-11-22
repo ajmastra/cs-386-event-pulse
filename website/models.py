@@ -67,3 +67,15 @@ class Comment(db.Model):
     #relationships
     user = db.relationship('User', backref='comments')
     event = db.relationship('Event', back_populates='comments')
+    likes = db.relationship('Like', back_populates='comment', cascade='all, delete')
+
+# like schedma for database
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    # pass existing user
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    # pass existing comment id
+    comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'), nullable=False)
+    # relationships
+    user = db.relationship('User', backref='likes')
+    comment = db.relationship('Comment', back_populates='likes')
