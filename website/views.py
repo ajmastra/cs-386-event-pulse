@@ -111,7 +111,7 @@ def add_event():
         selected_interest_ids = request.form.getlist('interest_ids')
 
         if not selected_interest_ids:
-            flash("Please select at least one interest.", "warning")
+            flash("Please select at least one event type", category="error")
             return redirect(url_for('views.add_event'))
 
         print(selected_interest_ids)
@@ -267,43 +267,6 @@ def search():
 
     return render_template('search.html', user=current_user, events=events, users=users, query=query)
 
-# ROUTING FOR INTERESTS
-@views.route('/interests', methods=['GET', 'POST'])
-@login_required
-def interests():
-    query = request.form.get('query')  # Get the search query from the form
-    interests = Interest.query.all()
-
-    if query is not None:
-        # Search for interest by name
-       interests = Interest.query.filter ( Interest.name.ilike(f'%{query}%') ).all()
-
-    return render_template('interests.html', user=current_user, interests=interests, query=query)
-
-# ROUTING FOR NEW INTEREST
-@views.route('/new_interest', methods=['GET', 'POST'])
-@login_required
-def new_interest():
-    # Test queries
-    # First, create a new query statement, we'll use the select statment here
-    statement = select(User, Interest).join(Interest.users)
-    # Now execute the statment and print the results
-    for row in db.session.execute( statement ):
-        print( f" User ID and Username { row.User.id }, { row.User.username }, Interest ID and Name: { row.Interest.id }, { row.Interest.name }")
-
-    interests = Interest.query.all()
-
-    if request.method == 'POST':
-        new_interest_name = request.form.get('new_interest_name')  # get the potentially filled in interest field
-        print("new_interest_name: " + str(new_interest_name))
-        if new_interest_name:
-            # Add new interest
-            print("Adding new interest...")
-            new_interest = Interest( name=new_interest_name )
-            db.session.add( new_interest )
-            db.session.commit()
-
-    return render_template('new_interest.html', user=current_user, interests=interests)
 
 # ROUTING FOR QUESTIONNAIRE
 @views.route('/questionnaire', methods=['GET', 'POST'])
