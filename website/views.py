@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Event, User, Comment
+from .models import Event, User, Comment, Like
 from . import db
 import json
 from datetime import datetime
@@ -289,4 +289,24 @@ def delete_comment(comment_id):
     db.session.commit()
     
     flash('Comment deleted successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=comment.event_id))
+
+# ROUTING FOR COMMENT LIKES
+@views.route('/like-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def like_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    like = Like.query.filter_by(user_id=current_user.id, comment_id=comment_id).first()
+
+    if like:
+        db.session.delete(like)
+        flash('You unliked this comment.', category='success')
+
+    else:
+        new_like = Like(user_id=current_user.id, comment_id=comment_id)
+        db.session.add(new_like)
+        flash('You liked this comment.', category='success')
+
+    db.session.commit()
     return redirect(url_for('views.event_details', event_id=comment.event_id))

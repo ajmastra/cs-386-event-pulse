@@ -65,6 +65,17 @@
                         <a href="{{ url_for('views.view_profile', user_id=comment.user.id) }}">{{ comment.user.username }}</a> 
                         on {{ comment.date_created.strftime('%B %d, %Y at %I:%M %p') }}
                     </small>
+
+                <!--LIKE BUTTON-->
+                <div class="like-div">
+                    <span class="like-count">{{ comment.likes|length }} </span>
+                    <form method="POST" action="{{url_for('views.like_comment', comment_id=comment.id) }}" class = "like-class">
+                       <button type="submit" class="like-btn">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                       </button> 
+                    </form>
+                </div>
+                
                 </div>
                 {% if comment.user.id == current_user.id %}
                 <form method="POST" action="{{ url_for('views.delete_comment', comment_id=comment.id) }}" class="m-0">

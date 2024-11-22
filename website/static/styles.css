@@ -192,6 +192,17 @@ body {
     color: white;
 }
 
+.like-btn {
+    background: none;
+    border: none;
+}
+
+.like-div {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
 textarea {
     resize: none;
 }
