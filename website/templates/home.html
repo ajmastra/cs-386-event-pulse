@@ -18,12 +18,14 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <span>{{ event.title }}</span>
-                    {% if current_user.interests != None and event.type_of_event in current_user.interests.split(",") %}
-                    <small class="text-muted d-block" style="background-color: yellow">Type: {{ event.type_of_event.replace("-", " ").title() }}</small>
-                    {% else %}
-                    <small class="text-muted d-block">Type: {{ event.type_of_event.replace("-", " ").title() }}</small>
-                    {% endif %}
-                    <small class="text-muted d-block">Location: {{ event.location }}</small>
+                    <ul class="list-group list-group-horizontal py-2">
+                        {% for cur_interest_name in event.common_interest_names %}
+                        <li class="list-group-item list-group-item-primary py-1">{{ cur_interest_name }}</li>
+                        {% endfor %}
+                        {% for cur_interest_name in event.not_common_interest_names %}
+                        <li class="list-group-item py-1">{{ cur_interest_name }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
                 <!-- display the formatted date and time -->
                 <span class="text-muted">

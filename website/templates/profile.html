@@ -18,6 +18,9 @@
             
             <h5>First Name:</h5>
             <p class="card-text">{{ user_profile.first_name }}</p>
+
+            <h5>Interests:</h5>
+            <p class="card-text">{{ interest_list }}</p>
             
             <!-- Checks if the current profile is the user's profile -->
             {% if is_own_profile %}
