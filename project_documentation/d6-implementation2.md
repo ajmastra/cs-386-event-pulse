@@ -76,16 +76,15 @@ our example:
 ![For You Page 2](/project_documentation/D6_media/d6-2-foryou-2.png)  
 
 **Requirement:** *Added Admin User - Allows users to have a moderated experience by giving select people the ability to moderate pages*  
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/194     
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Issue:** [Issue Link](https://github.com/ajmastra/cs-386-event-pulse/issues/194)     
+**Pull request:** [PR Link](https://github.com/ajmastra/cs-386-event-pulse/pull/204)    
 **Implemented by:** Andrew Sliva      
 **Approved by:** appName    
-**Print screen:** ![Admin Users](/project_documentation/D6_media/d6-2-FILENAME)  
-
-
-Remember that all code contributions should be submitted via pull requests and the reviewer should review and approve each pull request.
-
-Grading criteria (20 points): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, adequate use of language, and amount of work put into the implementation. Students can receive different grades depending on their involvement. It is expected that all members contribute with non-trivial implementation. All pull requests should be approved and integrated by the scrum master. You should follow an adequate workflow (description of the requirement on the issue tracker, submission of the implemented requirement as a pull request, and review of the pull request by another developer). 
+**Print screen:** 
+Admin View
+![admin](/project_documentation/D6_media/admin-view.png)
+Non-admin View
+![non-admin](/project_documentation/D6_media/non-admin-view.png)
 
 ## 3. Tests
 ### 3.1 Unit tests
