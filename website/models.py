@@ -22,7 +22,8 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     # interests: either a list or a stirng
     interests = db.Column(db.String(150))
-    
+    # Admin user 
+    is_admin = db.Column(db.Boolean, default=False)
     
     # handles many to many relationship with itself for friends
     friends = db.relationship(
@@ -100,3 +101,15 @@ event_interest = db.Table(
     db.Column('event_id', db.ForeignKey('event.id')),
     db.Column('interest_id', db.ForeignKey('interest.id'))
 )
+    likes = db.relationship('Like', back_populates='comment', cascade='all, delete')
+
+# like schedma for database
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    # pass existing user
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    # pass existing comment id
+    comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'), nullable=False)
+    # relationships
+    user = db.relationship('User', backref='likes')
+    comment = db.relationship('Comment', back_populates='likes')

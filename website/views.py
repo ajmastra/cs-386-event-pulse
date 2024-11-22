@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from sqlalchemy import select, intersect, union_all
-from .models import Event, User, Interest, Comment, user_interest, event_interest
+from .models import Event, User, Interest, Comment, user_interest, event_interest, Like
 from . import db
 import json
 from datetime import datetime
@@ -58,17 +58,20 @@ def home():
 # ROUTING FOR DELETING EVENT
 @views.route('/delete-event', methods=['POST'])
 def delete_event():
-    event = json.loads(request.data)
-    eventId = event['eventId']
-    event = Event.query.get(eventId)
+    event_data = json.loads(request.data)
+    event_id = event_data.get('eventId')
+    event = Event.query.get_or_404(event_id)
 
-    if event:
-        if event.user_id == current_user.id:
-            db.session.delete(event)
-            db.session.commit()
-            flash('Event deleted successfully!', category='success')
+    # Ensure the current user is either the owner or an admin
+    if event.user_id != current_user.id and not current_user.is_admin:
+        flash('You do not have permission to delete this event.', category='error')
+        return jsonify({'success': False}), 403
 
-    return jsonify({})
+    # Delete the event if authorized
+    db.session.delete(event)
+    db.session.commit()
+    flash('Event deleted successfully!', category='success')
+    return jsonify({'success': True})
 
 # ROUTING FOR EVENT DETAILS PAGE
 @views.route('/event/<int:event_id>')
@@ -81,8 +84,7 @@ def event_details(event_id):
     interest_list = interest_list_str(event)
 
     # render event details template
-    return render_template('event_details.html', event=event, user=current_user, interest_list=interest_list)  
-
+    return render_template('event_details.html', event=event, user=current_user, interest_list=interest_list)
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
@@ -306,23 +308,72 @@ def add_comment(event_id):
     flash('Comment added successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=event_id))
 
-# ROUTING FOR DELETING A COMMENT
 
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):
+    # Fetch the comment by ID or return a 404 if not found
     comment = Comment.query.get_or_404(comment_id)
-    
-    # ensure the comment belongs to the current user
-    if comment.user_id != current_user.id:
+
+    # Ensure the current user is either the owner or an admin
+    if comment.user_id != current_user.id and not current_user.is_admin:
         flash('You do not have permission to delete this comment.', category='error')
         return redirect(url_for('views.event_details', event_id=comment.event_id))
-    
-    # delete the comment from the db
+
+    # Delete the comment if authorized
     db.session.delete(comment)
     db.session.commit()
-    
     flash('Comment deleted successfully!', category='success')
+    return redirect(url_for('views.event_details', event_id=comment.event_id))
+
+# ROUTING FOR FOR YOU PAGE
+@views.route('/for-you', methods=['GET'])
+@login_required
+def for_you():
+    # Ensure the user has interests set
+    if current_user.interests:
+        # Split the interests string into a list
+        user_interests = current_user.interests.split(',')
+
+        # Query events where the type_of_event is in the user's interests
+        events = Event.query.filter(Event.type_of_event.in_(user_interests)).all()
+    else:
+        # If the user has no interests set, display no events or a message
+        events = []
+
+    # Format date and time for each event
+    for event in events:
+        if event.date_of_event:
+            event.formatted_date = event.date_of_event.strftime('%m-%d-%Y')
+        else:
+            event.formatted_date = 'No date set'
+
+        if event.time_of_event:
+            event.formatted_time = event.time_of_event.strftime('%I:%M %p')
+        else:
+            event.formatted_time = 'No time set'
+
+    # Return the For You page template
+    return render_template("for_you.html", user=current_user, events=events)
+
+# ROUTING FOR COMMENT LIKES
+@views.route('/like-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def like_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    like = Like.query.filter_by(user_id=current_user.id, comment_id=comment_id).first()
+
+    if like:
+        db.session.delete(like)
+        flash('You unliked this comment.', category='success')
+
+    else:
+        new_like = Like(user_id=current_user.id, comment_id=comment_id)
+        db.session.add(new_like)
+        flash('You liked this comment.', category='success')
+
+    db.session.commit()
     return redirect(url_for('views.event_details', event_id=comment.event_id))
 
 # Create list of interests as a string for easy html rendering
