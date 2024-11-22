@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from sqlalchemy import select
-from .models import Event, User, Interest, Comment
+from sqlalchemy import select, intersect, union_all
+from .models import Event, User, Interest, Comment, user_interest, event_interest
 from . import db
 import json
 from datetime import datetime
@@ -18,8 +18,26 @@ def home():
 
     # Add supporting variables for the html
     for event in events:
-        # format the interest list as a string for each event
-        event.interest_list = interest_list_str(event)
+        event_interests_stmt = (
+            select(Interest)
+            .join(event_interest, event_interest.c.interest_id == Interest.id)
+            .where(event_interest.c.event_id == event.id)
+        )
+
+        user_interests_stmt = (
+            select(Interest)
+            .join(user_interest, user_interest.c.interest_id == Interest.id)
+            .where(user_interest.c.user_id == current_user.id)
+        )
+
+        not_common_interests_stmt = event_interests_stmt.except_(user_interests_stmt)
+        common_interests_stmt = event_interests_stmt.intersect(user_interests_stmt)
+
+        common_interests = db.session.execute(common_interests_stmt)
+        not_common_interests = db.session.execute(not_common_interests_stmt)
+        
+        event.common_interest_names = [interest.name for interest in common_interests]
+        event.not_common_interest_names = [interest.name for interest in not_common_interests]
 
         # format date and time for each event to pass into the home.html
         if event.date_of_event:
@@ -295,25 +313,6 @@ def questionnaire():
         return redirect(url_for('views.home'))  
     return render_template("questionnaire.html", user=current_user, interests=interests)
 
-
-# Create list of interests as a string for easy html rendering
-def interest_list_str( obj_with_interests ):
-    # start with empty string
-    interest_str = ""
-
-    # create an iterator of all the interests
-    all_interests_iterator = iter(obj_with_interests.interests)
-
-    # add the first item to the string
-    cur_interest = next(all_interests_iterator)
-    interest_str += cur_interest.name
-
-    # now add the remaining items to the string  
-    for cur_interest in all_interests_iterator:
-        interest_str +=  ", " + cur_interest.name
-
-    return interest_str
-
 # ROUTING FOR COMMENTS
 @views.route('/add-comment/<int:event_id>', methods=['POST'])
 @login_required
@@ -348,3 +347,37 @@ def delete_comment(comment_id):
     
     flash('Comment deleted successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=comment.event_id))
+
+# Create list of interests as a string for easy html rendering
+def interest_list_str( obj_with_interests ):
+    # start with empty string
+    interest_str = ""
+
+    # create an iterator of all the interests
+    all_interests_iterator = iter(obj_with_interests.interests)
+
+    # add all interest names to the string
+    firstItem = True
+    for cur_interest in all_interests_iterator:
+        if firstItem:
+            firstItem = False
+        else:
+            interest_str +=  ", "
+        
+        interest_str += cur_interest.name
+
+    return interest_str
+
+def interest_names_list( obj_with_interests ):
+    # start with empty list
+    interest_list = []
+
+    # create an iterator of all the interests
+    all_interests_iterator = iter(obj_with_interests.interests)
+
+    # add all interest names to the string
+    for cur_interest in all_interests_iterator:
+        interest_list.append(cur_interest.name)
+
+    print(interest_list)
+    return interest_list
