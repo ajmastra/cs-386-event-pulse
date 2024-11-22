@@ -55,23 +55,23 @@ our example:
 
 **Requirement:** *Added Comment Like Count - Allows users to know the most popular comments to get an accurate feel of an event*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/182     
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/206    
 **Implemented by:** Benjamin Levine      
-**Approved by:** appName    
+**Approved by:** Samuel Butler    
 **Print screen:** ![Comment Likes](/project_documentation/D6_media/d6-2-FILENAME)  
 
 **Requirement:** *Added Interested Button - Allows the user to virtual display they're interested in an event*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
 **Implemented by:** Samuel Butler      
-**Approved by:** appName    
+**Approved by:** Andrew Gajewski
 **Print screen:** ![Interested Button](/project_documentation/D6_media/d6-2-FILENAME)  
 
 **Requirement:** *Added For You Page - Allows the user to have a centralized page of events dedicated towards their interests*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/105     
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/205    
 **Implemented by:** Andrew Gajewski    
-**Approved by:** appName    
+**Approved by:** Zachary Garza    
 **Print screen:** ![For You Page 1](/project_documentation/D6_media/d6-2-foryou-1.png)
 ![For You Page 2](/project_documentation/D6_media/d6-2-foryou-2.png)  
 
@@ -79,7 +79,7 @@ our example:
 **Issue:** [Issue Link](https://github.com/ajmastra/cs-386-event-pulse/issues/194)     
 **Pull request:** [PR Link](https://github.com/ajmastra/cs-386-event-pulse/pull/204)    
 **Implemented by:** Andrew Sliva      
-**Approved by:** appName    
+**Approved by:** Anthony Mastrangelo  
 **Print screen:** 
 Admin View
 ![admin](/project_documentation/D6_media/admin-view.png)
