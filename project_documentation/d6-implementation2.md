@@ -72,7 +72,8 @@ our example:
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
 **Implemented by:** Andrew Gajewski    
 **Approved by:** appName    
-**Print screen:** ![For You Page](/project_documentation/D6_media/d6-2-FILENAME)  
+**Print screen:** ![For You Page 1](/project_documentation/D6_media/d6-2-foryou-1.png)
+![For You Page 2](/project_documentation/D6_media/d6-2-foryou-2.png)  
 
 **Requirement:** *Added Admin User - Allows users to have a moderated experience by giving select people the ability to moderate pages*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/194     

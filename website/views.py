@@ -291,6 +291,36 @@ def delete_comment(comment_id):
     flash('Comment deleted successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=comment.event_id))
 
+# ROUTING FOR FOR YOU PAGE
+@views.route('/for-you', methods=['GET'])
+@login_required
+def for_you():
+    # Ensure the user has interests set
+    if current_user.interests:
+        # Split the interests string into a list
+        user_interests = current_user.interests.split(',')
+
+        # Query events where the type_of_event is in the user's interests
+        events = Event.query.filter(Event.type_of_event.in_(user_interests)).all()
+    else:
+        # If the user has no interests set, display no events or a message
+        events = []
+
+    # Format date and time for each event
+    for event in events:
+        if event.date_of_event:
+            event.formatted_date = event.date_of_event.strftime('%m-%d-%Y')
+        else:
+            event.formatted_date = 'No date set'
+
+        if event.time_of_event:
+            event.formatted_time = event.time_of_event.strftime('%I:%M %p')
+        else:
+            event.formatted_time = 'No time set'
+
+    # Return the For You page template
+    return render_template("for_you.html", user=current_user, events=events)
+
 # ROUTING FOR COMMENT LIKES
 @views.route('/like-comment/<int:comment_id>', methods=['POST'])
 @login_required
