@@ -37,7 +37,7 @@ class User(db.Model, UserMixin):
     # this will essentially store a list of all of the events owned by the user
 
     # establish the relationship of events to the user
-    events = db.relationship('Event', backref='creator') 
+    events = db.relationship('Event', backref='creator', cascade='all, delete')
 
     # Used to relate interests and users
     interests = db.relationship('Interest', secondary = 'user_interest', back_populates = 'users')

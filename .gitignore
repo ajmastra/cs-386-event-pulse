@@ -13,4 +13,7 @@ ENV/
 myenv/
 
 
-file: .DS_Store
+# mac specific files
+.DS_Store
+.AppleDouble
+.LSOverride

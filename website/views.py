@@ -66,6 +66,8 @@ def delete_event():
         if event.user_id == current_user.id:
             db.session.delete(event)
             db.session.commit()
+            flash('Event deleted successfully!', category='success')
+
     return jsonify({})
 
 # ROUTING FOR EVENT DETAILS PAGE
@@ -90,11 +92,6 @@ def add_event():
     interests = Interest.query.all()
 
     if request.method == 'POST':
-        # make sure user is logged in
-        if not current_user.is_authenticated:
-            # Forbidden if user is not authenticated
-            abort(403)  
-
         # Get information from the submitted form:
         # get the title
         title = request.form.get('event')
@@ -155,16 +152,14 @@ def add_event():
 @views.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def view_profile(user_id):
-    # Fetch the user by ID
-    user_profile = User.query.get_or_404(user_id)
-    
-    # Check if the profile belongs to the current user
-    is_own_profile = current_user.id == user_id
-
-    # Create list of user's interests
-    interest_list = interest_list_str(user_profile)
-
     if request.method == 'GET':
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+        
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
+
         # get empty lists for both queries
         cur_user_friends = []
         cur_search_friends = []
@@ -189,9 +184,16 @@ def view_profile(user_id):
             friend_status = 0
 
         # Render the profile template
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, interest_list=interest_list, friend_status=friend_status)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
     
     if request.method == 'POST':
+
+        # Fetch the user by ID
+        user_profile = User.query.get_or_404(user_id)
+
+        # Check if the profile belongs to the current user
+        is_own_profile = current_user.id == user_id
+
         # add searched user into current user's friend
         current_user.friends.append(user_profile)
 
@@ -223,7 +225,7 @@ def view_profile(user_id):
 
         flash('Friend added successfully!', category='success')
 
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, interest_list=interest_list, friend_status=friend_status)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
 
 
 # ROUTING FOR EDITING USER PROFILE
@@ -285,7 +287,7 @@ def questionnaire():
         flash('Interests updated successfully!', category='success')
 
         return redirect(url_for('views.home'))  
-    return render_template("questionnaire.html", user=current_user, interests=interests)
+    return render_template("questionnaire.html", user=current_user)
 
 # ROUTING FOR COMMENTS
 @views.route('/add-comment/<int:event_id>', methods=['POST'])
@@ -305,6 +307,7 @@ def add_comment(event_id):
     return redirect(url_for('views.event_details', event_id=event_id))
 
 # ROUTING FOR DELETING A COMMENT
+
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):
