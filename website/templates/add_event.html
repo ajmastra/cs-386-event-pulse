@@ -38,14 +38,13 @@
         </div>
 
         <!-- type of event -->
-        <div class="form-group">
-            <label for="eventType" class="font-weight-bold">Type of Event</label>
-            <select class="form-control" id="eventType" name="type_of_event" required>
-                <option value="" disabled selected>Choose the Type of Event</option>
-                {% for potential_interest in interests %}
-                <option value="{{ potential_interest.id }}">{{ potential_interest.name }}</option>
-                {% endfor %}
-            </select>
+        <div class="form-check form-check-inline">
+            <label for="eventType" class="font-weight-bold pr-3">Type of Event</label>
+            {% for cur_interest in interests %}
+            <input class="form-check-input" type="checkbox" name="interest_ids"
+                id="{{ cur_interest.id }}" value="{{ cur_interest.id }}">
+            <label class="form-check-label pr-3" for="{{ cur_interest.id }}">{{ cur_interest.name }}</label>
+            {% endfor %}
         </div>
 
         <!-- submit button -->

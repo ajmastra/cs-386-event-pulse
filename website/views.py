@@ -104,14 +104,25 @@ def add_event():
         date_of_event_str = request.form.get('date_of_event')
         # get the time
         time_of_event_str = request.form.get('time_of_event')
-        # Get selected interest id
-        selected_interest_id = request.form.get('type_of_event')
         # Get the location
         location = request.form.get('location')
+
+        # Get selected interest id
+        selected_interest_ids = request.form.getlist('interest_ids')
+
+        if not selected_interest_ids:
+            flash("Please select at least one interest.", "warning")
+            return redirect(url_for('views.add_event'))
+
+        print(selected_interest_ids)
 
          # Combine date and time strings into a single datetime object
         date_of_event = datetime.strptime(date_of_event_str, '%Y-%m-%d')
         time_of_event = datetime.strptime(time_of_event_str, '%H:%M').time()
+
+        # Convert IDs to integers
+        selected_interest_ids = [int(interest_id) for interest_id in selected_interest_ids]
+
 
         # create the new event, assuming you currently have user authentication
         new_event = Event(
@@ -122,14 +133,14 @@ def add_event():
             user_id=current_user.id,  # This is now safe
             location=location
         )
-        # Add the interest selected
-        new_interest_to_add = Interest.query.get(selected_interest_id)
-        new_event.interests.append(new_interest_to_add)
-
-        # add it to the database
         db.session.add(new_event)
+        db.session.commit()
 
-        # commit it to the db
+        # add interests to the event
+        for new_interest_id in selected_interest_ids:
+            db.session.execute(
+                event_interest.insert().values(event_id=new_event.id, interest_id=new_interest_id)
+            )
         db.session.commit()
 
         flash('Event added successfully!', category='success')
