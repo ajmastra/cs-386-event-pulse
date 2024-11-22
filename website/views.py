@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from sqlalchemy import select, intersect, union_all
-from .models import Event, User, Interest, Comment, user_interest, event_interest, Like
+from .models import Event, User, Interest, Comment, Like, user_interest, event_interest
 from . import db
 import json
 from datetime import datetime
@@ -161,6 +161,8 @@ def view_profile(user_id):
         # Check if the profile belongs to the current user
         is_own_profile = current_user.id == user_id
 
+        # get interest list
+        interest_list = interest_list_str(current_user)
 
         # get empty lists for both queries
         cur_user_friends = []
@@ -186,7 +188,7 @@ def view_profile(user_id):
             friend_status = 0
 
         # Render the profile template
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, interest_list=interest_list)
     
     if request.method == 'POST':
 
@@ -289,7 +291,7 @@ def questionnaire():
         flash('Interests updated successfully!', category='success')
 
         return redirect(url_for('views.home'))  
-    return render_template("questionnaire.html", user=current_user)
+    return render_template("questionnaire.html", user=current_user, interests=interests)
 
 # ROUTING FOR COMMENTS
 @views.route('/add-comment/<int:event_id>', methods=['POST'])
@@ -330,19 +332,57 @@ def delete_comment(comment_id):
 @views.route('/for-you', methods=['GET'])
 @login_required
 def for_you():
-    # Ensure the user has interests set
-    if current_user.interests:
-        # Split the interests string into a list
-        user_interests = current_user.interests.split(',')
+    # Get user interest id
+    user_interest_ids = (
+        select(user_interest.c.interest_id)
+        .where(user_interest.c.user_id == current_user.id)
+    )
+
+    # make a select statment
+    statement = (
+        select(Event)
+        .distinct()
+        .join(event_interest, event_interest.c.event_id == Event.id)
+        .where(event_interest.c.interest_id.in_(user_interest_ids))
+    )
+
+    # Execute the query
+    events = db.session.execute(statement).scalars().all()
+
+    #if current_user.interests:
+    #    # Split the interests string into a list
+    #    user_interests = current_user.interests.split(',')
 
         # Query events where the type_of_event is in the user's interests
-        events = Event.query.filter(Event.type_of_event.in_(user_interests)).all()
-    else:
-        # If the user has no interests set, display no events or a message
-        events = []
+    #    events = Event.query.filter(Event.interests.in_(user_interests)).all()
+    #else:
+    #    # If the user has no interests set, display no events or a message
+    #    events = []
 
     # Format date and time for each event
     for event in events:
+        event_interests_stmt = (
+            select(Interest)
+            .join(event_interest, event_interest.c.interest_id == Interest.id)
+            .where(event_interest.c.event_id == event.id)
+        )
+
+        user_interests_stmt = (
+            select(Interest)
+            .join(user_interest, user_interest.c.interest_id == Interest.id)
+            .where(user_interest.c.user_id == current_user.id)
+        )
+
+        not_common_interests_stmt = event_interests_stmt.except_(user_interests_stmt)
+        common_interests_stmt = event_interests_stmt.intersect(user_interests_stmt)
+
+        common_interests = db.session.execute(common_interests_stmt)
+        not_common_interests = db.session.execute(not_common_interests_stmt)
+        
+        event.common_interest_names = [interest.name for interest in common_interests]
+        event.not_common_interest_names = [interest.name for interest in not_common_interests]
+
+
         if event.date_of_event:
             event.formatted_date = event.date_of_event.strftime('%m-%d-%Y')
         else:
@@ -409,3 +449,16 @@ def interest_names_list( obj_with_interests ):
 
     print(interest_list)
     return interest_list
+
+# Find common interests between user and events
+def common_interests( user_id='', event_id=''):
+        common_interests_stmt = (
+            select(Interest)
+            .join(user_interest, user_interest.c.interest_id == Interest.id)
+            .join(event_interest, event_interest.c.interest_id == Interest.id)
+            .where(user_interest.c.user_id == user_id)
+            .where(event_interest.c.event_id == event_id)
+        )
+
+        common_interests = db.session.execute(common_interests_stmt)
+        return common_interests

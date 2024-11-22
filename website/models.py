@@ -71,6 +71,7 @@ class Comment(db.Model):
     #relationships
     user = db.relationship('User', backref='comments')
     event = db.relationship('Event', backref='comments')
+    likes = db.relationship('Like', back_populates='comment', cascade='all, delete')
 
 # interests schema
 class Interest(db.Model):
@@ -101,7 +102,6 @@ event_interest = db.Table(
     db.Column('event_id', db.ForeignKey('event.id')),
     db.Column('interest_id', db.ForeignKey('interest.id'))
 )
-    likes = db.relationship('Like', back_populates='comment', cascade='all, delete')
 
 # like schedma for database
 class Like(db.Model):
