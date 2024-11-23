@@ -101,6 +101,10 @@ Link:
 Include a link to a video showing the system working.
 - **5. Sign-Up Test** Ensures that new users can register by completing all required fields, such as email, username, and password, and successfully submitting the registration form.
 
+## 4. Demo
+Click to watch our demo of our web app!
+[![Demo Video](https://i.ytimg.com/vi/27f8P0S_TW0/maxresdefault.jpg)](https://www.youtube.com/watch?v=27f8P0S_TW0)
+
 ## 5. Code quality
 At the root of our team's code quality is our standards for Python syntax that we defined back in deliverable 2. We have clear and simple standards that ensure any code that is developed is of high quality and consistent across developers. We developed these guidelines and standards before starting the development, and as a result all of our code is very uniform and coherent.
 
