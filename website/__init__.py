@@ -19,7 +19,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'super duper secret key'
     
     # USE THIS FOR LOCAL TESTING
-    #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
     # USE THIS FOR SERVER
     app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
@@ -46,7 +46,7 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get(int(id))
+        return User.query.get(int(id)) 
 
     return app
 
