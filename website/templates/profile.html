@@ -63,21 +63,22 @@
         </div>
     </div>
     {% if is_own_profile == True %}
+    
     <!-- First loop gets everyone who asked to be your friend and is not in your friends list -->
         {% for each_user in incoming_friends %}
-        {% if each_user in user.friends == false %}
-            <div>
-                <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a> sent a Friend Request.
-            </div>
-        {% endif %}
+            {% if not each_user in user.friends %}
+                <div>
+                    <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a> sent you a Friend Request.
+                </div>
+            {% endif %}
         {% endfor %}
     <!-- Second loop gets everyone the user sent a request to AND they haven't sent one back -->
         {% for each_user in user.friends %}
-        {% if user in each_user.friends == false or not each_user.friends %}
-            <div>
-                Pending Friend Request to <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a>.
-            </div>
-        {% endif %}
+            {% if not user in each_user.friends %}
+                <div>
+                    Pending Friend Request to <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a>.
+                </div>
+            {% endif %}
         {% endfor %}
     <!-- Third loop gets everyone the user sent a request to AND they are in their list -->
     {% for each_user in user.friends %}
