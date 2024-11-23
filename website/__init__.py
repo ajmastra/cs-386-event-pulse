@@ -19,10 +19,10 @@ def create_app():
     app.config['SECRET_KEY'] = 'super duper secret key'
     
     # USE THIS FOR LOCAL TESTING
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
     # USE THIS FOR SERVER
-    # app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
 
     db.init_app(app)
     migrate.init_app(app, db)
