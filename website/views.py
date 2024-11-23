@@ -183,11 +183,11 @@ def view_profile(user_id):
 
         # for each user in the DB
         for i in list(all_users):
-            # for each friend of each user
+            # for each friend of the user
             for j in list(i.friends):
                 # if the id of the current user appears in their list
                 if j.id == current_user.id:
-                    users_friended_cur.append(i.id)
+                    users_friended_cur.append(i)
 
         # 3 - User and Searched User sent FR to each other (friends)
         # 2 - Searched User Sent FR to User
@@ -218,6 +218,10 @@ def view_profile(user_id):
 
         # commit it to the db
         db.session.commit()
+
+
+        # get all users and put into variable
+        all_users = User.query.all()
 
         # get empty lists for both queries
         cur_user_friends = []
