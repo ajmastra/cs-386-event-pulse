@@ -2,6 +2,7 @@
 
 __pycache__/
 instance/
+migrations/
 
 
 # Environments
@@ -17,3 +18,4 @@ myenv/
 .DS_Store
 .AppleDouble
 .LSOverride
+
