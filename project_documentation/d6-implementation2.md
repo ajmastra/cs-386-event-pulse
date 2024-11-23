@@ -61,12 +61,22 @@ our example:
 **Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1)
 ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2)  
 
-**Requirement:** *Added Interested Button - Allows the user to virtual display they're interested in an event*  
+**Requirement:** *Added Interested Button - Allows the user to save events they are interested in and look at a list of them*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
 **Implemented by:** Samuel Butler      
 **Approved by:** Andrew Gajewski
-**Print screen:** ![Interested Button](/project_documentation/D6_media/d6-2-FILENAME)  
+**Print screen:** ![Interested Button 1](/project_documentation/D6_media/d6-2-interest-button-1.png)
+![Interested Button 2](/project_documentation/D6_media/d6-2-interest-button-2.png)
+![Interested Button 3](/project_documentation/D6_media/d6-2-interest-button-3.png)
+
+**Requirement:** *Reworked Interest backend and Updated Highlighting - Allows multiple interests to be associated with each event and makes hightlighting cleaner*
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/218    
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
+**Implemented by:** Samuel Butler      
+**Approved by:** Andrew Gajewski
+**Print screen:** ![Interests Rework 1](/project_documentation/D6_media/d6-2-interests-rework-1.png)
+![Interests Rework 2](/project_documentation/D6_media/d6-2-interests-rework-2.png)   
 
 **Requirement:** *Added For You Page - Allows the user to have a centralized page of events dedicated towards their interests*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/105     
