@@ -40,6 +40,7 @@ class User(db.Model, UserMixin):
         backref = 'folllowing'
     )
 
+
     # every time an event is created, add id into this list
     # this will essentially store a list of all of the events owned by the user
 

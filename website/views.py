@@ -167,19 +167,34 @@ def view_profile(user_id):
         # Check if the profile belongs to the current user
         is_own_profile = current_user.id == user_id
 
+        # get all users and put into variable
+        all_users = User.query.all()
         # get interest list
         interest_list = interest_list_str(current_user)
 
-        # get empty lists for both queries
+
+
+        # get empty lists for all queries
         cur_user_friends = []
         cur_search_friends = []
+        users_friended_cur = []
 
         # fill each list with ids of each person
+            # get all cur user's friends
         for i in list(current_user.friends):
             cur_user_friends.append(i.id)
+            # get all viewing user's friends
         for i in list(user_profile.friends):
             cur_search_friends.append(i.id)
-        
+
+        # for each user in the DB
+        for i in list(all_users):
+            # for each friend of the user
+            for j in list(i.friends):
+                # if the id of the current user appears in their list
+                if j.id == current_user.id:
+                    users_friended_cur.append(i)
+
         # 3 - User and Searched User sent FR to each other (friends)
         # 2 - Searched User Sent FR to User
         # 1 - User Sent FR to Searched User
@@ -194,7 +209,7 @@ def view_profile(user_id):
             friend_status = 0
 
         # Render the profile template
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, interest_list=interest_list)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, interest_list=interest_list, incoming_friends=users_friended_cur)
     
     if request.method == 'POST':
 
@@ -210,15 +225,30 @@ def view_profile(user_id):
         # commit it to the db
         db.session.commit()
 
+
+        # get all users and put into variable
+        all_users = User.query.all()
+
         # get empty lists for both queries
         cur_user_friends = []
         cur_search_friends = []
+        users_friended_cur = []
 
         # fill each list with ids of each person
+            # get all cur user's friends
         for i in list(current_user.friends):
             cur_user_friends.append(i.id)
+            # get all viewing user's friends
         for i in list(user_profile.friends):
             cur_search_friends.append(i.id)
+
+        # for each user in the DB
+        for i in list(all_users):
+            # for each friend of each user
+            for j in list(i.friends):
+                # if the id of the current user appears in their list
+                if j.id == current_user.id:
+                    users_friended_cur.append(i.id)
         
         # 3 - User and Searched User sent FR to each other (friends)
         # 2 - Searched User Sent FR to User
@@ -235,7 +265,7 @@ def view_profile(user_id):
 
         flash('Friend added successfully!', category='success')
 
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status)
+        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, incoming_friends=users_friended_cur)
 
 
 # ROUTING FOR EDITING USER PROFILE
