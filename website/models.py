@@ -24,6 +24,12 @@ class User(db.Model, UserMixin):
     interests = db.Column(db.String(150))
     # Admin user 
     is_admin = db.Column(db.Boolean, default=False)
+    # Events they are 'interested in'
+    events_interested_in = db.relationship(
+        'Event',
+        secondary = 'users_interested_in_events',
+        back_populates = 'users_interested'
+    )
     
     # handles many to many relationship with itself for friends
     friends = db.relationship(
@@ -59,6 +65,19 @@ class Event(db.Model):
     # Used to relate interests and events
     interests = db.relationship('Interest', secondary = 'event_interest', back_populates = 'events')
 
+    # Events they are 'interested in'
+    users_interested = db.relationship(
+        'User',
+        secondary = 'users_interested_in_events',
+        back_populates = 'events_interested_in'
+    )
+
+# User to event many-to-many relation for event saving aka 'interested in'
+users_interested_in_events = db.Table(
+    'users_interested_in_events',
+    db.Column('event_id', db.ForeignKey('event.id')),
+    db.Column('user_id', db.ForeignKey('user.id'))
+)
 
 # comment schema for database
 class Comment(db.Model):
@@ -97,7 +116,7 @@ user_interest = db.Table(
     db.Column('interest_id', db.ForeignKey('interest.id'))
 )
 
-# Event to Interest many-to-many relation table 
+# Event to Interest many-to-many relation table
 event_interest = db.Table(
     'event_interest',
     db.Column('event_id', db.ForeignKey('event.id')),
