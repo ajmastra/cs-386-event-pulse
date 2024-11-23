@@ -11,29 +11,7 @@ Friend and comment systems have also been built in, supporting community buildin
 
 [Link to EventPulse on GitHub](https://github.com/ajmastra/cs-386-event-pulse)
 
-## 2. Implemented requirements
-List in this section the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue,  a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). Order the requirements by the name of the student who implemented them. Everyone in the group is expected to have code contributions documented by means of pull requests. Every pull request should be reviewed and approved before the merge. 
-
-At this point, we expect that you implement/prototype the features you specified in your MVP (c.f. D.2 Requirements). Pivots and changes are allowed as soon as you justify them.
-
-See the example:
-
-**Requirement:** As a Student, I want to add a homework assignment so that I can organize my ToDo list.  
-**Issue:** https://github.com/user/project/issue  
-**Pull request:** https://github.com/user/project/pull  
-**Implemented by:** Martin Fowler  
-**Approved by:** Ada Lovelace  
-**Print screen:** A print screen that depicts the implemented feature (if applicable)  
-
-our example:
-**Requirement:** *WhatYouDid - How it makes software better*  
-**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/ISSUENUMBER   
-**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/PRNUMBER    
-**Implemented by:** impName    
-**Approved by:** appName    
-**Print screen:** ![ImpTitle](/project_documentation/D6_media/linkToImageFile)  
-
----
+## 2. Implemented Requirements  
 
 **Requirement:** *Comments under Events - Allows user to get a feel of the event from the community*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/154    
@@ -57,14 +35,14 @@ our example:
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/206    
 **Implemented by:** Benjamin Levine      
 **Approved by:** Samuel Butler    
-**Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1)
-![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2)  
+**Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1.png)  
+![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2.png)  
 
 **Requirement:** *Added Interested Button - Allows the user to virtual display they're interested in an event*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
 **Implemented by:** Samuel Butler      
-**Approved by:** Andrew Gajewski
+**Approved by:** Andrew Gajewski  
 **Print screen:** ![Interested Button](/project_documentation/D6_media/d6-2-FILENAME)  
 
 **Requirement:** *Added For You Page - Allows the user to have a centralized page of events dedicated towards their interests*  
@@ -76,11 +54,11 @@ our example:
 ![For You Page 2](/project_documentation/D6_media/d6-2-foryou-2.png)  
 
 **Requirement:** *Added Admin User - Allows users to have a moderated experience by giving select people the ability to moderate pages*  
-**Issue:** [Issue Link](https://github.com/ajmastra/cs-386-event-pulse/issues/194)     
-**Pull request:** [PR Link](https://github.com/ajmastra/cs-386-event-pulse/pull/204)    
+**Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/194     
+**Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/204    
 **Implemented by:** Andrew Sliva      
 **Approved by:** Anthony Mastrangelo  
-**Print screen:** 
+**Print screen:**   
 Admin View
 ![admin](/project_documentation/D6_media/admin-view.png)
 Non-admin View
@@ -102,19 +80,19 @@ Grading criteria (2 points): adequate choice of a test framework, coverage of th
 Link: 
 [Link to acceptance tests folder](https://github.com/ajmastra/cs-386-event-pulse/acceptance_tests)
 
-**Login Test**
+#### **Login Test**
 ![login](/project_documentation/D6_media/test_login_results.png)
 
-**Event Search Test** 
-![event search](/project_documentation/D6_media/test_search-results.png)
+#### **Event Search Test** 
+![event search](/project_documentation/D6_media/test_event_search_results.png)
 
-**Event Creation Test**
-![event creation](/project_documentation/D6_media/test_event_creation.png)
+#### **Event Creation Test**
+![event creation](/project_documentation/D6_media/test_event_creation_results.png)
 
-**Comment Test**
+#### **Comment Test**
 ![comment](/project_documentation/D6_media/test_event_comment.png)
 
-**Sign-Up Test** 
+##### **Sign-Up Test** 
 ![sign up](/project_documentation/D6_media/test_sign_up_results.png)
 
 **These acceptance tests ensure that the core functionalities of the application work seamlessly from a user's perspective:**
