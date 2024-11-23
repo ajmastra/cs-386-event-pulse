@@ -231,3 +231,108 @@ textarea {
 .rounded {
     border-radius: 10px;
 }
+
+
+
+/* ORB LOGIC */
+/* Orb Background */
+.orb-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensures it's behind everything else */
+    background: #f8f9fa; /* Fallback background color */
+}
+
+/* Orbs */
+.orb {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(106,13,173,0.7), rgba(106,13,173,0.2));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+/* Orbs */
+.orb {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(106,13,173,0.4), rgba(106,13,173,0.1));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.5;
+    filter: blur(5px); 
+}
+
+.orb1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    width: 250px;
+    height: 250px;
+}
+
+.orb2 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 1s;
+    width: 200px;
+    height: 200px;
+}
+
+.orb3 {
+    top: 70%;
+    left: 60%;
+    animation-delay: 2s;
+    width: 300px;
+    height: 300px;
+}
+
+.orb4 {
+    top: 20%;
+    left: 80%;
+    animation-delay: 3s;
+    width: 180px;
+    height: 180px;
+}
+
+.orb5 {
+    top: 60%;
+    left: 40%;
+    animation-delay: 4s;
+    width: 220px;
+    height: 220px;
+}
+
+.orb7 {
+    top: 30%;
+    left: 50%;
+    animation-delay: 6s;
+    width: 200px;
+    height: 200px;
+}
+
+.orb8 {
+    top: 80%;
+    left: 10%;
+    animation-delay: 7s;
+    width: 230px;
+    height: 230px;
+}
+
+
+/* Animation for Floating Effect */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

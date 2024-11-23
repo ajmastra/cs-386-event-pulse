@@ -10,7 +10,8 @@ DEFAULT_INTERESTS = ("Live Music", "Theatre", "Political Event", "Community Even
 follow = db.Table(
     'follow',
     db.Column('following_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('follower_id', db.Integer, db.ForeignKey('user.id'))
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('status', db.String(10), default='pending')  # 'pending' or 'accepted'
 )
 
 # user schema for database
@@ -40,10 +41,82 @@ class User(db.Model, UserMixin):
         backref = 'folllowing'
     )
 
+    # initialize send friend request button
+        # sends friend request to another user
+    def send_friend_request(self, to_user):
+
+        # check if the target user has already sent a request to the current user
+        existing_request = db.session.query(follow).filter_by(
+            following_id=to_user.id, follower_id=self.id, status='pending'
+        ).first()
+
+        # if there WAS an existing friend request send to the current user
+        if existing_request:
+            # auto accept on both users behalfs
+            db.session.execute(
+                follow.update()
+                .where(follow.c.following_id == to_user.id, follow.c.follower_id == self.id)
+                .values(status='accepted')
+            )
+            db.session.execute(
+                follow.update()
+                .where(follow.c.following_id == self.id, follow.c.follower_id == to_user.id)
+                .values(status='accepted')
+            )
+
+            # commit changes to db
+            db.session.commit()
+
+            # flash success
+            flash(f"You are now friends with {to_user.username}!", category='success')
+
+        # otherwise, create a new pending friend request
+        else:
+
+            # create new request row on table
+            db.session.execute(
+                follow.insert().values(following_id=self.id, follower_id=to_user.id, status='pending')
+            )
+
+            # commit to db
+            db.session.commit()
+
+            # flash success
+            flash(f"Friend request sent to {to_user.username}.", category='success')
+
+    # initialize accept friend request button
+        # accepts a friend request from another user
+    def accept_friend_request(self, from_user):
+
+        # update the follow column, and set the users to friends with each other's ids with status accepted
+        db.session.execute(
+            follow.update()
+            .where(follow.c.following_id == from_user.id, follow.c.follower_id == self.id)
+            .values(status='accepted')
+        )
+        # commit to the database
+        db.session.commit()
+
+    # initalize get friends function
+        # retrieves all users who have an accepted friend status with the current_user
+    def get_friends(self):
+
+        # return a list of users who are friends with current user
+        return [u for u in self.friends if follow.query.filter_by(
+            following_id=self.id, follower_id=u.id, status='accepted'
+        ).first()]
+
+    # initialize get pending requests functions
+        # retrieve all pending friend requests to the current_user
+    def get_pending_requests(self):
+
+        # return the list of users who have send a pending friend request to current_user
+        return [u for u in self.friends if follow.query.filter_by(
+            following_id=u.id, follower_id=self.id, status='pending'
+        ).first()]
 
     # every time an event is created, add id into this list
     # this will essentially store a list of all of the events owned by the user
-
     # establish the relationship of events to the user
     events = db.relationship('Event', backref='creator', cascade='all, delete')
 

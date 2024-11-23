@@ -22,6 +22,20 @@
         <title>{% block title %}Name{% endblock %}</title>
     </head>
     <body>
+        <!-- ORB BACKGROUND-->
+        
+        <div class="orb-background">
+            <div class="orb orb1"></div>
+            <div class="orb orb2"></div>
+            <div class="orb orb3"></div>
+            <div class="orb orb4"></div>
+            <div class="orb orb5"></div>
+            <div class="orb orb6"></div>
+            <div class="orb orb7"></div>
+            <div class="orb orb8"></div>
+        </div>
+
+
         <!-- NAV -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="/">
@@ -34,9 +48,9 @@
                 <div class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                         <a class="nav-item nav-link" id="home" href="/">Home</a>
+                        <a class="nav-item nav-link" id="forYou" href="/for-you">For You</a>
                         <a class="nav-item nav-link" id="search" href="/search">Search</a>
                         <a class="nav-item nav-link" id="questionnaire" href="/questionnaire">Questionnaire</a>
-                        <a class="nav-item nav-link" id="forYou" href="/for-you">For You</a>
                     {% else %}
                         <a class="nav-item nav-link" id="login" href="/login">Login</a>
                         <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>

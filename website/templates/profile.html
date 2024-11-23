@@ -1,95 +1,75 @@
 {% extends "base.html" %}
 
-{% block title %}
-    {{ user_profile.first_name }}'s Profile
-{% endblock %}
-
 {% block content %}
 <div class="container">
     <div class="card mt-4">
         <div class="card-body">
             <h1 class="card-title">{{ user_profile.first_name }}'s Profile</h1>
-            
-            <h5 class="mt-4">Email:</h5>
-            <p class="card-text">{{ user_profile.email }}</p>
-            
+            <h5>Email:</h5>
+            <p>{{ user_profile.email }}</p>
             <h5>Username:</h5>
-            <p class="card-text">{{ user_profile.username }}</p>
-            
-            <h5>First Name:</h5>
-            <p class="card-text">{{ user_profile.first_name }}</p>
+            <p>{{ user_profile.username }}</p>
 
             <h5>Interests:</h5>
-            <p class="card-text">{{ interest_list }}</p>
-            
-            <!-- Checks if the current profile is the user's profile -->
+            <p>{{ interest_list }}</p>
+
             {% if is_own_profile %}
-            <div class="mt-3">
-                <!-- Displays Edit Profile Button -->
-                <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
-            </div>
-            <!-- Otherwise, this handles the friend button -->
+                <h5>Friends</h5>
+                <ul class="list-group">
+                    {% for friend in friends %}
+                        <li class="list-group-item">
+                            <a href="{{ url_for('views.view_profile', user_id=friend.id) }}">{{ friend.username }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <h5>Incoming Friend Requests</h5>
+                {% if incoming_requests %}
+                    <ul class="list-group">
+                        {% for request in incoming_requests %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{{ url_for('views.view_profile', user_id=request.id) }}">{{ request.username }}</a>
+                                <form method="POST">
+                                    <input type="hidden" name="target_user_id" value="{{ request.id }}">
+                                    <button type="submit" name="action" value="accept_request" class="btn btn-success btn-sm">Accept</button>
+                                    <button type="submit" name="action" value="reject_request" class="btn btn-danger btn-sm">Reject</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-muted">You have no incoming friend requests.</p>
+                {% endif %}
+
+                <h5>Sent Friend Requests</h5>
+                {% if sent_requests %}
+                    <ul class="list-group">
+                        {% for request in sent_requests %}
+                            <li class="list-group-item">
+                                <a href="{{ url_for('views.view_profile', user_id=request.id) }}">{{ request.username }}</a>
+                                <span class="badge badge-warning">Pending</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-muted">You have not sent any friend requests.</p>
+                {% endif %}
+
+                <!-- Edit Profile Button -->
+                <div class="mt-4">
+                    <a href="{{ url_for('views.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+                </div>
             {% else %}
-                <!-- If Searched user is friends with current user -->
-                {% if friend_status == 3 %}
-                <div class="mt-3">
-                    <p class="card-text">You are friends with {{ user_profile.username }}</p>
-                </div>
-                <!-- If Searched user added current user as friend -->
-                {% elif friend_status == 2 %}
-                <form method="POST">
-                    <div class="mt-3">
-                        <button type="submit" class="btn btn-primary btn-lg px-5">Accept {{ user_profile.username }}'s Friend Request</button>
-                    </div>
-                </form>
-                <!-- If current user added searched user as a friend -->
-                {% elif friend_status == 1 %}
-                <div class="mt-3">
-                    <p class="card-text">You sent a friend request to {{ user_profile.username }}</p>
-                </div>
-                <!-- If neither searched or current user added each other as friends -->
-                {% elif friend_status == 0 %}
-                <form method="POST">
-                    <div class="mt-3">
-                        <button type="submit" class="btn btn-primary btn-lg px-5">Add Friend</button>
-                    </div>
-                </form>
+                {% if user_profile in friends %}
+                    <p>You are friends with {{ user_profile.username }}.</p>
+                {% else %}
+                    <form method="POST">
+                        <input type="hidden" name="target_user_id" value="{{ user_profile.id }}">
+                        <button type="submit" name="action" value="send_request" class="btn btn-primary">Add Friend</button>
+                    </form>
                 {% endif %}
             {% endif %}
-            
-            <div class="mt-4">
-                <a href="{{ url_for('views.home') }}" class="btn btn-secondary">Back to Home</a>
-            </div>
         </div>
     </div>
-    {% if is_own_profile == True %}
-    
-    <!-- First loop gets everyone who asked to be your friend and is not in your friends list -->
-        {% for each_user in incoming_friends %}
-            {% if not each_user in user.friends %}
-                <div>
-                    <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a> sent you a Friend Request.
-                </div>
-            {% endif %}
-        {% endfor %}
-    <!-- Second loop gets everyone the user sent a request to AND they haven't sent one back -->
-        {% for each_user in user.friends %}
-            {% if not user in each_user.friends %}
-                <div>
-                    Pending Friend Request to <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a>.
-                </div>
-            {% endif %}
-        {% endfor %}
-    <!-- Third loop gets everyone the user sent a request to AND they are in their list -->
-    {% for each_user in user.friends %}
-        {% if user in each_user.friends %}
-            <div>
-                You are friends with <a href="{{ url_for('views.view_profile', user_id=each_user.id) }}">{{each_user.username}}</a>.
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-    {% endif %}
-    
 </div>
 {% endblock %}
