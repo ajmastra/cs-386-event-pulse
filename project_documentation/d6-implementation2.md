@@ -67,13 +67,11 @@ Non-admin View
 ## 3. Tests
 ### 3.1 Unit tests
 
-A unit test is an automated test that aims to verify the behavior of a component isolated from the rest of the system. For this deliverable, show an example of a unit test that uses mock objects to isolate the class from the rest of the system. 
-
-Test framework you used to develop your tests (e.g., JUnit, unittest, pytest, etc.)
-Link to your GitHub folder where your automated unit tests are located
-An example of a test case that makes use of mock objects. Include in your answer a GitHub link to the class being tested and to the test
-A print screen showing the result of the unit test execution
-Grading criteria (2 points): adequate choice of a test framework, coverage of the tests, quality of the tests, adequate use of Mock objects, and a print screen showing successful test execution.
+1. **Test Framework**: Pytest
+2. **Automated Unit Test Files**: https://github.com/ajmastra/cs-386-event-pulse/tree/main/tests/unit_testing
+3. **Example Test Case**: We created a variety of test cases for this implementation, but one of the more important ones was to do with the Add Comment functionality. For this, there needs to be a user account setup and logged in, as well as an event already created. The user can then try to post a comment on the event, adding it to the database. The testing that we are performing is on the models.py file, where we have the Comment database schema.
+4. **Result of testing**:
+![unit_testing](/project_documentation/D6_media/unit_testing.png)
 
 ### 3.2 Acceptance tests
 
