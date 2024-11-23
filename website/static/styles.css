@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #333333; /* Light gray background */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -244,7 +244,7 @@ textarea {
     height: 100%;
     overflow: hidden;
     z-index: -1; /* Ensures it's behind everything else */
-    background: #f8f9fa; /* Fallback background color */
+    background: #E8E8E8; /* Fallback background color */
 }
 
 /* Orbs */
