@@ -1,5 +1,4 @@
-# Implementation 2
-This deliverable should describe the second release of your project. A release is a fully functional software that delivers a set of features (it doesn’t need to be the complete set, but the software needs to be usable). Structure your deliverable into the following sections. See the “Team Project Instructions” for details about formatting. 
+# Implementation 2  
 
 ## 1. Introduction
 EventPulse is an event tracker app that provides NAU students and Flagstaff residents with an all in one place to share and discover local events, find groups of similar people, and discuss events.
@@ -115,30 +114,23 @@ Grading criteria (10 points): This section will be graded based on the quality o
 ## 5. Code quality
 At the root of our team's code quality is our standards for Python syntax that we defined back in deliverable 2. We have clear and simple standards that ensure any code that is developed is of high quality and consistent across developers. We developed these guidelines and standards before starting the development, and as a result all of our code is very uniform and coherent.
 
-1.	Naming Conventions
-
+1.	**Naming Conventions**  
 We have rules for naming conventions of different things, for example, class names are in PascalCase, constants are UPPERCASE, while functions are in snake_case. These naming conventions help us identify and differentiate what everything is, while also keeping the code looking clean and structured.
 
-2.	Function Design and Structure
-
+2.	**Function Design and Structure**  
 We also have guidelines that define how functions should be designed. Functions should be short and focused on a single task, have no more than 5 parameters, and have a single clear return path when possible. 
 
-3.	Code Formatting
-
+3.	**Code Formatting**  
 We also have rules for general code formatting that help keep the code structured and uniform. For example, all lines have a maximum of 79 characters, and use four spaces per indentation level (no tabs). 
 
-4.	Metrics
-
+4.	**Metrics**  
 One metric that our code measures well in is complexity. The issue with complexity arises in “the large and complex methods problem”. In our project, we have methods that do one task at a time (this is also what we were taught in design principles in D5). If your method only focuses on one thing and doesn't attempt to do multiple things at the same time, it is much easier to limit the complexity and scale of a method.
 
-5.	Best Practices
-
-“User variable names that mean something” - Throughout our project you will see that all our naming is of the same form. All our variable names have meanings related to their functionalities and dependencies. Throughout models.py you can see examples of this. 
-
+5.	**Best Practices**  
+“User variable names that mean something” - Throughout our project you will see that all our naming is of the same form. All our variable names have meanings related to their functionalities and dependencies. Throughout models.py you can see examples of this.  
 Comments - Throughout our code we can see comments labeling what classes do what. Our comments aren't explaining the functionality of the code, simply just giving it a label to make it easier. 
 
-6.	Testing Standards
-
+6.	**Testing Standards**  
 Whenever developing code, and testing the software, we always do so in a virtual environment. This ensures that any testing we do provides consistent results, as we are all testing in the same environment. With consistent testing results, we can be confident our code will run as expected in all scenarios.
 
 
