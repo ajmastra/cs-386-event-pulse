@@ -30,7 +30,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
 
     # import db schemas to make sure we run models.py before the db is created
-    from .models import User, Event
+    from .models import User, Event, Interest
 
     # call the create database function before the app is returned
     create_database(app)

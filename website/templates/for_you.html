@@ -1,18 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}For You{% endblock %}
 
 {% block content %}
 <br>
-<h1 align="center">Events</h1>
+<h1 align="center">For You</h1>
 
 <div class="container">
-    <div class="text-left mt-4">
-        <a href="{{ url_for('views.add_event') }}" class="btn btn-primary">Add Event</a>
-    </div>
-    <br>
-
     <div class="list-group" id="events">
-        <!-- loop through the events and create a button for each one -->
+        <!-- Check if there are events -->
+        {% if events %}
+        <!-- Loop through the filtered events -->
         {% for event in events %}
         <a href="{{ url_for('views.event_details', event_id=event.id) }}" class="btn btn-event">
             <div class="d-flex justify-content-between align-items-center">
@@ -26,14 +23,17 @@
                         <li class="list-group-item py-1">{{ cur_interest_name }}</li>
                         {% endfor %}
                     </ul>
+                    <small class="text-muted d-block">Location: {{ event.location }}</small>
                 </div>
-                <!-- display the formatted date and time -->
                 <span class="text-muted">
                     {{ event.formatted_date }} | {{ event.formatted_time }}
                 </span>
             </div>
         </a>
         {% endfor %}
+        {% else %}
+        <p class="text-center text-muted">No events match your interests. Update your preferences in the questionnaire!</p>
+        {% endif %}
     </div>
 </div>
 
