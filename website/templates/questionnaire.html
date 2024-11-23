@@ -13,7 +13,11 @@
                         type="checkbox"
                         class="form-check-input"
                         id="{{ potential_interest.id }}"
-                        name="{{ potential_interest.id }}">
+                        name="{{ potential_interest.id }}"
+                        {% if potential_interest.checked %}
+                        checked
+                        {% endif %}
+                    >
                     <label class="form-check-label" for="{{ potential_interest.id }}">{{ potential_interest.name }}</label>
                 </div>
                 {% endfor %}
