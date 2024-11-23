@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from os import path, getenv
 from flask_login import LoginManager
@@ -6,6 +7,9 @@ from dotenv import load_dotenv
 
 # load environment files:
 load_dotenv()
+
+# initialize migrate function
+migrate = Migrate()
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -15,12 +19,13 @@ def create_app():
     app.config['SECRET_KEY'] = 'super duper secret key'
     
     # USE THIS FOR LOCAL TESTING
-    #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
     # USE THIS FOR SERVER
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+    #app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
 
     db.init_app(app)
+    migrate.init_app(app, db)
 
     from .views import views
     from .auth import auth
