@@ -58,10 +58,10 @@ our example:
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/206    
 **Implemented by:** Benjamin Levine      
 **Approved by:** Samuel Butler    
-**Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1)
-![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2)  
+**Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1.png)
+![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2.png)  
 
-**Requirement:** *Added Interested Button - Allows the user to save events they are interested in and look at a list of them*  
+**Requirement:** *Added Interested Button - Allows the user to save events they are interested in and view at a list of them*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
 **Implemented by:** Samuel Butler      
