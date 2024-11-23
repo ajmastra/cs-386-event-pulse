@@ -284,20 +284,43 @@ def search():
 @views.route('/questionnaire', methods=['GET', 'POST'])
 @login_required
 def questionnaire():
-    interests = Interest.query.all()
-    
+    all_interests = Interest.query.all()
+
+    selected_user_interests_stmt = (
+        select(Interest)
+        .join(user_interest, user_interest.c.interest_id == Interest.id)
+        .where(user_interest.c.user_id == current_user.id)
+    )
+    selected_user_interests = db.session.execute(selected_user_interests_stmt).scalars().all()
+
+    # make list that makes sure the correc interests are checked
+    for cur_interest in all_interests:
+        if(cur_interest in selected_user_interests):
+            cur_interest.checked = True
+        else:
+            cur_interest.checked = False
+
     if request.method == 'POST':
+        # Delete all current user interests
+        delete_interests_stmt = (
+            delete(user_interest)
+            .where(user_interest.c.user_id == current_user.id)
+        )
+        db.session.execute(delete_interests_stmt)
+
+        # add all selected interests
         selected_interests = request.form
         for interest_id in selected_interests:
-            interest_to_add = Interest.query.get(interest_id)
-            current_user.interests.append(interest_to_add)
-    
-        # Commit changes to db
+            db.session.execute(
+                user_interest.insert().values(user_id=current_user.id, interest_id=interest_id)
+            )
+        
         db.session.commit()
+
         flash('Interests updated successfully!', category='success')
 
         return redirect(url_for('views.home'))  
-    return render_template("questionnaire.html", user=current_user, interests=interests)
+    return render_template("questionnaire.html", user=current_user, interests=all_interests)
 
 # ROUTING FOR COMMENTS
 @views.route('/add-comment/<int:event_id>', methods=['POST'])
