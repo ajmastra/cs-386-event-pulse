@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from sqlalchemy import select, delete, intersect, union_all
-from .models import Event, User, Interest, Comment, Like, user_interest, event_interest, users_interested_in_events
+from .models import Event, User, Interest, Comment, Like, user_interest, event_interest, users_interested_in_events, follow
 from . import db
 import json
 from datetime import datetime
@@ -160,112 +160,101 @@ def add_event():
 @views.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def view_profile(user_id):
-    if request.method == 'GET':
-        # Fetch the user by ID
-        user_profile = User.query.get_or_404(user_id)
-        
-        # Check if the profile belongs to the current user
-        is_own_profile = current_user.id == user_id
+    user_profile = User.query.get_or_404(user_id)
+    # check if the current user is the owner of the profile page they are currently on
+    is_own_profile = current_user.id == user_id
 
-        # get all users and put into variable
-        all_users = User.query.all()
-        # get interest list
-        interest_list = interest_list_str(current_user)
+    # fetch incoming requests
+    incoming_requests = [
+        user for user in User.query.join(follow, follow.c.following_id == User.id)
+        .filter(follow.c.follower_id == current_user.id, follow.c.status == 'pending')
+    ]
 
+    # fetch sent requests
+    sent_requests = [
+        user for user in User.query.join(follow, follow.c.follower_id == User.id)
+        .filter(follow.c.following_id == current_user.id, follow.c.status == 'pending')
+    ]
 
+    # fetch friends for current user
+    friends = [
+        user for user in User.query.join(follow, follow.c.following_id == User.id)
+        .filter(follow.c.follower_id == current_user.id, follow.c.status == 'accepted')
+    ]
 
-        # get empty lists for all queries
-        cur_user_friends = []
-        cur_search_friends = []
-        users_friended_cur = []
+    # generate interest list for the user profile
+    interest_list = ", ".join([interest.name for interest in user_profile.interests])
 
-        # fill each list with ids of each person
-            # get all cur user's friends
-        for i in list(current_user.friends):
-            cur_user_friends.append(i.id)
-            # get all viewing user's friends
-        for i in list(user_profile.friends):
-            cur_search_friends.append(i.id)
-
-        # for each user in the DB
-        for i in list(all_users):
-            # for each friend of the user
-            for j in list(i.friends):
-                # if the id of the current user appears in their list
-                if j.id == current_user.id:
-                    users_friended_cur.append(i)
-
-        # 3 - User and Searched User sent FR to each other (friends)
-        # 2 - Searched User Sent FR to User
-        # 1 - User Sent FR to Searched User
-        # 0 - No interaction 
-        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
-            friend_status = 3
-        elif current_user.id in cur_search_friends:
-            friend_status = 2
-        elif user_profile.id in cur_user_friends:
-            friend_status = 1
-        else:
-            friend_status = 0
-
-        # Render the profile template
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, interest_list=interest_list, incoming_friends=users_friended_cur)
-    
+    ######### FRIEND REQUEST HANDLING #########
     if request.method == 'POST':
+        # get action type from form
+        action = request.form.get('action')
+        # get target user id from the form aka the user who is being interacted with
+        target_user_id = request.form.get('target_user_id')
+        # get target user, or return error if they were not found in db (failsafe)
+        target_user = User.query.get_or_404(target_user_id)
 
-        # Fetch the user by ID
-        user_profile = User.query.get_or_404(user_id)
+        # if user send request
+        if action == 'send_request':
 
-        # Check if the profile belongs to the current user
-        is_own_profile = current_user.id == user_id
+            # insert new row to the follow table with status pending
+            db.session.execute(
+                follow.insert().values(following_id=current_user.id, follower_id=target_user.id, status='pending')
+            )
 
-        # add searched user into current user's friend
-        current_user.friends.append(user_profile)
+            # commit change to db
+            db.session.commit()
 
-        # commit it to the db
-        db.session.commit()
+            # flask success message to user
+            flash(f"Friend request sent to {target_user.username}.", category='success')
+
+        # if user accepts request
+        elif action == 'accept_request':
+
+            # update the follow table to set status to accepted
+            db.session.execute(
+                follow.update()
+                .where(follow.c.following_id == target_user.id, follow.c.follower_id == current_user.id)
+                .values(status='accepted')
+            )
+
+            #commit to db
+            db.session.commit()
+
+            # flash success
+            flash(f"Friend request from {target_user.username} accepted!", category='success')
+
+        # if user rejects friend request
+        elif action == 'reject_request':
+
+            # delete corresponding row in follow table
+            db.session.execute(
+                follow.delete()
+                .where(follow.c.following_id == target_user.id, follow.c.follower_id == current_user.id)
+            )
+
+            # commit to db
+            db.session.commit()
+
+            # flash success
+            flash(f"Friend request from {target_user.username} rejected.", category='info')
+
+        # return redirect
+        return redirect(url_for('views.view_profile', user_id=user_id))
+
+    # return template with following data
+    return render_template(
+        'profile.html',
+        user_profile=user_profile,
+        is_own_profile=is_own_profile,
+        friends=friends,
+        incoming_requests=incoming_requests,
+        sent_requests=sent_requests,
+        interest_list=interest_list,
+        user=current_user 
+    )
 
 
-        # get all users and put into variable
-        all_users = User.query.all()
-
-        # get empty lists for both queries
-        cur_user_friends = []
-        cur_search_friends = []
-        users_friended_cur = []
-
-        # fill each list with ids of each person
-            # get all cur user's friends
-        for i in list(current_user.friends):
-            cur_user_friends.append(i.id)
-            # get all viewing user's friends
-        for i in list(user_profile.friends):
-            cur_search_friends.append(i.id)
-
-        # for each user in the DB
-        for i in list(all_users):
-            # for each friend of each user
-            for j in list(i.friends):
-                # if the id of the current user appears in their list
-                if j.id == current_user.id:
-                    users_friended_cur.append(i.id)
-        
-        # 3 - User and Searched User sent FR to each other (friends)
-        # 2 - Searched User Sent FR to User
-        # 1 - User Sent FR to Searched User
-        # 0 - No interaction 
-        if user_profile.id in cur_user_friends and current_user.id in cur_search_friends:
-            friend_status = 3
-        elif current_user.id in cur_search_friends:
-            friend_status = 2
-        elif user_profile.id in cur_user_friends:
-            friend_status = 1
-        else:
-            friend_status = 0
-
-        flash('Friend added successfully!', category='success')
-
-        return render_template('profile.html', user_profile=user_profile, is_own_profile=is_own_profile, user=current_user, friend_status=friend_status, incoming_friends=users_friended_cur)
 
 
 # ROUTING FOR EDITING USER PROFILE
