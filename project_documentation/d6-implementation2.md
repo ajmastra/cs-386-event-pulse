@@ -58,7 +58,8 @@ our example:
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/206    
 **Implemented by:** Benjamin Levine      
 **Approved by:** Samuel Butler    
-**Print screen:** ![Comment Likes](/project_documentation/D6_media/d6-2-FILENAME)  
+**Print screen:** ![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-1)
+![Comment Likes 1](/project_documentation/D6_media/d6-2-likes-2)  
 
 **Requirement:** *Added Interested Button - Allows the user to virtual display they're interested in an event*  
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/153    
