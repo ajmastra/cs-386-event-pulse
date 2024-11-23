@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from sqlalchemy import select, intersect, union_all, delete
-from .models import Event, User, Interest, Comment, Like, user_interest, event_interest
+from sqlalchemy import select, delete, intersect, union_all
+from .models import Event, User, Interest, Comment, Like, user_interest, event_interest, users_interested_in_events
 from . import db
 import json
 from datetime import datetime
@@ -80,11 +80,17 @@ def event_details(event_id):
     event = Event.query.get_or_404(event_id)
 
     # get string of interests using function
-    # !! not checking if a 404 was returned, not sure how to handle this gracefully
     interest_list = interest_list_str(event)
 
+    # Check if the event is already saved
+    if event in current_user.events_interested_in:
+        user_interested=True
+    else:
+        user_interested=False
+
+
     # render event details template
-    return render_template('event_details.html', event=event, user=current_user, interest_list=interest_list)
+    return render_template('event_details.html', event=event, user=current_user, interest_list=interest_list, user_interested=user_interested)
 
 # ROUTING FOR ADDING AN EVENT
 @views.route('/add-event', methods=['GET', 'POST'])
@@ -333,6 +339,36 @@ def add_comment(event_id):
     flash('Comment added successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=event_id))
 
+# ROUTING FOR SAVING AN EVENT
+@views.route('/save_event/<int:event_id>', methods=['POST'])
+def save_event(event_id):
+    # get the event
+    statement = stmt = select(Event).where(Event.id == event_id)
+    event = db.session.execute(stmt).scalar()
+
+    event = db.session.execute(statement).scalar()
+
+    # Check if the event is already saved
+    if event in current_user.events_interested_in:
+        db.session.execute(
+            delete(users_interested_in_events)
+            .where(users_interested_in_events.c.event_id == event_id)
+            .where(users_interested_in_events.c.user_id == current_user.id)
+        )
+        db.session.commit()
+        flash("Event unsaved!", "success")
+    else:
+        db.session.execute(
+            users_interested_in_events.insert().values(event_id=event_id, user_id=current_user.id)
+            )
+        db.session.commit()
+        flash("Event saved successfully!", "success")
+
+
+    # Redirect back to the event details page
+    return redirect(url_for('views.event_details', event_id=event_id))
+
+
 
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
@@ -350,6 +386,55 @@ def delete_comment(comment_id):
     db.session.commit()
     flash('Comment deleted successfully!', category='success')
     return redirect(url_for('views.event_details', event_id=comment.event_id))
+
+# ROUTING FOR SAVED EVENTS
+@views.route('/saved_events', methods=['GET', 'POST'])
+@login_required
+def saved_events():
+    # Get events user is interested in
+    statement = (
+        select(Event)
+        .join(users_interested_in_events, users_interested_in_events.c.event_id==Event.id)
+        .where(users_interested_in_events.c.user_id==current_user.id)
+        )
+    events = db.session.execute(statement).scalars().all()
+
+    # Add supporting variables for the html
+    for event in events:
+        event_interests_stmt = (
+            select(Interest)
+            .join(event_interest, event_interest.c.interest_id == Interest.id)
+            .where(event_interest.c.event_id == event.id)
+        )
+
+        user_interests_stmt = (
+            select(Interest)
+            .join(user_interest, user_interest.c.interest_id == Interest.id)
+            .where(user_interest.c.user_id == current_user.id)
+        )
+
+        not_common_interests_stmt = event_interests_stmt.except_(user_interests_stmt)
+        common_interests_stmt = event_interests_stmt.intersect(user_interests_stmt)
+
+        common_interests = db.session.execute(common_interests_stmt)
+        not_common_interests = db.session.execute(not_common_interests_stmt)
+        
+        event.common_interest_names = [interest.name for interest in common_interests]
+        event.not_common_interest_names = [interest.name for interest in not_common_interests]
+
+        # format date and time for each event to pass into the home.html
+        if event.date_of_event:
+            event.formatted_date = event.date_of_event.strftime('%m-%d-%Y')
+        else:
+            event.formatted_date = 'No date set'
+
+        if event.time_of_event:
+            event.formatted_time = event.time_of_event.strftime('%I:%M %p')
+        else:
+            event.formatted_time = 'No time set'
+
+    # return home template
+    return render_template("saved_events.html", user=current_user, events=events)
 
 # ROUTING FOR FOR YOU PAGE
 @views.route('/for-you', methods=['GET'])

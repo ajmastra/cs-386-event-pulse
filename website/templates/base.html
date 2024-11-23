@@ -52,6 +52,9 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{ url_for('views.view_profile', user_id=current_user.id) }}">Profile</a>
                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url_for('views.saved_events', user_id=current_user.id) }}">
+                                Saved Events</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">Logout</a>
                         </div>
                     </div>
