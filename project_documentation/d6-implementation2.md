@@ -55,7 +55,7 @@ Friend and comment systems have also been built in, supporting community buildin
 **Issue:** https://github.com/ajmastra/cs-386-event-pulse/issues/218    
 **Pull request:** https://github.com/ajmastra/cs-386-event-pulse/pull/207    
 **Implemented by:** Samuel Butler      
-**Approved by:** Andrew Gajewski
+**Approved by:** Andrew Gajewski  
 **Print screen:**  
 ![Interests Rework 1](/project_documentation/D6_media/d6-2-interests-rework-1.png)
 ![Interests Rework 2](/project_documentation/D6_media/d6-2-interests-rework-2.png)   
