@@ -5,22 +5,36 @@
     <div class="card mt-4">
         <div class="card-body">
             <h1 class="card-title">{{ user_profile.first_name }}'s Profile</h1>
-            <h5>Email:</h5>
+            <h5>Email</h5>
             <p>{{ user_profile.email }}</p>
-            <h5>Username:</h5>
+            <h5>Username</h5>
             <p>{{ user_profile.username }}</p>
 
-            <h5>Interests:</h5>
-            <p>{{ interest_list }}</p>
+            <h5>Interests</h5>
+            {% if interest_list == "" %}
+                {% if is_own_profile %}
+                    <p class="text-muted">You currently have no interests, fill out the Questionnaire to get some!</p>
+                {% else %}
+                    <p class="text-muted">{{ user_profile.username }} currently has no interests.</p>
+                {% endif %}
+            {% else %}
+                <p>{{ interest_list }}</p>
+            {% endif %}
+
+            <br>
 
             {% if is_own_profile %}
                 <h5>Friends</h5>
                 <ul class="list-group">
-                    {% for friend in friends %}
-                        <li class="list-group-item">
-                            <a href="{{ url_for('views.view_profile', user_id=friend.id) }}">{{ friend.username }}</a>
-                        </li>
-                    {% endfor %}
+                    {% if not friends %}
+                        <p class="text-muted">You currently have no friends on EventPulse.</p>
+                    {% else %}
+                        {% for friend in friends %}
+                            <li class="list-group-item">
+                                <a href="{{ url_for('views.view_profile', user_id=friend.id) }}">{{ friend.username }}</a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
 
                 <h5>Incoming Friend Requests</h5>
@@ -62,6 +76,8 @@
             {% else %}
                 {% if user_profile in friends %}
                     <p>You are friends with {{ user_profile.username }}.</p>
+                {% elif user_profile in sent_requests %}
+                    <p class="text-muted">You sent a friend request to {{ user_profile.username }}.</p>
                 {% else %}
                     <form method="POST">
                         <input type="hidden" name="target_user_id" value="{{ user_profile.id }}">
