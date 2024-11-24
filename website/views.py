@@ -177,10 +177,16 @@ def view_profile(user_id):
     ]
 
     # fetch friends for current user
-    friends = [
+    following_id_query = [
         user for user in User.query.join(follow, follow.c.following_id == User.id)
         .filter(follow.c.follower_id == current_user.id, follow.c.status == 'accepted')
     ]
+    follower_id_query = [
+        user for user in User.query.join(follow, follow.c.follower_id == User.id)
+        .filter(follow.c.following_id == current_user.id, follow.c.status == 'accepted')
+    ]
+    friends = list( set(following_id_query) | set(follower_id_query) )
+    
 
     # generate interest list for the user profile
     interest_list = ", ".join([interest.name for interest in user_profile.interests])
