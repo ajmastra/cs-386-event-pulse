@@ -91,8 +91,8 @@ Non-admin View
 
 ### 3.2 Acceptance tests
 
-Link: 
-[Link to acceptance tests folder](https://github.com/ajmastra/cs-386-event-pulse/acceptance_tests)
+1. **Test Framework**: Selenium  
+2. **Automated Acceptance Test Files**: https://github.com/ajmastra/cs-386-event-pulse/acceptance_tests  
 
 #### **Login Test**
 ![login](/project_documentation/D6_media/test_login_results.png)
@@ -113,8 +113,7 @@ Link:
 - **1. Login Test** Verifies that users can log in successfully by providing valid credentials and navigating to the homepage.
 - **2. Event Search Test** Ensures that users can search for events using the search bar and view relevant results.
 - **3. Event Creation Test** Confirms that users can create new events by filling in all required fields (title, date, time, location, description, and event type) and successfully submitting the form.
-- **4. Comment Test** Validates that users can add a comment to an event, post it successfully, and see it displayed in the comments section.
-Include a link to a video showing the system working.
+- **4. Comment Test** Validates that users can add a comment to an event, post it successfully, and see it displayed in the comments section.  
 - **5. Sign-Up Test** Ensures that new users can register by completing all required fields, such as email, username, and password, and successfully submitting the registration form.
 
 ## 4. Demo
@@ -145,5 +144,5 @@ Whenever developing code, and testing the software, we always do so in a virtual
 
 
 ## 6. Lessons learned
-During this release, we had to fulfill a lot of daunting requirements we made back in D2. We were pretty nervous regarding relationships and the additions of models to our system, so comments, friends, and interests were pretty scary to implement. During the early stages, interests were returned as strings and set into the User, but now we've worked on Comments, which have their own class, and then a N:N relationship with User towards itself, which was relatively easy to implement. Doing these created a commenting system to be added to events as well as users being able to friend each other. This allowed our software to focus on its core values, like allowing users to connect with one another, learning about what it means to align with our core values. With this in mind, we dedicated some time to learn how to add side-by-side HTML elements and override a previously-existing element in our software, like the previous "interest" system. Having an "admin" user was easy to implement, but doing so meant we had to learn how to previously rewrite a good portion of our if statements in the system. All in all, it's important to see how rewriting a system can take a lot of time and head-scratching, especially since our project is relatively tiny compared to bigger industry software.  
+During this release, we had to fulfill a lot of daunting requirements we made back in D2. We were pretty nervous regarding relationships and the additions of models to our system, so comments, friends, and interests were pretty scary to implement. During the early stages, interests were returned as strings and set into the User, but now we've worked on Comments, which have their own class, and then a N:N relationship with User towards itself, which was relatively easy to implement. Doing these created a commenting system to be added to events as well as users being able to friend each other. This allowed our software to focus on its core values, like allowing users to connect with one another, learning about what it means to align with our core values. With this in mind, we dedicated some time to learn how to add side-by-side HTML elements and override a previously-existing element in our software, like the previous "interest" system. Having an "admin" user was easy to implement, but doing so meant we had to learn how to previously rewrite a good portion of our if statements in the system. All in all, it's important to see how rewriting a system can take a lot of time and head-scratching, especially since our project is relatively tiny compared to bigger industry software. In the future, I think if we were to focus more time on getting deadlines done early, it would be signifigantly easier to communicate with others about problems, allowing all of us to make seamless implementations and contributions. One other thing we'd do differently would be to work on "daunting" things earlier, as once the "scary" relationships were out of the way, a lot more progress was made regarding final implementation. 
 
