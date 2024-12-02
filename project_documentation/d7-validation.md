@@ -77,7 +77,7 @@ Validation aims to ensure that you developed the right product. At the beginning
   - Ease of use: 8
   - Liklihood of use in day to day: 6
  
-**User 3**: William After   
+**User 3**: William Aft   
 - **Task Completetion Times:**
   - Create an Account: 30 seconds  
   - Fill out Questionairre: 10 seconds  
