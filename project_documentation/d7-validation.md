@@ -37,24 +37,24 @@ Validation aims to ensure that you developed the right product. At the beginning
 
 **User 1**: Nate Grimshaw
 - **Task Completetion Times:**
-  - Create an Account:
-  - Fill out Questionairre:
-  - Post an Event:
-  - Comment on event:
-  - Like a Commment:
-  - Delete a Comment:
-  - Delete an Event:
-  - Edit profile:
-  - Send a friend request:
-- **Success Rate**: 
+  - Create an Account: 1 minunte
+  - Fill out Questionairre: 15 seconds
+  - Post an Event: 50 seconds
+  - Comment on event: 20 seconds
+  - Like a Commment: 15 seconds
+  - Delete a Comment: 10 seconds
+  - Delete an Event: 25 seconds
+  - Edit profile: 20 seconds
+  - Send a friend request: 1.5 minutes
+- **Success Rate**: 90%
 - **Feedback / Answers to Questions:**
-  - UI Description:
-  - Ease of creating an Event:
-  - Missing / needed features:
+  - UI Description: Fairly simple and intuitive, but seems dated.
+  - Ease of creating an Event: Simple to understand, thought there should be an add event button in the navigation bar.
+  - Missing / needed features: Profile pictures would be nice, and maybe a way to filter the events on the home page.
 - **Ratings (Scale 1-10):**
-  - User Interface:
-  - Ease of use:
-  - Liklihood of use in day to day:
+  - User Interface: 6
+  - Ease of use: 9
+  - Liklihood of use in day to day: 5
  
 **User 2**: Conrad Lis
 - **Task Completetion Times:**
