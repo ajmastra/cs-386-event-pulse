@@ -18,7 +18,7 @@ Validation aims to ensure that you developed the right product. At the beginning
 4. Comment on existing event
 5. Like a comment
 6. Delete a comment
-7. Delete an 
+7. Delete an event
 8. Edit profile
 9. Send a friend request
 10. Accept a friend request
