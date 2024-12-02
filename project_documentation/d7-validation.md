@@ -11,7 +11,7 @@ Validation aims to ensure that you developed the right product. At the beginning
 
 # Script
 
-** Tasks for the user to do **  
+**Tasks for the user to do**  
 1. Create account
 2. Fill out questionairre interests
 3. Post an event
