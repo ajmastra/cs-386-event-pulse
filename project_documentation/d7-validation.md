@@ -102,4 +102,15 @@ Validation aims to ensure that you developed the right product. At the beginning
 
 ## Reflections 
 
+**What worked well:**  
+
+**What can be changed:**  
+
+**Learning Curve:**  
+
+**Task Performance:**  
+
+**User Preferences:**
+- *What did the users like the most?*
+- Was the value proposition accomplished?*  
 
