@@ -77,26 +77,26 @@ Validation aims to ensure that you developed the right product. At the beginning
   - Ease of use: 8
   - Liklihood of use in day to day: 6
  
-**User 3**: 
+**User 3**: William After   
 - **Task Completetion Times:**
-  - Create an Account:
-  - Fill out Questionairre:
-  - Post an Event:
-  - Comment on event:
-  - Like a Commment:
-  - Delete a Comment:
-  - Delete an Event:
-  - Edit profile:
-  - Send a friend request:
+  - Create an Account: 30 seconds  
+  - Fill out Questionairre: 10 seconds  
+  - Post an Event: 35 seconds  
+  - Comment on event: 20 seconds
+  - Like a Commment: 5 seconds
+  - Delete a Comment: 10 seconds  
+  - Delete an Event: 15 seconds  
+  - Edit profile: 30 seconds   
+  - Send a friend request: 20 seconds   
 - **Success Rate**: 
 - **Feedback / Answers to Questions:**
-  - UI Description:
-  - Ease of creating an Event:
-  - Missing / needed features:
+  - UI Description: Everythig easy to navigate, makes sense where things are placed.  
+  - Ease of creating an Event: Easy to understand, might take too long.    
+  - Missing / needed features: Notifications for friend requests.    
 - **Ratings (Scale 1-10):**
-  - User Interface:
-  - Ease of use:
-  - Liklihood of use in day to day:
+  - User Interface: 9  
+  - Ease of use: 8  
+  - Liklihood of use in day to day: 7  
 
 ## Reflections 
 
