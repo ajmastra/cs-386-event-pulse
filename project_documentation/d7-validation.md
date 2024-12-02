@@ -43,7 +43,7 @@ Validation aims to ensure that you developed the right product. At the beginning
   - Comment on event:
   - Like a Commment:
   - Delete a Comment:
-  - Delete an Events:
+  - Delete an Event:
   - Edit profile:
   - Send a friend request:
 - **Success Rate**: 
@@ -56,26 +56,26 @@ Validation aims to ensure that you developed the right product. At the beginning
   - Ease of use:
   - Liklihood of use in day to day:
  
-**User 2**: 
+**User 2**: Conrad Lis
 - **Task Completetion Times:**
-  - Create an Account:
-  - Fill out Questionairre:
-  - Post an Event:
-  - Comment on event:
-  - Like a Commment:
-  - Delete a Comment:
-  - Delete an Events:
-  - Edit profile:
-  - Send a friend request:
-- **Success Rate**: 
+  - Create an Account: 45 seconds
+  - Fill out Questionairre: 15 seconds
+  - Post an Event: 40 seconds
+  - Comment on event: 15 seconds
+  - Like a Commment: 10 seconds
+  - Delete a Comment: 10 seconds
+  - Delete an Event: 15 seconds
+  - Edit profile: 20 seconds
+  - Send a friend request: 30 seconds
+- **Success Rate**: 88%
 - **Feedback / Answers to Questions:**
-  - UI Description:
-  - Ease of creating an Event:
-  - Missing / needed features:
+  - UI Description: Simple and clean, it navigates pretty well.
+  - Ease of creating an Event: Very simple and easy to understand. Picking the time for the event is a little clunky.
+  - Missing / needed features: Profile pictures or event pictures would be nice for visuals.
 - **Ratings (Scale 1-10):**
-  - User Interface:
-  - Ease of use:
-  - Liklihood of use in day to day:
+  - User Interface: 7
+  - Ease of use: 8
+  - Liklihood of use in day to day: 6
  
 **User 3**: 
 - **Task Completetion Times:**
@@ -85,7 +85,7 @@ Validation aims to ensure that you developed the right product. At the beginning
   - Comment on event:
   - Like a Commment:
   - Delete a Comment:
-  - Delete an Events:
+  - Delete an Event:
   - Edit profile:
   - Send a friend request:
 - **Success Rate**: 
