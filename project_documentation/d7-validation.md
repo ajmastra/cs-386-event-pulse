@@ -33,10 +33,12 @@ Validation aims to ensure that you developed the right product. At the beginning
 2. Do you like the way you tag events you are interested in?
 3. What would you improve?
 4. Did anything feel clunky?
-5. 
+5. What does this site have that other event sites lack?
+6. What does this site lack that other event sites have?
 
-**Results:** Conduct the user evaluation with at least 3 users. Report the data that you collected.
+## Results
 
-**Reflections:** Reflect on what you observed. Some questions that you can explore: What features worked well? What can be changed? How is the learning curve of your system? Did the users perform the tasks as you expected? Did the users’ actions produce the results they expected? What did the users like the most? Is your value proposition accomplished? 
+## Reflections 
+
 
 Grading criteria (29 points): adequate script, adequate report of the results, results from at least 3 potential users, adequate reflection, and language.
