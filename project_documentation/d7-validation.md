@@ -21,7 +21,6 @@ Validation aims to ensure that you developed the right product. At the beginning
 7. Delete an event
 8. Edit profile
 9. Send a friend request
-10. Accept a friend request
 
 **Data collected**  
 1. Time taken to complete each quest.
@@ -38,7 +37,69 @@ Validation aims to ensure that you developed the right product. At the beginning
 
 ## Results
 
+**User 1**: Nate Grimshaw
+- **Task Completetion Times:**
+  - Create an Account:
+  - Fill out Questionairre:
+  - Post an Event:
+  - Comment on event:
+  - Like a Commment:
+  - Delete a Comment:
+  - Delete an Events:
+  - Edit profile:
+  - Send a friend request:
+- **Success Rate**: 
+- **Feedback / Answers to Questions:**
+  - UI Description:
+  - Ease of creating an Event:
+  - Missing / needed features:
+- **Ratings (Scale 1-10):**
+  - User Interface:
+  - Ease of use:
+  - Liklihood of use in day to day:
+ 
+**User 2**: 
+- **Task Completetion Times:**
+  - Create an Account:
+  - Fill out Questionairre:
+  - Post an Event:
+  - Comment on event:
+  - Like a Commment:
+  - Delete a Comment:
+  - Delete an Events:
+  - Edit profile:
+  - Send a friend request:
+- **Success Rate**: 
+- **Feedback / Answers to Questions:**
+  - UI Description:
+  - Ease of creating an Event:
+  - Missing / needed features:
+- **Ratings (Scale 1-10):**
+  - User Interface:
+  - Ease of use:
+  - Liklihood of use in day to day:
+ 
+**User 3**: 
+- **Task Completetion Times:**
+  - Create an Account:
+  - Fill out Questionairre:
+  - Post an Event:
+  - Comment on event:
+  - Like a Commment:
+  - Delete a Comment:
+  - Delete an Events:
+  - Edit profile:
+  - Send a friend request:
+- **Success Rate**: 
+- **Feedback / Answers to Questions:**
+  - UI Description:
+  - Ease of creating an Event:
+  - Missing / needed features:
+- **Ratings (Scale 1-10):**
+  - User Interface:
+  - Ease of use:
+  - Liklihood of use in day to day:
+
 ## Reflections 
 
 
-Grading criteria (29 points): adequate script, adequate report of the results, results from at least 3 potential users, adequate reflection, and language.
